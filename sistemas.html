@@ -24,10 +24,8 @@
   <meta property="og:description" content="Software de inventario, punto de venta y sistemas a medida para negocios en Santa Cruz del Quiché. Soluciones que realmente funcionan.">
   <meta property="og:url" content="https://mayofixtech.com/sistemas.html">
 
-  <!-- Imagen de la vista previa al compartir el enlace (WhatsApp, Facebook,
-       LinkedIn, Telegram). Tiene que ser una URL absoluta: con ruta relativa
-       WhatsApp no la encuentra. 1200x630 y 88 KB, por debajo del limite que
-       hace que WhatsApp descarte la imagen. -->
+  <!-- <!-- Vista previa al compartir (WhatsApp, Facebook, LinkedIn). La URL debe ser absoluta
+       o WhatsApp no la encuentra, y por debajo de 300 KB o la descarta. -->
   <meta property="og:image" content="https://mayofixtech.com/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -48,28 +46,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap"></noscript>
 
-  <!-- Iconos del sitio. El .ico contiene 16, 32 y 48 px: el de 16 usa una
-       versión de la M con el trazo más grueso, que a ese tamaño se lee
-       mejor. El .svg lo prefieren los navegadores modernos y se mantiene
-       nítido a cualquier tamaño. El .png es para cuando alguien guarda la
-       página en la pantalla de inicio de un iPhone. -->
+  <!-- <!-- Iconos: el .ico lleva 16/32/48 px (el de 16 con el trazo más grueso para que se lea);
+       el .svg para navegadores modernos y el .png para la pantalla de inicio en iOS. -->
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <!-- ── TEMA CLARO / OSCURO ──────────────────────────────────────
-       Se aplica ANTES de que el navegador pinte nada, para que al
-       recargar no se vea un destello del tema anterior. Por eso va
-       aquí arriba y no en js/main.js. -->
+  <!-- ── TEMA CLARO / OSCURO El sitio abre siempre en oscuro, sin mirar la preferencia del sistema. Solo se respeta el tema que el visitante haya elegido antes con el selector. Se aplica antes de que el navegador pinte nada, para que al recargar no se vea un destello. -->
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0E2337">
   <script>
     (function () {
       var t = null;
       try { t = localStorage.getItem('theme'); } catch (e) {}
-      if (t !== 'light' && t !== 'dark') {
-        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
-      }
+      if (t !== 'light' && t !== 'dark') t = 'dark';
       document.documentElement.setAttribute('data-theme', t);
       if (t === 'light') {
         var m = document.querySelector('meta[name="theme-color"]');
@@ -99,10 +89,7 @@
 </head>
 
 <body>
-  <!-- ── CURSORES PERSONALIZADOS ──
-       Dos capas: un punto sólido (.cursor) que sigue el ratón exacto
-       y un anillo exterior (.cursor-ring) que lo sigue con un pequeño retraso
-       para dar efecto de suavizado. Ambos se ocultan en pantallas táctiles. -->
+  <!-- ── CURSORES PERSONALIZADOS ── Dos capas: un punto sólido (.cursor) que sigue el ratón exacto y un anillo exterior (.cursor-ring) que lo sigue con un pequeño retraso para dar efecto de suavizado. Ambos se ocultan en pantallas táctiles. -->
   <a href="#main-content" class="skip-link">Saltar al contenido</a>
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
@@ -129,9 +116,7 @@
         <span class="lang-switch-opt">ES</span>
         <span class="lang-switch-opt">EN</span>
       </div>
-      <!-- Selector de tema. Mismo patrón que el de idioma: cápsula con
-           pastilla deslizante. Sol = claro, luna = oscuro. El estado
-           real lo fija applyTheme() en js/main.js. -->
+      <!-- <!-- Selector de tema: sol = claro, luna = oscuro. El estado lo fija applyTheme() en main.js. -->
       <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
         <span class="theme-switch-pill"></span>
         <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
@@ -147,10 +132,7 @@
     </div>
   </nav>
 
-  <!-- ── MENÚ MÓVIL ──
-       Panel desplegable que aparece en pantallas pequeñas al pulsar el hamburger.
-       Se activa añadiendo la clase "open" desde JavaScript.
-       Incluye los mismos enlaces del nav y el interruptor de idioma. -->
+  <!-- ── MENÚ MÓVIL ── Panel desplegable que aparece en pantallas pequeñas al pulsar el hamburger. Se activa añadiendo la clase "open" desde JavaScript. Incluye los mismos enlaces del nav y el interruptor de idioma. -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html" data-i18n="nav_home">Inicio</a>
     <a href="reparacion.html" data-i18n="nav_repair">Reparación</a>
@@ -166,7 +148,6 @@
       </div>
     </div>
 
-    <!-- Fila del selector de tema en el menú móvil -->
     <div class="mobile-theme">
       <span>Tema / Theme</span>
       <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
@@ -177,9 +158,7 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       PAGE HEADER
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- PAGE HEADER -->
   <header class="page-header" id="main-content">
     <div class="page-header-orb"></div>
     <div class="page-header-orb2"></div>
@@ -207,9 +186,7 @@
     </div>
   </header>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       SERVICES GRID — 5 cards (3 + 2)
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- SERVICES GRID — 5 cards (3 + 2) -->
   <section class="services-section">
     <div class="max">
       <p class="section-tag reveal" data-i18n="srv_tag">Lo que desarrollamos</p>
@@ -291,9 +268,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       ENTERPRISE — Odoo / Sistemas Empresariales
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- ENTERPRISE — Odoo / Sistemas Empresariales -->
   <section class="enterprise-section">
     <div class="enterprise-inner">
 
@@ -350,9 +325,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       EXCEL AUTOMATION
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- EXCEL AUTOMATION -->
   <section class="excel-section">
     <div class="excel-inner max">
 
@@ -402,9 +375,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       PROCESS — 5 steps vertical timeline
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- PROCESS — 5 steps vertical timeline -->
   <section class="process-section">
     <div class="max">
       <p class="section-tag reveal" data-i18n="proc_tag">El proceso</p>
@@ -463,9 +434,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       FOR WHOM — Industry pills
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- FOR WHOM — Industry pills -->
   <section class="forwho-section">
     <div class="max">
       <p class="section-tag reveal" data-i18n="fw_tag">¿Para quién es?</p>
@@ -504,9 +473,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       CTA BAND
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- CTA BAND -->
   <section class="cta-band">
     <div class="cta-band-inner reveal">
       <h2 data-i18n="cta_title">¿Listo para organizar tu negocio?</h2>
@@ -518,9 +485,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-top">
       <div class="footer-brand">

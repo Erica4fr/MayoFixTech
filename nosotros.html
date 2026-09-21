@@ -2,7 +2,6 @@
 <!-- DOCTYPE le indica al navegador que este es un documento HTML5 -->
 
 <html lang="es">
-<!-- lang="es" le dice al navegador y a Google que el contenido está en español -->
 
 <head>
   <!-- <head> contiene metadatos: información SOBRE la página, no contenido visible -->
@@ -34,10 +33,8 @@
   <meta property="og:description" content="Conoce a Erica Alejandra Franco, técnica de computadoras con 8 años de experiencia en Santa Cruz del Quiché, Guatemala.">
   <meta property="og:url" content="https://mayofixtech.com/nosotros.html">
 
-  <!-- Imagen de la vista previa al compartir el enlace (WhatsApp, Facebook,
-       LinkedIn, Telegram). Tiene que ser una URL absoluta: con ruta relativa
-       WhatsApp no la encuentra. 1200x630 y 88 KB, por debajo del limite que
-       hace que WhatsApp descarte la imagen. -->
+  <!-- <!-- Vista previa al compartir (WhatsApp, Facebook, LinkedIn). La URL debe ser absoluta
+       o WhatsApp no la encuentra, y por debajo de 300 KB o la descarta. -->
   <meta property="og:image" content="https://mayofixtech.com/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -59,28 +56,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap"></noscript>
 
-  <!-- Iconos del sitio. El .ico contiene 16, 32 y 48 px: el de 16 usa una
-       versión de la M con el trazo más grueso, que a ese tamaño se lee
-       mejor. El .svg lo prefieren los navegadores modernos y se mantiene
-       nítido a cualquier tamaño. El .png es para cuando alguien guarda la
-       página en la pantalla de inicio de un iPhone. -->
+  <!-- <!-- Iconos: el .ico lleva 16/32/48 px (el de 16 con el trazo más grueso para que se lea);
+       el .svg para navegadores modernos y el .png para la pantalla de inicio en iOS. -->
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <!-- ── TEMA CLARO / OSCURO ──────────────────────────────────────
-       Se aplica ANTES de que el navegador pinte nada, para que al
-       recargar no se vea un destello del tema anterior. Por eso va
-       aquí arriba y no en js/main.js. -->
+  <!-- ── TEMA CLARO / OSCURO El sitio abre siempre en oscuro, sin mirar la preferencia del sistema. Solo se respeta el tema que el visitante haya elegido antes con el selector. Se aplica antes de que el navegador pinte nada, para que al recargar no se vea un destello. -->
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0E2337">
   <script>
     (function () {
       var t = null;
       try { t = localStorage.getItem('theme'); } catch (e) {}
-      if (t !== 'light' && t !== 'dark') {
-        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
-      }
+      if (t !== 'light' && t !== 'dark') t = 'dark';
       document.documentElement.setAttribute('data-theme', t);
       if (t === 'light') {
         var m = document.querySelector('meta[name="theme-color"]');
@@ -116,29 +105,19 @@
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       CURSOR PERSONALIZADO
-       Dos divs vacíos — JavaScript los mueve para seguir al mouse.
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- CURSOR PERSONALIZADO Dos divs vacíos — JavaScript los mueve para seguir al mouse. -->
   <a href="#main-content" class="skip-link">Saltar al contenido</a>
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
   <svg style="display:none" aria-hidden="true" focusable="false"><symbol id="ico-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol><symbol id="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol></svg>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       BARRA DE NAVEGACIÓN
-       Fija en la parte superior (position: fixed en el CSS).
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- BARRA DE NAVEGACIÓN Fija en la parte superior (position: fixed en el CSS). -->
   <nav id="navbar">
     <!-- Logo: enlace a la página de inicio -->
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-dot"></div>  <!-- Punto decorativo dorado -->
-      Mayo Fix Tech
+      <div class="nav-logo-dot"></div>      Mayo Fix Tech
     </a>
 
-    <!-- Lista de navegación principal (se oculta en móvil).
-         data-i18n → JS reemplaza el texto según el idioma activo.
-         class="active" → marca esta página como la actual (resaltado en CSS). -->
     <ul class="nav-links">
       <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
       <li><a href="reparacion.html" data-i18n="nav_repair">Reparación</a></li>
@@ -147,20 +126,15 @@
       <li><a href="nosotros.html" class="active" data-i18n="nav_about">Conóceme</a></li>  <!-- Página actual -->
     </ul>
 
-    <!-- Lado derecho del nav: selector de idioma + botón CTA + hamburguesa -->
     <div class="nav-right">
       <!-- Selector de idioma ES/EN.
            role="switch" y aria-label → accesibilidad para lectores de pantalla.
            onclick="toggleLang()" → llama a la función JS al hacer clic. -->
       <div class="lang-switch is-es" onclick="toggleLang()" role="switch" tabindex="0" aria-checked="false" aria-label="Cambiar idioma">
-        <div class="lang-switch-pill"></div>  <!-- Pastilla dorada deslizante -->
-        <span class="lang-switch-opt">ES</span>
+        <div class="lang-switch-pill"></div>        <span class="lang-switch-opt">ES</span>
         <span class="lang-switch-opt">EN</span>
       </div>
-      <!-- Botón WhatsApp en forma de cápsula (se oculta en móvil) -->
-      <!-- Selector de tema. Mismo patrón que el de idioma: cápsula con
-           pastilla deslizante. Sol = claro, luna = oscuro. El estado
-           real lo fija applyTheme() en js/main.js. -->
+      <!-- <!-- Selector de tema: sol = claro, luna = oscuro. El estado lo fija applyTheme() en main.js. -->
       <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
         <span class="theme-switch-pill"></span>
         <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
@@ -176,7 +150,6 @@
     </div>
   </nav>
 
-  <!-- Menú móvil desplegable (JS agrega/quita la clase "open") -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html" data-i18n="nav_home">Inicio</a>
     <a href="reparacion.html" data-i18n="nav_repair">Reparación</a>
@@ -194,7 +167,6 @@
       </div>
     </div>
 
-    <!-- Fila del selector de tema en el menú móvil -->
     <div class="mobile-theme">
       <span>Tema / Theme</span>
       <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
@@ -205,12 +177,7 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       CABECERA DE PÁGINA
-       Reemplaza al hero grande de index.html. Es una cabecera compacta
-       con tag, título H1 y subtítulo. Usa <header> (semánticamente correcto
-       para la cabecera de una sección de la página).
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- CABECERA DE PÁGINA Reemplaza al hero grande de index.html. Es una cabecera compacta con tag, título H1 y subtítulo. Usa <header> (semánticamente correcto para la cabecera de una sección de la página). -->
   <header class="page-header" id="main-content">
     <!-- Orb decorativo: círculo de luz difusa en la esquina -->
     <div class="page-header-orb"></div>
@@ -226,11 +193,7 @@
     </div>
   </header>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       SECCIÓN "ABOUT" (Sobre mí / Historia)
-       Sin clase personalizada — usa los estilos base de <section>.
-       Layout de 2 columnas: tarjeta de perfil + historia en texto.
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- SECCIÓN "ABOUT" (Sobre mí / Historia) Sin clase personalizada — usa los estilos base de <section>. Layout de 2 columnas: tarjeta de perfil + historia en texto. -->
   <section>
     <div class="max">
       <div class="about-layout">
@@ -239,11 +202,6 @@
         <div class="about-card reveal">
           <!-- Avatar circular con borde degradado dorado -->
           <div class="about-avatar">
-            <!-- src="FotoErica.jpg" carga la imagen desde la misma carpeta del HTML
-                 (versión recortada de 320×320 px, ~14 KB; el original FotoErica.png pesa 3.3 MB)
-                 width/height → el navegador reserva el espacio antes de que cargue la foto
-                 alt= texto alternativo: se muestra si la imagen no carga, y lo lee
-                 Google y los lectores de pantalla para accesibilidad -->
             <img src="FotoErica.jpg" alt="Erica Alejandra Franco Rosales" width="320" height="320">
           </div>
 
@@ -285,11 +243,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       SECCIÓN "TRUST" (Valores / Por qué confiar)
-       Fondo --bg2 para alternar visualmente con la sección anterior.
-       4 tarjetas en grid 2x2 con animación de línea lateral al hover.
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- SECCIÓN "TRUST" (Valores / Por qué confiar) Fondo --bg2 para alternar visualmente con la sección anterior. 4 tarjetas en grid 2x2 con animación de línea lateral al hover. -->
   <section class="trust">
     <div class="max">
       <p class="sec-tag reveal" data-i18n="trust_tag">Valores del servicio</p>
@@ -344,11 +298,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       SECCIÓN DE CONTACTO
-       id="contacto" permite enlazar directamente a esta sección
-       con una URL tipo nosotros.html#contacto
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- SECCIÓN DE CONTACTO id="contacto" permite enlazar directamente a esta sección con una URL tipo nosotros.html#contacto -->
   <section class="contact" id="contacto">
     <div class="max">
       <div class="contact-layout">
@@ -453,12 +403,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       BANDA CTA (llamada a la acción final)
-       Fondo dorado degradado con cuadrícula sutil.
-       Nota: aquí se usa <section> aunque en index.html tenía su propia clase.
-       El CSS de .cta-band aplica igual.
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- BANDA CTA (llamada a la acción final) Fondo dorado degradado con cuadrícula sutil. Nota: aquí se usa <section> aunque en index.html tenía su propia clase. El CSS de .cta-band aplica igual. -->
   <section class="cta-band">
     <div class="cta-band-inner reveal">
       <h2 data-i18n="cta_h2">¿Listo para trabajar juntos?</h2>
@@ -471,10 +416,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       PIE DE PÁGINA (FOOTER)
-       Grid 4 columnas: marca + Reparación + WordPress + Páginas.
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- PIE DE PÁGINA (FOOTER) Grid 4 columnas: marca + Reparación + WordPress + Páginas. -->
   <footer>
     <div class="footer-top">
       <!-- Columna de marca (2fr = el doble de ancho que las otras) -->
@@ -526,11 +468,7 @@
     </div>
   </footer>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       JAVASCRIPT
-       Colocado al final del <body> para que el HTML ya esté cargado
-       cuando el JS intente acceder a los elementos del DOM.
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- JAVASCRIPT Colocado al final del <body> para que el HTML ya esté cargado cuando el JS intente acceder a los elementos del DOM. -->
   <script>
     const translations = {
       es: {

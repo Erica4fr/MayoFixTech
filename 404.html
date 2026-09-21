@@ -15,28 +15,20 @@
 
   <!-- Rutas absolutas (empiezan con /): esta página se muestra en cualquier URL que no exista,
        incluso dentro de carpetas (ej. /blog/algo), así que las rutas relativas no encontrarían el CSS -->
-  <!-- Iconos del sitio. El .ico contiene 16, 32 y 48 px: el de 16 usa una
-       versión de la M con el trazo más grueso, que a ese tamaño se lee
-       mejor. El .svg lo prefieren los navegadores modernos y se mantiene
-       nítido a cualquier tamaño. El .png es para cuando alguien guarda la
-       página en la pantalla de inicio de un iPhone. -->
+  <!-- <!-- Iconos: el .ico lleva 16/32/48 px (el de 16 con el trazo más grueso para que se lea);
+       el .svg para navegadores modernos y el .png para la pantalla de inicio en iOS. -->
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- ── TEMA CLARO / OSCURO ──────────────────────────────────────
-       Se aplica ANTES de que el navegador pinte nada, para que al
-       recargar no se vea un destello del tema anterior. Por eso va
-       aquí arriba y no en js/main.js. -->
+  <!-- ── TEMA CLARO / OSCURO El sitio abre siempre en oscuro, sin mirar la preferencia del sistema. Solo se respeta el tema que el visitante haya elegido antes con el selector. Se aplica antes de que el navegador pinte nada, para que al recargar no se vea un destello. -->
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0E2337">
   <script>
     (function () {
       var t = null;
       try { t = localStorage.getItem('theme'); } catch (e) {}
-      if (t !== 'light' && t !== 'dark') {
-        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
-      }
+      if (t !== 'light' && t !== 'dark') t = 'dark';
       document.documentElement.setAttribute('data-theme', t);
       if (t === 'light') {
         var m = document.querySelector('meta[name="theme-color"]');
@@ -154,9 +146,7 @@
         <span class="lang-switch-opt">ES</span>
         <span class="lang-switch-opt">EN</span>
       </div>
-      <!-- Selector de tema. Mismo patrón que el de idioma: cápsula con
-           pastilla deslizante. Sol = claro, luna = oscuro. El estado
-           real lo fija applyTheme() en js/main.js. -->
+      <!-- <!-- Selector de tema: sol = claro, luna = oscuro. El estado lo fija applyTheme() en main.js. -->
       <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
         <span class="theme-switch-pill"></span>
         <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
@@ -187,7 +177,6 @@
       </div>
     </div>
 
-    <!-- Fila del selector de tema en el menú móvil -->
     <div class="mobile-theme">
       <span>Tema / Theme</span>
       <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">

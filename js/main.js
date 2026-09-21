@@ -1,11 +1,9 @@
-/* ─────────────────────────────────────────────────────────────────
-   main.js  —  Mayo Fix Tech
-   Comportamiento compartido para todas las páginas.
-   Este archivo se carga DESPUÉS del <script> inline de cada página
-   que define la variable global `translations` con las cadenas de texto.
-───────────────────────────────────────────────────────────────── */
+// main.js  —  Mayo Fix Tech
+// Comportamiento compartido para todas las páginas.
+// Este archivo se carga DESPUÉS del <script> inline de cada página
+// que define la variable global `translations` con las cadenas de texto.
 
-// ── CURSOR PERSONALIZADO ─────────────────────────────────────────
+// ── CURSOR PERSONALIZADO
 // Punto sólido + anillo exterior con efecto de lag suave (lerp 12%)
 (function () {
   var cursor = document.getElementById('cursor');
@@ -43,7 +41,7 @@
   }
 }());
 
-// ── MENÚ MÓVIL ───────────────────────────────────────────────────
+// ── MENÚ MÓVIL
 function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
 }
@@ -54,7 +52,7 @@ document.addEventListener('click', function (e) {
     menu.classList.remove('open');
 });
 
-// ── SCROLL REVEAL ────────────────────────────────────────────────
+// ── SCROLL REVEAL
 // Añade clase "visible" cuando el elemento entra en el viewport (activa animación CSS)
 (function () {
   var obs = new IntersectionObserver(function (entries) {
@@ -66,7 +64,7 @@ document.addEventListener('click', function (e) {
   document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
 }());
 
-// ── FORMULARIO DE CONTACTO → WHATSAPP ────────────────────────────
+// ── FORMULARIO DE CONTACTO → WHATSAPP
 // El sitio es estático (sin servidor), así que el formulario no puede enviar correos.
 // En su lugar arma un mensaje con los datos y abre WhatsApp con el texto listo.
 // Solo existe en nosotros.html; en las demás páginas no hace nada.
@@ -98,7 +96,7 @@ document.addEventListener('click', function (e) {
   });
 }());
 
-// ── MOTOR DE TRADUCCIONES ────────────────────────────────────────
+// ── MOTOR DE TRADUCCIONES
 // `translations` es definido por el <script> inline de cada página antes de cargar este archivo.
 // data-i18n usa textContent (texto plano, seguro contra XSS).
 // data-i18n-html usa innerHTML (solo para contenido con etiquetas HTML internas).
@@ -167,7 +165,7 @@ document.addEventListener('keydown', function (e) {
 // Inicialización: aplica el idioma guardado en localStorage (o español por defecto)
 applyLang(localStorage.getItem('lang') || 'es');
 
-// ── MOTOR DE TEMAS (claro / oscuro) ──────────────────────────────
+// ── MOTOR DE TEMAS (claro / oscuro)
 // El tema se aplica en un <script> inline dentro del <head> de cada
 // página, ANTES de que se pinte nada, para que no haya un destello
 // del tema anterior al cargar. Este bloque solo gestiona el cambio
@@ -209,19 +207,6 @@ function currentTheme() {
 
 function toggleTheme() {
   applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
-}
-
-// Si nunca se eligió tema a mano, seguir la preferencia del sistema
-// cuando esta cambie (p. ej. el modo noche automático del teléfono).
-if (window.matchMedia) {
-  var mq = window.matchMedia('(prefers-color-scheme: light)');
-  var onSchemeChange = function (e) {
-    var saved = null;
-    try { saved = localStorage.getItem('theme'); } catch (err) {}
-    if (!saved) applyTheme(e.matches ? 'light' : 'dark');
-  };
-  if (mq.addEventListener) mq.addEventListener('change', onSchemeChange);
-  else if (mq.addListener) mq.addListener(onSchemeChange);
 }
 
 // Sincroniza el estado visual del selector al cargar la página.

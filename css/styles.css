@@ -1,21 +1,11 @@
-/* ═══════════════════════════════════════════════════════════════════
-   MAYO FIX TECH — Unified Stylesheet
-   Extracted from: index.html, nosotros.html, reparacion.html,
-                   sistemas.html, wordpress.html
-═══════════════════════════════════════════════════════════════════ */
+/* MAYO FIX TECH — Unified Stylesheet Extracted from: index.html, nosotros.html, reparacion.html, sistemas.html, wordpress.html */
 
-/* ─────────────────────────────────────────────────────────────
-   RESET GLOBAL
-───────────────────────────────────────────────────────────── */
+/* Reset global */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ─────────────────────────────────────────────────────────────
-   VARIABLES CSS (Custom Properties)
-───────────────────────────────────────────────────────────── */
+/* VARIABLES CSS (Custom Properties) */
 :root {
-  /* ── Escala azul (color de marca) ───────────────────────────
-     De la más profunda a la más pálida. Los tokens semánticos de
-     más abajo apuntan aquí; no uses estos valores directamente. */
+  /* ── Escala azul (color de marca) De la más profunda a la más pálida. Los tokens semánticos de más abajo apuntan aquí; no uses estos valores directamente. */
   --blue-950: #0A1A2A;
   --blue-900: #0E2337;
   --blue-800: #17334D;
@@ -29,10 +19,7 @@
   --blue-50:  #E7F0F8;
   --blue-25:  #F3F8FC;
 
-  /* ── Escala dorada (color de marca) ─────────────────────────
-     --gold-500 es el dorado original de Mayo Fix Tech. Los tonos
-     700-800 existen porque el dorado puro no tiene contraste
-     suficiente como texto sobre fondo claro (1.92:1). */
+  /* ── Escala dorada (color de marca) --gold-500 es el dorado original de Mayo Fix Tech. Los tonos 700-800 existen porque el dorado puro no tiene contraste suficiente como texto sobre fondo claro (1.92:1). */
   --gold-800: #6E4808;
   --gold-700: #8A5A0C;
   --gold-600: #C6841A;
@@ -42,7 +29,7 @@
   --gold-200: #FBE6B8;
   --gold-100: #FDF3DC;
 
-  /* ── Fijos en ambos temas ───────────────────────────────────  */
+  /* ── Fijos en ambos temas */
   --accent:  var(--gold-500);   /* dorado de marca: fondos y decoración */
   --accent2: var(--gold-400);
   --on-accent: var(--blue-900); /* texto sobre dorado — 8.32:1        */
@@ -50,32 +37,28 @@
   --on-wa:   var(--blue-900);   /* texto sobre el verde — 8.06:1       */
   --danger:  #EF4444;
 
-  /* ── Tipografía ─────────────────────────────────────────────  */
+  /* ── Tipografía */
   --font-display: 'Fraunces', Georgia, serif;
   --font-body:    'Nunito', system-ui, -apple-system, sans-serif;
 
-  /* ── Radios ─────────────────────────────────────────────────  */
+  /* ── Radios */
   --r:      6px;
   --r-sm:   8px;
   --r-md:   12px;
   --r-lg:   18px;
   --r-full: 999px;
 
-  /* ── Curvas de animación ────────────────────────────────────  */
+  /* ── Curvas de animación */
   --ease-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
   --ease-base: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   --ease-slow: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* ── Layout ─────────────────────────────────────────────────  */
+  /* ── Layout */
   --max:   1240px;
   --nav-h: 72px;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   TEMA OSCURO (el predeterminado)
-   Sigue la regla de usar variantes tonales más profundas en vez de
-   invertir colores: tres niveles de superficie dan profundidad.
-═══════════════════════════════════════════════════════════════ */
+/* TEMA OSCURO (el predeterminado) Sigue la regla de usar variantes tonales más profundas en vez de invertir colores: tres niveles de superficie dan profundidad. */
 :root,
 :root[data-theme="dark"] {
   color-scheme: dark;
@@ -114,12 +97,7 @@
   --tint-line: rgba(239, 176, 54, 0.30);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   TEMA CLARO
-   No es el oscuro invertido: el fondo es un azul muy pálido (no
-   blanco puro) para que el papel siga sintiéndose de la marca, y
-   las tarjetas suben a blanco para crear la jerarquía.
-═══════════════════════════════════════════════════════════════ */
+/* TEMA CLARO No es el oscuro invertido: el fondo es un azul muy pálido (no blanco puro) para que el papel siga sintiéndose de la marca, y las tarjetas suben a blanco para crear la jerarquía. */
 :root[data-theme="light"] {
   color-scheme: light;
 
@@ -171,9 +149,7 @@
 
 html { scroll-behavior: smooth; }
 
-/* ─────────────────────────────────────────────────────────────
-   BODY
-───────────────────────────────────────────────────────────── */
+/* Body */
 body {
   font-family: 'Nunito', sans-serif;
   background: var(--bg);
@@ -183,9 +159,7 @@ body {
   /* cursor: none se aplica desde JS después de confirmar que el cursor personalizado existe */
 }
 
-/* ─────────────────────────────────────────────────────────────
-   SKIP TO CONTENT (accesibilidad teclado)
-───────────────────────────────────────────────────────────── */
+/* SKIP TO CONTENT (accesibilidad teclado) */
 .skip-link {
   position: absolute; top: -100%; left: 1rem;
   background: var(--accent); color: var(--on-accent);
@@ -195,9 +169,7 @@ body {
 }
 .skip-link:focus { top: 0; }
 
-/* ─────────────────────────────────────────────────────────────
-   CURSOR PERSONALIZADO
-───────────────────────────────────────────────────────────── */
+/* Cursor personalizado */
 .cursor {
   position: fixed; z-index: 99999; pointer-events: none;
   width: 10px; height: 10px;
@@ -218,9 +190,7 @@ body:has(a:hover) .cursor { width: 14px; height: 14px; background: var(--accent2
 body:has(a:hover) .cursor-ring { width: 48px; height: 48px; border-color: var(--accent-ink); }
 @media (pointer: coarse) { .cursor, .cursor-ring { display: none; } body { cursor: auto; } }
 
-/* ─────────────────────────────────────────────────────────────
-   BARRA DE NAVEGACIÓN
-───────────────────────────────────────────────────────────── */
+/* Barra de navegación */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   height: var(--nav-h);
@@ -275,9 +245,7 @@ nav {
   nav { padding: 0 1.25rem; }
 }
 
-/* ─────────────────────────────────────────────────────────────
-   SELECTOR DE IDIOMA (ES / EN)
-───────────────────────────────────────────────────────────── */
+/* Selector de idioma (es / en) */
 .nav-right { display: flex; align-items: center; gap: 0.75rem; }
 
 .lang-switch {
@@ -311,9 +279,7 @@ nav {
 }
 .mobile-lang > span { font-size: 0.85rem; color: var(--text3); }
 
-/* ─────────────────────────────────────────────────────────────
-   BOTONES REUTILIZABLES
-───────────────────────────────────────────────────────────── */
+/* Botones reutilizables */
 .btn {
   display: inline-flex; align-items: center; gap: 0.45rem;
   padding: 0.85rem 1.75rem; border: none; border-radius: 8px;
@@ -330,32 +296,25 @@ nav {
 .btn-dark { background: var(--blue-950); color: #FFFFFF; border-radius: 8px; padding: 1rem 2.25rem; font-size: 0.9rem; font-weight: 700; }
 .btn-dark:hover { background: var(--blue-900); transform: translateY(-2px); }
 
-/* ─────────────────────────────────────────────────────────────
-   TEXTO CON DEGRADADO (.grad)
-───────────────────────────────────────────────────────────── */
+/* TEXTO CON DEGRADADO (.grad) */
 .grad {
   background: linear-gradient(135deg, #EFB036 0%, #F5C86A 50%, #FFE9A3 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   ANIMACIÓN DE APARICIÓN AL SCROLL (.reveal)
-───────────────────────────────────────────────────────────── */
+/* ANIMACIÓN DE APARICIÓN AL SCROLL (.reveal) */
 .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.75s ease, transform 0.75s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
-/* Aliases used in nosotros.html and wordpress.html */
 .rd1 { transition-delay: 0.1s; }
 .rd2 { transition-delay: 0.2s; }
 .rd3 { transition-delay: 0.3s; }
 
-/* ─────────────────────────────────────────────────────────────
-   CABECERA DE PÁGINA (.page-header) — páginas interiores
-───────────────────────────────────────────────────────────── */
+/* CABECERA DE PÁGINA (.page-header) — páginas interiores */
 .page-header {
   padding-top: calc(var(--nav-h) + 5rem);
   padding-bottom: 5rem;
@@ -384,9 +343,7 @@ nav {
 }
 .page-header p { font-size: 1rem; color: var(--text2); max-width: 520px; line-height: 1.75; }
 
-/* ─────────────────────────────────────────────────────────────
-   UTILIDADES GENERALES
-───────────────────────────────────────────────────────────── */
+/* Utilidades generales */
 .max { max-width: var(--max); margin: 0 auto; }
 
 .section-tag, .sec-tag {
@@ -402,9 +359,7 @@ nav {
 }
 .section-sub, .sec-sub { font-size: 1rem; color: var(--text2); max-width: 480px; line-height: 1.75; margin-bottom: 4rem; }
 
-/* ─────────────────────────────────────────────────────────────
-   BANDA CTA (fondo dorado degradado)
-───────────────────────────────────────────────────────────── */
+/* BANDA CTA (fondo dorado degradado) */
 .cta-band {
   padding: 7rem 1.5rem;
   background: linear-gradient(135deg, #C6841A 0%, #EFB036 55%, #F5C86A 100%);
@@ -427,9 +382,7 @@ nav {
 .cta-band .btn-dark { background: var(--blue-950); color: #FFFFFF; border-radius: 8px; padding: 1rem 2.25rem; font-size: 0.9rem; font-weight: 700; }
 .cta-band .btn-dark:hover { background: var(--blue-900); transform: translateY(-2px); }
 
-/* ─────────────────────────────────────────────────────────────
-   PIE DE PÁGINA (FOOTER)
-───────────────────────────────────────────────────────────── */
+/* Pie de página (footer) */
 footer {
   background: var(--bg-footer);
   border-top: 1px solid var(--border);
@@ -458,20 +411,12 @@ footer {
 .footer-socials a { width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: 6px; color: var(--text3); text-decoration: none; transition: all 0.2s; }
 .footer-socials a:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
 
-/* ─────────────────────────────────────────────────────────────
-   BRAND-NAME ACCENT DOT
-   Converted from inline style="color:var(--accent)" on <span>
-   inside .brand-name in the footer of all pages
-───────────────────────────────────────────────────────────── */
+/* BRAND-NAME ACCENT DOT Converted from inline style="color:var(--accent)" on <span> inside .brand-name in the footer of all pages */
 .footer-brand .brand-name span { color: var(--accent-ink); }
 
-/* ═══════════════════════════════════════════════════════════════════
-   INDEX.HTML — Page-specific styles
-═══════════════════════════════════════════════════════════════════ */
+/* INDEX.HTML — Page-specific styles */
 
-/* ─────────────────────────────────────────────────────────────
-   SECCIÓN HERO
-───────────────────────────────────────────────────────────── */
+/* Sección hero */
 .hero {
   min-height: 100vh;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -533,9 +478,7 @@ footer {
 .hero-scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--accent), transparent); }
 @keyframes scrollBob { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
 
-/* ─────────────────────────────────────────────────────────────
-   BARRA DE ESTADÍSTICAS
-───────────────────────────────────────────────────────────── */
+/* Barra de estadísticas */
 .stats-bar {
   background: var(--bg2);
   border-top: 1px solid var(--border);
@@ -550,9 +493,7 @@ footer {
 .stat-num { font-family: 'Fraunces', serif; font-weight: 800; font-size: 2.2rem; color: var(--accent-ink); line-height: 1; margin-bottom: 0.25rem; }
 .stat-label { font-size: 0.78rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; }
 
-/* ─────────────────────────────────────────────────────────────
-   SECCIÓN DE SERVICIOS (preview) — index.html
-───────────────────────────────────────────────────────────── */
+/* SECCIÓN DE SERVICIOS (preview) — index.html */
 .services-preview { padding: 7rem 1.5rem; }
 .service-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--border); }
 .svc-col {
@@ -580,9 +521,7 @@ footer {
 .svc-col-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.84rem; font-weight: 600; color: var(--accent-ink); text-decoration: none; transition: gap 0.2s; position: relative; z-index: 1; }
 .svc-col-link:hover { gap: 0.75rem; }
 
-/* ─────────────────────────────────────────────────────────────
-   SECCIÓN "POR QUÉ" — index.html
-───────────────────────────────────────────────────────────── */
+/* SECCIÓN "POR QUÉ" — index.html */
 .why { padding: 7rem 1.5rem; background: var(--bg2); }
 .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); margin-top: 1rem; }
 .why-card {
@@ -599,9 +538,7 @@ footer {
 .why-card h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.6rem; }
 .why-card p { font-size: 0.88rem; color: var(--text2); line-height: 1.75; }
 
-/* ─────────────────────────────────────────────────────────────
-   index.html — Responsive
-───────────────────────────────────────────────────────────── */
+/* index.html — Responsive */
 @media (max-width: 1100px) {
   .service-cols { grid-template-columns: 1fr 1fr; }
 }
@@ -617,15 +554,11 @@ footer {
   .why-card { padding: 2rem 1.75rem; }
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   NOSOTROS.HTML — Page-specific styles
-═══════════════════════════════════════════════════════════════════ */
+/* NOSOTROS.HTML — Page-specific styles */
 
 section { padding: 6rem 1.5rem; }
 
-/* ─────────────────────────────────────────────────────────────
-   SECCIÓN ABOUT
-───────────────────────────────────────────────────────────── */
+/* Sección about */
 .about-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
 .about-card {
   background: var(--bg2); border: 1px solid var(--border);
@@ -672,9 +605,7 @@ section { padding: 6rem 1.5rem; }
 .about-story p strong { color: var(--text); font-weight: 600; }
 .about-story p:last-child { margin-bottom: 0; }
 
-/* ─────────────────────────────────────────────────────────────
-   SECCIÓN TRUST — nosotros.html
-───────────────────────────────────────────────────────────── */
+/* SECCIÓN TRUST — nosotros.html */
 .trust { background: var(--bg2); }
 .trust-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); }
 .trust-card {
@@ -697,9 +628,7 @@ section { padding: 6rem 1.5rem; }
 .trust-card h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
 .trust-card p { font-size: 0.88rem; color: var(--text2); line-height: 1.75; }
 
-/* ─────────────────────────────────────────────────────────────
-   SECCIÓN DE CONTACTO — nosotros.html
-───────────────────────────────────────────────────────────── */
+/* SECCIÓN DE CONTACTO — nosotros.html */
 .contact { background: var(--bg); }
 .contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
 .contact-left h2 { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.25rem; }
@@ -716,9 +645,7 @@ section { padding: 6rem 1.5rem; }
 .loc-main { color: var(--text); font-weight: 500; }
 .loc-sub { font-size: 0.8rem; margin-top: 0.15rem; }
 
-/* ─────────────────────────────────────────────────────────────
-   FORMULARIO DE CONTACTO — nosotros.html
-───────────────────────────────────────────────────────────── */
+/* FORMULARIO DE CONTACTO — nosotros.html */
 .contact-form {
   background: var(--bg2); border: 1px solid var(--border);
   border-radius: 12px; padding: 2.75rem;
@@ -766,30 +693,20 @@ section { padding: 6rem 1.5rem; }
 .form-submit:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 12px 32px var(--tint-line); }
 .form-note { font-size: 0.78rem; color: var(--text3); text-align: center; margin-top: 1rem; }
 
-/* ─────────────────────────────────────────────────────────────
-   nosotros.html — Inline styles converted to classes
-───────────────────────────────────────────────────────────── */
-/* <p style="font-size:1rem; color:var(--text2); max-width:480px; line-height:1.75; margin-bottom:3.5rem;"> */
+/* nosotros.html — Inline styles converted to classes */
 .trust .trust-grid + p,
 p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; line-height: 1.75; margin-bottom: 3.5rem; }
 
-/* <a class="btn btn-wa" style="font-size:0.82rem; padding:0.75rem 1.4rem;"> inside .wa-block */
 .wa-block .btn-wa { font-size: 0.82rem; padding: 0.75rem 1.4rem; }
 
-/* ─────────────────────────────────────────────────────────────
-   nosotros.html — CTA band (smaller max-width variant)
-───────────────────────────────────────────────────────────── */
+/* nosotros.html — CTA band (smaller max-width variant) */
 .nosotros-cta .cta-band-inner { max-width: 560px; }
 
-/* ─────────────────────────────────────────────────────────────
-   nosotros.html — btn-dark variant (no radius override)
-───────────────────────────────────────────────────────────── */
+/* nosotros.html — btn-dark variant (no radius override) */
 .btn-dark-plain { background: var(--blue-950); color: #FFFFFF; }
 .btn-dark-plain:hover { background: var(--blue-900); transform: translateY(-2px); }
 
-/* ─────────────────────────────────────────────────────────────
-   nosotros.html — Responsive
-───────────────────────────────────────────────────────────── */
+/* nosotros.html — Responsive */
 @media(max-width: 1000px) {
   .about-layout { grid-template-columns: 1fr; gap: 3rem; }
   .about-card { position: static; }
@@ -801,13 +718,9 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
   .form-row { grid-template-columns: 1fr; }
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   REPARACION.HTML — Page-specific styles
-═══════════════════════════════════════════════════════════════════ */
+/* REPARACION.HTML — Page-specific styles */
 
-/* ─────────────────────────────────────────────────────────────
-   LISTA DE SERVICIOS
-───────────────────────────────────────────────────────────── */
+/* Lista de servicios */
 .services-section { padding: 6rem 1.5rem; }
 .services-list { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--border); }
 .svc-item {
@@ -843,9 +756,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
   font-size: 0.75rem; line-height: 1.7;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   SECCIÓN "FUERA DEL ALCANCE"
-───────────────────────────────────────────────────────────── */
+/* Sección "fuera del alcance" */
 .not-included {
   background: var(--bg2);
   padding: 4rem 1.5rem;
@@ -864,9 +775,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
 .ni-item svg { color: var(--danger); width: 16px; height: 16px; flex-shrink: 0; }
 .ni-note { font-size: 0.82rem; color: var(--text3); font-style: italic; }
 
-/* ─────────────────────────────────────────────────────────────
-   reparacion.html — Responsive
-───────────────────────────────────────────────────────────── */
+/* reparacion.html — Responsive */
 @media(max-width: 768px) {
   .svc-item { grid-template-columns: 1fr; }
   .svc-num-col {
@@ -881,13 +790,9 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
   .not-included { padding: 3rem 1.25rem; }
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   SISTEMAS.HTML — Page-specific styles
-═══════════════════════════════════════════════════════════════════ */
+/* SISTEMAS.HTML — Page-specific styles */
 
-/* ─────────────────────────────────────────────────────────────
-   PAGE HEADER — sistemas.html (larger orb, second orb)
-───────────────────────────────────────────────────────────── */
+/* PAGE HEADER — sistemas.html (larger orb, second orb) */
 .page-header-orb2 {
   position: absolute; width: 400px; height: 400px;
   background: radial-gradient(circle, var(--orb-blue) 0%, transparent 70%);
@@ -908,9 +813,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
 }
 .sistemas-header p { font-size: 1.05rem; max-width: 580px; line-height: 1.8; }
 
-/* ─────────────────────────────────────────────────────────────
-   HEADER BADGES — sistemas.html
-───────────────────────────────────────────────────────────── */
+/* HEADER BADGES — sistemas.html */
 .header-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
 .header-badge {
   display: inline-flex; align-items: center; gap: 0.4rem;
@@ -921,9 +824,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
 }
 .header-badge svg { color: var(--accent-ink); flex-shrink: 0; }
 
-/* ─────────────────────────────────────────────────────────────
-   SERVICES GRID — sistemas.html
-───────────────────────────────────────────────────────────── */
+/* SERVICES GRID — sistemas.html */
 .services-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1px; background: var(--border);
@@ -973,9 +874,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
 }
 .services-grid-bottom .srv-card { background: var(--bg); }
 
-/* ─────────────────────────────────────────────────────────────
-   ENTERPRISE SECTION — sistemas.html
-───────────────────────────────────────────────────────────── */
+/* ENTERPRISE SECTION — sistemas.html */
 .enterprise-section {
   padding: 7rem 1.5rem;
   background: var(--bg2);
@@ -1033,9 +932,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
 .module-pill svg { color: var(--accent-ink); flex-shrink: 0; }
 .module-pill:hover { background: var(--glass-strong); border-color: var(--tint-line); color: var(--text); }
 
-/* ─────────────────────────────────────────────────────────────
-   EXCEL SECTION — sistemas.html
-───────────────────────────────────────────────────────────── */
+/* EXCEL SECTION — sistemas.html */
 .excel-section { padding: 7rem 1.5rem; }
 .excel-inner {
   max-width: var(--max); margin: 0 auto;
@@ -1072,9 +969,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
 }
 .excel-callout p { font-size: 0.9rem; color: var(--text2); line-height: 1.75; }
 
-/* ─────────────────────────────────────────────────────────────
-   PROCESS SECTION — sistemas.html
-───────────────────────────────────────────────────────────── */
+/* PROCESS SECTION — sistemas.html */
 .process-section {
   padding: 7rem 1.5rem;
   background: var(--bg2);
@@ -1123,9 +1018,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
   letter-spacing: 0.06em; text-transform: uppercase; color: var(--wa-ink);
 }
 
-/* ─────────────────────────────────────────────────────────────
-   FOR WHOM SECTION — sistemas.html
-───────────────────────────────────────────────────────────── */
+/* FOR WHOM SECTION — sistemas.html */
 .forwho-section { padding: 7rem 1.5rem; }
 .industry-grid {
   display: flex; flex-wrap: wrap; gap: 0.85rem;
@@ -1154,23 +1047,15 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
 .forwho-note p { font-size: 0.95rem; color: var(--text2); line-height: 1.75; }
 .forwho-note p strong { color: var(--text); }
 
-/* ─────────────────────────────────────────────────────────────
-   sistemas.html — Inline styles converted to classes
-───────────────────────────────────────────────────────────── */
-/* <p style="font-size:0.8rem; color:var(--text3); margin-bottom:1.5rem; text-transform:uppercase; letter-spacing:0.1em;">
-   inside .enterprise-visual, before .module-grid */
+/* sistemas.html — Inline styles converted to classes */
 .enterprise-visual > p { font-size: 0.8rem; color: var(--text3); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
 
 /* <p class="section-sub" style="margin-bottom:0;"> in excel section */
 .excel-section .section-sub { margin-bottom: 0; }
 
-/* <a class="btn btn-ghost" style="font-size:0.82rem; padding:0.7rem 1.3rem; margin-top:0.5rem;">
-   inside .excel-callout */
 .excel-callout .btn-ghost { font-size: 0.82rem; padding: 0.7rem 1.3rem; margin-top: 0.5rem; }
 
-/* ─────────────────────────────────────────────────────────────
-   sistemas.html — Responsive
-───────────────────────────────────────────────────────────── */
+/* sistemas.html — Responsive */
 @media (max-width: 900px) {
   .services-grid { grid-template-columns: 1fr 1fr; }
   .services-grid-bottom { grid-template-columns: 1fr; }
@@ -1190,13 +1075,9 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
   .services-grid-bottom { grid-template-columns: 1fr; }
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   WORDPRESS.HTML — Page-specific styles
-═══════════════════════════════════════════════════════════════════ */
+/* WORDPRESS.HTML — Page-specific styles */
 
-/* ─────────────────────────────────────────────────────────────
-   SECCIÓN "SIEMPRE INCLUIDO" (.includes)
-───────────────────────────────────────────────────────────── */
+/* SECCIÓN "SIEMPRE INCLUIDO" (.includes) */
 .includes { background: var(--bg2); }
 .inc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
 .inc-item {
@@ -1216,9 +1097,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
 .inc-item h4 { font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
 .inc-item p { font-size: 0.84rem; color: var(--text2); line-height: 1.65; }
 
-/* ─────────────────────────────────────────────────────────────
-   PLANES — wordpress.html
-───────────────────────────────────────────────────────────── */
+/* PLANES — wordpress.html */
 .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); }
 .plan-card {
   background: var(--bg2); padding: 3rem 2.75rem;
@@ -1265,9 +1144,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
 }
 .plan-deadline svg { color: var(--accent-ink); }
 
-/* ─────────────────────────────────────────────────────────────
-   PROCESO — wordpress.html
-───────────────────────────────────────────────────────────── */
+/* PROCESO — wordpress.html */
 .process { background: var(--bg2); }
 .process-line {
   display: grid; grid-template-columns: repeat(4, 1fr);
@@ -1281,8 +1158,6 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
   background: linear-gradient(90deg, transparent, var(--accent), var(--accent), transparent);
   opacity: 0.2;
 }
-/* Note: .proc-step is also used by sistemas.html process-timeline but with different layout.
-   The wordpress.html version uses column layout: */
 .process .proc-step {
   display: flex; flex-direction: column; align-items: center; text-align: center;
   padding: 0 1.25rem;
@@ -1308,15 +1183,11 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
 .process .proc-step h4 { font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
 .process .proc-step p { font-size: 0.82rem; color: var(--text2); line-height: 1.6; }
 
-/* ─────────────────────────────────────────────────────────────
-   wordpress.html — Inline styles converted to classes
-───────────────────────────────────────────────────────────── */
+/* wordpress.html — Inline styles converted to classes */
 /* <p class="sec-sub reveal" style="margin-bottom: 3.5rem;"> in process section */
 .process .sec-sub { margin-bottom: 3.5rem; }
 
-/* ─────────────────────────────────────────────────────────────
-   wordpress.html — Responsive
-───────────────────────────────────────────────────────────── */
+/* wordpress.html — Responsive */
 @media(max-width: 900px) {
   .inc-grid { grid-template-columns: repeat(2, 1fr); }
   .plans-grid { grid-template-columns: 1fr; }
@@ -1329,11 +1200,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
   .process-line { grid-template-columns: 1fr; gap: 2rem; }
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   AJUSTES POR TEMA
-   Lo que no se resuelve cambiando una variable: degradados, brillos y
-   elementos que se apoyaban en que el fondo siempre fuera oscuro.
-═══════════════════════════════════════════════════════════════════ */
+/* AJUSTES POR TEMA Lo que no se resuelve cambiando una variable: degradados, brillos y elementos que se apoyaban en que el fondo siempre fuera oscuro. */
 
 /* Degradado del titular. En claro pasa a la escala azul: el dorado de
    marca sobre papel claro da 1.92:1 y, oscurecido hasta ser legible,
@@ -1367,11 +1234,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
 /* Footer: en claro es una banda de papel, no un bloque casi negro. */
 :root[data-theme="light"] footer { border-top: 1px solid var(--border); }
 
-/* ═══════════════════════════════════════════════════════════════════
-   SELECTOR DE TEMA (claro / oscuro)
-   Hermano visual del selector de idioma: misma cápsula, misma pastilla
-   dorada deslizante. Sol a la izquierda, luna a la derecha.
-═══════════════════════════════════════════════════════════════════ */
+/* SELECTOR DE TEMA (claro / oscuro) Hermano visual del selector de idioma: misma cápsula, misma pastilla dorada deslizante. Sol a la izquierda, luna a la derecha. */
 .theme-switch {
   display: inline-flex; align-items: center;
   background: var(--glass); border: 1px solid var(--border);
@@ -1411,12 +1274,7 @@ p.trust-sub-inline { font-size: 1rem; color: var(--text2); max-width: 480px; lin
   .theme-switch-pill, .lang-switch-pill { transition: none; }
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   REFINAMIENTO VISUAL
-   Profundidad por sombra en las superficies que ya eran tarjetas, sin
-   convertir el resto del sitio en una cuadrícula de tarjetas iguales:
-   las rejillas de línea fina se quedan como están.
-═══════════════════════════════════════════════════════════════════ */
+/* REFINAMIENTO VISUAL Profundidad por sombra en las superficies que ya eran tarjetas, sin convertir el resto del sitio en una cuadrícula de tarjetas iguales: las rejillas de línea fina se quedan como están. */
 .contact-form, .excel-callout, .enterprise-visual, .wa-block, .about-card {
   box-shadow: var(--shadow-md);
 }
