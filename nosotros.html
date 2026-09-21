@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<!-- DOCTYPE le indica al navegador que este es un documento HTML5 -->
+
+<html lang="es">
+<!-- lang="es" le dice al navegador y a Google que el contenido está en español -->
+
+<head>
+  <!-- <head> contiene metadatos: información SOBRE la página, no contenido visible -->
+
+  <!-- Juego de caracteres UTF-8: permite tildes, ñ y cualquier símbolo -->
+  <meta charset="UTF-8">
+
+  <!-- Hace la página responsive en celulares:
+       width=device-width → el ancho se adapta al dispositivo
+       initial-scale=1.0  → sin zoom al cargar -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título optimizado SEO: servicio + ubicación (máx. 60 caracteres) -->
+  <title>Sobre Mayo Fix Tech | Técnica en Santa Cruz del Quiché</title>
+  <link rel="canonical" href="https://mayofixtech.com/nosotros.html">
+
+  <!-- Descripción para Google: orientada a generar clic (máx. 155 caracteres) -->
+  <meta name="description" content="Conoce a Erica Alejandra Franco, técnica de computadoras con 8 años de experiencia en Santa Cruz del Quiché, Guatemala. Contáctame por WhatsApp.">
+
+  <!-- Geolocalización: región GT-QC = Quiché, Guatemala -->
+  <meta name="geo.region" content="GT-QC">
+  <meta name="geo.placename" content="Santa Cruz del Quiché">
+
+  <!-- Open Graph: mejora la vista previa al compartir en redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_GT">
+  <meta property="og:site_name" content="Mayo Fix Tech">
+  <meta property="og:title" content="Sobre Mayo Fix Tech | Técnica en Santa Cruz del Quiché">
+  <meta property="og:description" content="Conoce a Erica Alejandra Franco, técnica de computadoras con 8 años de experiencia en Santa Cruz del Quiché, Guatemala.">
+  <meta property="og:url" content="https://mayofixtech.com/nosotros.html">
+
+  <!-- Imagen de la vista previa al compartir el enlace (WhatsApp, Facebook,
+       LinkedIn, Telegram). Tiene que ser una URL absoluta: con ruta relativa
+       WhatsApp no la encuentra. 1200x630 y 88 KB, por debajo del limite que
+       hace que WhatsApp descarte la imagen. -->
+  <meta property="og:image" content="https://mayofixtech.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Mayo Fix Tech — Diagnóstico y reparación de PC">
+
+  <!-- Mismo dato para X/Twitter y para los clientes que leen estas etiquetas -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sobre Mayo Fix Tech | Técnica en Santa Cruz del Quiché">
+  <meta name="twitter:description" content="Conoce a Erica Alejandra Franco, técnica de computadoras con 8 años de experiencia en Santa Cruz del Quiché, Guatemala.">
+  <meta name="twitter:image" content="https://mayofixtech.com/og-image.jpg">
+
+  <!-- Preconecta con ambos CDN de Google Fonts para reducir latencia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Carga no bloqueante de Google Fonts -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Iconos del sitio. El .ico contiene 16, 32 y 48 px: el de 16 usa una
+       versión de la M con el trazo más grueso, que a ese tamaño se lee
+       mejor. El .svg lo prefieren los navegadores modernos y se mantiene
+       nítido a cualquier tamaño. El .png es para cuando alguien guarda la
+       página en la pantalla de inicio de un iPhone. -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- ── TEMA CLARO / OSCURO ──────────────────────────────────────
+       Se aplica ANTES de que el navegador pinte nada, para que al
+       recargar no se vea un destello del tema anterior. Por eso va
+       aquí arriba y no en js/main.js. -->
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0E2337">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      if (t === 'light') {
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F3F8FC');
+      }
+    }());
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema.org Person: datos estructurados sobre la persona detrás del negocio -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Erica Alejandra Franco Rosales",
+    "jobTitle": "Técnica de Computadoras",
+    "description": "Técnica de computadoras con 8 años de experiencia en Santa Cruz del Quiché, Guatemala.",
+    "worksFor": {
+      "@type": "LocalBusiness",
+      "name": "Mayo Fix Tech",
+      "telephone": "+502-5992-4104"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santa Cruz del Quiché",
+      "addressRegion": "Quiché",
+      "addressCountry": "GT"
+    },
+    "knowsAbout": ["Reparación de computadoras", "WordPress", "Sistemas a medida", "Ingeniería en Sistemas"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CURSOR PERSONALIZADO
+       Dos divs vacíos — JavaScript los mueve para seguir al mouse.
+  ══════════════════════════════════════════════════════════════ -->
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <svg style="display:none" aria-hidden="true" focusable="false"><symbol id="ico-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol><symbol id="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol></svg>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BARRA DE NAVEGACIÓN
+       Fija en la parte superior (position: fixed en el CSS).
+  ══════════════════════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <!-- Logo: enlace a la página de inicio -->
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-dot"></div>  <!-- Punto decorativo dorado -->
+      Mayo Fix Tech
+    </a>
+
+    <!-- Lista de navegación principal (se oculta en móvil).
+         data-i18n → JS reemplaza el texto según el idioma activo.
+         class="active" → marca esta página como la actual (resaltado en CSS). -->
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+      <li><a href="reparacion.html" data-i18n="nav_repair">Reparación</a></li>
+      <li><a href="wordpress.html">WordPress</a></li>
+      <li><a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a></li>
+      <li><a href="nosotros.html" class="active" data-i18n="nav_about">Conóceme</a></li>  <!-- Página actual -->
+    </ul>
+
+    <!-- Lado derecho del nav: selector de idioma + botón CTA + hamburguesa -->
+    <div class="nav-right">
+      <!-- Selector de idioma ES/EN.
+           role="switch" y aria-label → accesibilidad para lectores de pantalla.
+           onclick="toggleLang()" → llama a la función JS al hacer clic. -->
+      <div class="lang-switch is-es" onclick="toggleLang()" role="switch" tabindex="0" aria-checked="false" aria-label="Cambiar idioma">
+        <div class="lang-switch-pill"></div>  <!-- Pastilla dorada deslizante -->
+        <span class="lang-switch-opt">ES</span>
+        <span class="lang-switch-opt">EN</span>
+      </div>
+      <!-- Botón WhatsApp en forma de cápsula (se oculta en móvil) -->
+      <!-- Selector de tema. Mismo patrón que el de idioma: cápsula con
+           pastilla deslizante. Sol = claro, luna = oscuro. El estado
+           real lo fija applyTheme() en js/main.js. -->
+      <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
+        <span class="theme-switch-pill"></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-moon"/></svg></span>
+      </button>
+      <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="nav-cta">
+        <svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+        <span data-i18n="nav_contact">Contactar</span>
+      </a>
+      <button class="hamburger" aria-label="Menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menú móvil desplegable (JS agrega/quita la clase "open") -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" data-i18n="nav_home">Inicio</a>
+    <a href="reparacion.html" data-i18n="nav_repair">Reparación</a>
+    <a href="wordpress.html">WordPress</a>
+    <a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a>
+    <a href="nosotros.html" data-i18n="nav_about">Conóceme</a>
+    <!-- Fila del selector de idioma dentro del menú móvil:
+         etiqueta "Idioma / Language" a la izquierda + switch a la derecha -->
+    <div class="mobile-lang">
+      <span>Idioma / Language</span>
+      <div class="lang-switch is-es" onclick="toggleLang()" role="switch" tabindex="0" aria-checked="false" aria-label="Cambiar idioma">
+        <div class="lang-switch-pill"></div>
+        <span class="lang-switch-opt">ES</span>
+        <span class="lang-switch-opt">EN</span>
+      </div>
+    </div>
+
+    <!-- Fila del selector de tema en el menú móvil -->
+    <div class="mobile-theme">
+      <span>Tema / Theme</span>
+      <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
+        <span class="theme-switch-pill"></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-moon"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CABECERA DE PÁGINA
+       Reemplaza al hero grande de index.html. Es una cabecera compacta
+       con tag, título H1 y subtítulo. Usa <header> (semánticamente correcto
+       para la cabecera de una sección de la página).
+  ══════════════════════════════════════════════════════════════ -->
+  <header class="page-header" id="main-content">
+    <!-- Orb decorativo: círculo de luz difusa en la esquina -->
+    <div class="page-header-orb"></div>
+
+    <div class="page-header-inner">
+      <!-- Etiqueta pequeña sobre el título -->
+      <p class="page-tag" data-i18n="page_tag">La persona detrás del taller</p>
+
+      <!-- data-i18n-html se usa porque el contenido tiene etiquetas HTML internas (<br>, <span>) -->
+      <h1 data-i18n-html="page_h1">Conóceme &<br><span class="grad">Contacto</span></h1>
+
+      <p data-i18n="page_sub">Conoce quién está detrás de Mayo Fix Tech, los valores que guían el trabajo y cómo comunicarte.</p>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN "ABOUT" (Sobre mí / Historia)
+       Sin clase personalizada — usa los estilos base de <section>.
+       Layout de 2 columnas: tarjeta de perfil + historia en texto.
+  ══════════════════════════════════════════════════════════════ -->
+  <section>
+    <div class="max">
+      <div class="about-layout">
+
+        <!-- Columna izquierda: tarjeta de perfil (sticky al hacer scroll) -->
+        <div class="about-card reveal">
+          <!-- Avatar circular con borde degradado dorado -->
+          <div class="about-avatar">
+            <!-- src="FotoErica.jpg" carga la imagen desde la misma carpeta del HTML
+                 (versión recortada de 320×320 px, ~14 KB; el original FotoErica.png pesa 3.3 MB)
+                 width/height → el navegador reserva el espacio antes de que cargue la foto
+                 alt= texto alternativo: se muestra si la imagen no carga, y lo lee
+                 Google y los lectores de pantalla para accesibilidad -->
+            <img src="FotoErica.jpg" alt="Erica Alejandra Franco Rosales" width="320" height="320">
+          </div>
+
+          <h3>Erica Alejandra Franco Rosales</h3>
+          <p class="role" data-i18n="about_role">Fundadora · Mayo Fix Tech</p>
+
+          <!-- Estadísticas de perfil: cada fila tiene un ícono SVG + texto -->
+          <div class="about-stat">
+            <!-- SVG: ícono de actividad/pulso (años de experiencia) -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span data-i18n="about_stat1">8+ años en hardware y software</span>
+          </div>
+          <div class="about-stat">
+            <!-- SVG: ícono de libros (formación/estudio) -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span data-i18n="about_stat2">Ingeniería en Sistemas · UMG</span>
+          </div>
+          <div class="about-stat">
+            <!-- SVG: ícono de pin de mapa (ubicación) -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="about_stat3">Santa Cruz del Quiché, Guatemala</span>
+          </div>
+        </div>
+
+        <!-- Columna derecha: historia en texto (aparece con delay de 0.1s) -->
+        <div class="about-story reveal rd1">
+          <!-- data-i18n-html porque contiene <br> y <span class="grad"> -->
+          <h2 data-i18n-html="about_h2">La historia detrás de<br><span class="grad">Mayo Fix Tech.</span></h2>
+
+          <!-- data-i18n-html porque contiene <strong> (igual que about_p2 y about_p3) -->
+          <p data-i18n-html="about_p1">Soy <strong>Erica Alejandra Franco Rosales</strong>, la persona detrás de Mayo Fix Tech. Llevo más de 8 años trabajando con hardware y software de PCs y laptops.</p>
+          <!-- data-i18n-html porque contiene <strong> -->
+          <p data-i18n-html="about_p2">Lo que empezó como curiosidad por entender cómo funcionan las máquinas por dentro se convirtió en lo que hago todos los días: <strong>diagnosticar, reparar y mantener equipos funcionando como deben</strong>.</p>
+          <p data-i18n-html="about_p3">Actualmente estudio <strong>Ingeniería en Sistemas en la Universidad Mariano Gálvez de Guatemala</strong>, lo que me permite combinar la experiencia práctica con una base técnica sólida en programación, bases de datos, electrónica y sistemas operativos.</p>
+          <p data-i18n="about_p4">No dejo de aprender. Me capacito constantemente en nuevas herramientas y tecnologías porque la tecnología no se detiene y mi formación tampoco.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN "TRUST" (Valores / Por qué confiar)
+       Fondo --bg2 para alternar visualmente con la sección anterior.
+       4 tarjetas en grid 2x2 con animación de línea lateral al hover.
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="trust">
+    <div class="max">
+      <p class="sec-tag reveal" data-i18n="trust_tag">Valores del servicio</p>
+      <!-- data-i18n-html porque contiene <br> y <span class="grad"> -->
+      <h2 class="sec-title reveal" data-i18n-html="trust_h2">¿Por qué confiar en<br><span class="grad">Mayo Fix Tech?</span></h2>
+
+      <!-- Párrafo con estilo inline — equivale a escribir las propiedades CSS directamente
+           en el elemento (útil para ajustes puntuales sin crear una clase nueva) -->
+      <p class="reveal" data-i18n="trust_sub">
+        Cuatro principios que definen cómo trabajo con cada equipo y cada cliente.
+      </p>
+
+      <div class="trust-grid">
+
+        <!-- Tarjeta 1: Diagnóstico Real -->
+        <div class="trust-card reveal">
+          <div class="trust-num" aria-hidden="true">01</div>  <!-- Número decorativo de fondo -->
+          <!-- SVG: lupa con cruz (diagnóstico) -->
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          <h3 data-i18n="trust1_title">Diagnóstico Real, No Adivinanzas</h3>
+          <p data-i18n="trust1_desc">No cambio piezas "a ver si funciona". Uso herramientas de diagnóstico por software y medición eléctrica para encontrar el problema real antes de tocar cualquier componente.</p>
+        </div>
+
+        <!-- Tarjeta 2: Honestidad (delay 0.1s) -->
+        <div class="trust-card reveal rd1">
+          <div class="trust-num" aria-hidden="true">02</div>
+          <!-- SVG: escudo con check (confianza) -->
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <h3 data-i18n="trust2_title">Honestidad Sobre Capacidad</h3>
+          <p data-i18n="trust2_desc">Si algo está fuera de mi alcance, te lo digo antes que arriesgar tu equipo. Prefiero decirte "esto no lo hago" a dañar algo irreversiblemente.</p>
+        </div>
+
+        <!-- Tarjeta 3: Formación Continua (delay 0.2s) -->
+        <div class="trust-card reveal rd2">
+          <div class="trust-num" aria-hidden="true">03</div>
+          <!-- SVG: libros (formación) -->
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <h3 data-i18n="trust3_title">Formación Continua</h3>
+          <p data-i18n="trust3_desc">Estudio ingeniería, tomo cursos y actualizo mis conocimientos constantemente. La tecnología no se detiene y mi servicio tampoco.</p>
+        </div>
+
+        <!-- Tarjeta 4: Tu equipo en buenas manos (delay 0.3s) -->
+        <div class="trust-card reveal rd3">
+          <div class="trust-num" aria-hidden="true">04</div>
+          <!-- SVG: corazón (cuidado/dedicación) -->
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <h3 data-i18n="trust4_title">Tu Equipo en Buenas Manos</h3>
+          <p data-i18n="trust4_desc">Cada reparación la trato como si fuera la mía. Documento cada intervención y te explico exactamente qué se hizo y por qué.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN DE CONTACTO
+       id="contacto" permite enlazar directamente a esta sección
+       con una URL tipo nosotros.html#contacto
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="contact" id="contacto">
+    <div class="max">
+      <div class="contact-layout">
+
+        <!-- Columna izquierda: información de contacto -->
+        <div class="contact-left reveal">
+          <!-- data-i18n-html porque contiene <br> y <span class="grad"> -->
+          <h2 data-i18n-html="contact_h2">Hablemos sobre tu<br><span class="grad">equipo o proyecto.</span></h2>
+          <p data-i18n="contact_p">La forma más rápida es por WhatsApp. Respondo durante el día. También puedes usar el formulario.</p>
+
+          <!-- Bloque destacado de WhatsApp -->
+          <div class="wa-block">
+            <span class="wa-label" data-i18n="wa_label">WhatsApp · Respuesta rápida</span>
+            <span class="wa-num">+502 5992-4104</span>
+            <!-- Estilos inline para ajustar tamaño de este botón específico
+                 sin crear una clase nueva solo para él -->
+            <a href="https://wa.me/50259924104" target="_blank" rel="noopener"
+               class="btn btn-wa" >
+              <svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+              <span data-i18n="wa_btn">Abrir WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Bloque de ubicación con ícono de pin de mapa -->
+          <div class="location">
+            <!-- SVG: ícono de ubicación/pin de mapa -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <div class="loc-main" data-i18n="loc_main">Santa Cruz del Quiché, Guatemala</div>
+              <div class="loc-sub" data-i18n="loc_sub">Servicio en el taller · coordinación previa</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha: formulario de contacto (delay 0.1s) -->
+        <div class="contact-form reveal rd1">
+          <h3 data-i18n="form_h3">Envíame un mensaje.</h3>
+
+          <!-- <form> es el elemento HTML para formularios
+               El sitio no tiene servidor: al enviar, js/main.js arma un mensaje con los datos
+               y abre WhatsApp con el texto listo para mandar (busca id="contactForm") -->
+          <form id="contactForm">
+
+            <!-- Fila de 2 campos en paralelo: Nombre y Correo -->
+            <div class="form-row">
+              <!-- Campo de nombre -->
+              <div class="form-group">
+                <!-- for="nombre" conecta la etiqueta con el input id="nombre"
+                     (al hacer clic en la etiqueta, el cursor va al campo) -->
+                <label for="nombre" data-i18n="label_nombre">Nombre</label>
+                <!-- type="text" → campo de texto libre
+                     required → el navegador no deja enviar sin llenarlo -->
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+              </div>
+              <!-- Campo de correo electrónico -->
+              <div class="form-group">
+                <label for="email" data-i18n="label_email">Correo electrónico</label>
+                <!-- type="email" → el navegador valida que tenga formato de email (algo@algo.com) -->
+                <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+              </div>
+            </div>
+
+            <!-- Campo de selección (dropdown) -->
+            <div class="form-group">
+              <label for="servicio" data-i18n="label_servicio">Servicio de interés</label>
+              <!-- <select> crea un menú desplegable -->
+              <select id="servicio" name="servicio">
+                <!-- disabled selected → esta opción no se puede seleccionar,
+                     es solo el texto por defecto que se muestra al cargar -->
+                <option value="" disabled selected data-i18n="select_default">¿Qué necesitas?</option>
+                <option data-i18n="select_opt1">Reparación de PC / laptop</option>
+                <option data-i18n="select_opt2">Mantenimiento o diagnóstico</option>
+                <option data-i18n="select_opt3">Recuperación de datos</option>
+                <option data-i18n="select_opt4">Landing page en WordPress</option>
+                <option data-i18n="select_opt5">Sitio informativo en WordPress</option>
+                <option data-i18n="select_opt6">Sistema a medida</option>
+                <option data-i18n="select_opt7">Automatización de Excel</option>
+                <option data-i18n="select_opt8">Implementación Odoo</option>
+                <option data-i18n="select_opt9">Otro</option>
+              </select>
+            </div>
+
+            <!-- Campo de texto largo (mensaje) -->
+            <div class="form-group">
+              <label for="mensaje" data-i18n="label_mensaje">Mensaje</label>
+              <!-- <textarea> es un campo de texto de varias líneas
+                   A diferencia de <input>, tiene etiqueta de cierre </textarea> -->
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntame qué necesitas..." required></textarea>
+            </div>
+
+            <!-- Botón de envío del formulario
+                 type="submit" → al hacer clic envía el formulario -->
+            <button type="submit" class="form-submit" data-i18n="form_submit">Enviar por WhatsApp →</button>
+
+            <!-- Nota aclaratoria pequeña debajo del botón -->
+            <p class="form-note" data-i18n="form_note">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BANDA CTA (llamada a la acción final)
+       Fondo dorado degradado con cuadrícula sutil.
+       Nota: aquí se usa <section> aunque en index.html tenía su propia clase.
+       El CSS de .cta-band aplica igual.
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="cta-band">
+    <div class="cta-band-inner reveal">
+      <h2 data-i18n="cta_h2">¿Listo para trabajar juntos?</h2>
+      <p data-i18n="cta_p">Sea reparación o una página web, hablemos sin compromiso.</p>
+      <!-- Botón oscuro de contraste sobre el fondo dorado -->
+      <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="btn btn-dark">
+        <svg width="17" height="17" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+        <span data-i18n="cta_btn">Escríbeme por WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PIE DE PÁGINA (FOOTER)
+       Grid 4 columnas: marca + Reparación + WordPress + Páginas.
+  ══════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-top">
+      <!-- Columna de marca (2fr = el doble de ancho que las otras) -->
+      <div class="footer-brand">
+        <!-- El punto al final tiene color dorado via style inline -->
+        <div class="brand-name">Mayo Fix Tech<span>.</span></div>
+        <p data-i18n="footer_brand_p">Reparación de PCs y laptops. Páginas web en WordPress. Santa Cruz del Quiché, Guatemala.</p>
+        <p class="footer-coverage" data-i18n="footer_coverage">Atendemos en Santa Cruz del Quiché y municipios cercanos: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango y Patzité.</p>
+      </div>
+
+      <!-- Columna: links de Reparación -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_repair">Reparación</h4>
+        <ul>
+          <li><a href="reparacion.html" data-i18n="footer_link_diag">Diagnóstico</a></li>
+          <li><a href="reparacion.html" data-i18n="footer_link_soft">Software</a></li>
+          <li><a href="reparacion.html" data-i18n="footer_link_data">Datos y SSD</a></li>
+          <li><a href="reparacion.html" data-i18n="footer_link_laptops">Laptops</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna: links de WordPress -->
+      <div class="footer-col">
+        <h4>WordPress</h4>
+        <ul>
+          <li><a href="wordpress.html" data-i18n="footer_link_landing">Landing Page</a></li>
+          <li><a href="wordpress.html" data-i18n="footer_link_info">Sitio informativo</a></li>
+          <li><a href="wordpress.html" data-i18n="footer_link_process">Proceso</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna: links de páginas del sitio -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_pages">Páginas</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+          <li><a href="reparacion.html" data-i18n="nav_repair">Reparación</a></li>
+          <li><a href="wordpress.html">WordPress</a></li>
+          <li><a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a></li>
+          <li><a href="nosotros.html" data-i18n="nav_about">Conóceme</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fila inferior: copyright y ubicación -->
+    <div class="footer-bottom">
+      <span data-i18n="footer_copy">© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales</span>
+      <span data-i18n="footer_loc">Santa Cruz del Quiché, Guatemala</span>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       JAVASCRIPT
+       Colocado al final del <body> para que el HTML ya esté cargado
+       cuando el JS intente acceder a los elementos del DOM.
+  ══════════════════════════════════════════════════════════════ -->
+  <script>
+    const translations = {
+      es: {
+        // Título de página
+        page_title: 'Sobre Mayo Fix Tech | Técnica en Santa Cruz del Quiché',
+
+        // Nav
+        nav_home: 'Inicio',
+        nav_repair: 'Reparación',
+        nav_sistemas: 'Sistemas',
+        nav_about: 'Conóceme',
+        nav_contact: 'Contactar',
+
+        // Cabecera de página
+        page_tag: 'La persona detrás del taller',
+        page_h1: 'Conóceme &<br><span class="grad">Contacto</span>',
+        page_sub: 'Conoce quién está detrás de Mayo Fix Tech, los valores que guían el trabajo y cómo comunicarte.',
+
+        // Tarjeta de perfil
+        about_role: 'Fundadora · Mayo Fix Tech',
+        about_stat1: '8+ años en hardware y software',
+        about_stat2: 'Ingeniería en Sistemas · UMG',
+        about_stat3: 'Santa Cruz del Quiché, Guatemala',
+
+        // Historia
+        about_h2: 'La historia detrás de<br><span class="grad">Mayo Fix Tech.</span>',
+        about_p1: 'Soy <strong>Erica Alejandra Franco Rosales</strong>, la persona detrás de Mayo Fix Tech. Llevo más de 8 años trabajando con hardware y software de PCs y laptops.',
+        about_p2: 'Lo que empezó como curiosidad por entender cómo funcionan las máquinas por dentro se convirtió en lo que hago todos los días: <strong>diagnosticar, reparar y mantener equipos funcionando como deben</strong>.',
+        about_p3: 'Actualmente estudio <strong>Ingeniería en Sistemas en la Universidad Mariano Gálvez de Guatemala</strong>, lo que me permite combinar la experiencia práctica con una base técnica sólida en programación, bases de datos, electrónica y sistemas operativos.',
+        about_p4: 'No dejo de aprender. Me capacito constantemente en nuevas herramientas y tecnologías porque la tecnología no se detiene y mi formación tampoco.',
+
+        // Trust / Valores
+        trust_tag: 'Valores del servicio',
+        trust_h2: '¿Por qué confiar en<br><span class="grad">Mayo Fix Tech?</span>',
+        trust_sub: 'Cuatro principios que definen cómo trabajo con cada equipo y cada cliente.',
+        trust1_title: 'Diagnóstico Real, No Adivinanzas',
+        trust1_desc: 'No cambio piezas "a ver si funciona". Uso herramientas de diagnóstico por software y medición eléctrica para encontrar el problema real antes de tocar cualquier componente.',
+        trust2_title: 'Honestidad Sobre Capacidad',
+        trust2_desc: 'Si algo está fuera de mi alcance, te lo digo antes que arriesgar tu equipo. Prefiero decirte "esto no lo hago" a dañar algo irreversiblemente.',
+        trust3_title: 'Formación Continua',
+        trust3_desc: 'Estudio ingeniería, tomo cursos y actualizo mis conocimientos constantemente. La tecnología no se detiene y mi servicio tampoco.',
+        trust4_title: 'Tu Equipo en Buenas Manos',
+        trust4_desc: 'Cada reparación la trato como si fuera la mía. Documento cada intervención y te explico exactamente qué se hizo y por qué.',
+
+        // Contacto
+        contact_h2: 'Hablemos sobre tu<br><span class="grad">equipo o proyecto.</span>',
+        contact_p: 'La forma más rápida es por WhatsApp. Respondo durante el día. También puedes usar el formulario.',
+        wa_label: 'WhatsApp · Respuesta rápida',
+        wa_btn: 'Abrir WhatsApp',
+        loc_main: 'Santa Cruz del Quiché, Guatemala',
+        loc_sub: 'Servicio en el taller · coordinación previa',
+
+        // Formulario
+        form_h3: 'Envíame un mensaje.',
+        label_nombre: 'Nombre',
+        label_email: 'Correo electrónico',
+        label_servicio: 'Servicio de interés',
+        select_default: '¿Qué necesitas?',
+        select_opt1: 'Reparación de PC / laptop',
+        select_opt2: 'Mantenimiento o diagnóstico',
+        select_opt3: 'Recuperación de datos',
+        select_opt4: 'Landing page en WordPress',
+        select_opt5: 'Sitio informativo en WordPress',
+        select_opt6: 'Sistema a medida',
+        select_opt7: 'Automatización de Excel',
+        select_opt8: 'Implementación Odoo',
+        select_opt9: 'Otro',
+        label_mensaje: 'Mensaje',
+        form_submit: 'Enviar por WhatsApp →',
+        form_note: 'Se abrirá WhatsApp con tu mensaje listo para enviar.',
+
+        // CTA
+        cta_h2: '¿Listo para trabajar juntos?',
+        cta_p: 'Sea reparación o una página web, hablemos sin compromiso.',
+        cta_btn: 'Escríbeme por WhatsApp',
+
+        // Footer
+        footer_brand_p: 'Reparación de PCs y laptops. Páginas web en WordPress. Santa Cruz del Quiché, Guatemala.',
+        footer_h_repair:     'Reparación',
+        footer_link_diag:    'Diagnóstico',
+        footer_link_soft:    'Software',
+        footer_link_data:    'Datos y SSD',
+        footer_link_laptops: 'Laptops',
+        footer_link_landing: 'Landing Page',
+        footer_link_info:    'Sitio informativo',
+        footer_link_process: 'Proceso',
+        footer_h_pages:      'Páginas',
+        footer_copy: '© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales',
+        footer_coverage: 'Atendemos en Santa Cruz del Quiché y municipios cercanos: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango y Patzité.',
+        footer_loc: 'Santa Cruz del Quiché, Guatemala'
+      },
+      en: {
+        // Page title
+        page_title: 'Meet Me — Mayo Fix Tech',
+
+        // Nav
+        nav_home: 'Home',
+        nav_repair: 'Repair',
+        nav_sistemas: 'Systems',
+        nav_about: 'Meet Me',
+        nav_contact: 'Contact',
+
+        // Page header
+        page_tag: 'The person behind the workshop',
+        page_h1: 'Meet Me &<br><span class="grad">Contact</span>',
+        page_sub: 'Meet the person behind Mayo Fix Tech, the values that guide the work, and how to get in touch.',
+
+        // Profile card
+        about_role: 'Founder · Mayo Fix Tech',
+        about_stat1: '8+ years in hardware and software',
+        about_stat2: 'Systems Engineering · UMG',
+        about_stat3: 'Santa Cruz del Quiché, Guatemala',
+
+        // Story
+        about_h2: 'The story behind<br><span class="grad">Mayo Fix Tech.</span>',
+        about_p1: 'I\'m <strong>Erica Alejandra Franco Rosales</strong>, the person behind Mayo Fix Tech. I have been working with PC and laptop hardware and software for over 8 years.',
+        about_p2: 'What started as curiosity about how machines work on the inside became what I do every day: <strong>diagnosing, repairing, and keeping equipment running the way it should</strong>.',
+        about_p3: 'I\'m currently studying <strong>Systems Engineering at Universidad Mariano Gálvez de Guatemala</strong>, which lets me combine hands-on experience with a solid technical foundation in programming, databases, electronics, and operating systems.',
+        about_p4: 'I never stop learning. I constantly train in new tools and technologies because technology doesn\'t stand still — and neither does my education.',
+
+        // Trust / Values
+        trust_tag: 'Service values',
+        trust_h2: 'Why trust<br><span class="grad">Mayo Fix Tech?</span>',
+        trust_sub: 'Four principles that define how I work with every device and every client.',
+        trust1_title: 'Real Diagnosis, Not Guesswork',
+        trust1_desc: 'I don\'t swap parts "just to see if it works." I use software diagnostic tools and electrical measurement to find the real problem before touching any component.',
+        trust2_title: 'Honesty About Capability',
+        trust2_desc: 'If something is beyond my scope, I tell you before risking your device. I\'d rather say "I don\'t do that" than cause irreversible damage.',
+        trust3_title: 'Continuous Learning',
+        trust3_desc: 'I study engineering, take courses, and constantly update my knowledge. Technology doesn\'t stand still, and neither does my service.',
+        trust4_title: 'Your Device in Good Hands',
+        trust4_desc: 'I treat every repair as if it were my own device. I document each intervention and explain exactly what was done and why.',
+
+        // Contact
+        contact_h2: 'Let\'s talk about your<br><span class="grad">device or project.</span>',
+        contact_p: 'The fastest way is WhatsApp. I respond during the day. You can also use the form.',
+        wa_label: 'WhatsApp · Fast response',
+        wa_btn: 'Open WhatsApp',
+        loc_main: 'Santa Cruz del Quiché, Guatemala',
+        loc_sub: 'Workshop service · prior coordination',
+
+        // Form
+        form_h3: 'Send me a message.',
+        label_nombre: 'Name',
+        label_email: 'Email address',
+        label_servicio: 'Service of interest',
+        select_default: 'What do you need?',
+        select_opt1: 'PC / laptop repair',
+        select_opt2: 'Maintenance or diagnosis',
+        select_opt3: 'Data recovery',
+        select_opt4: 'WordPress landing page',
+        select_opt5: 'WordPress informational site',
+        select_opt6: 'Custom system',
+        select_opt7: 'Excel automation',
+        select_opt8: 'Odoo implementation',
+        select_opt9: 'Other',
+        label_mensaje: 'Message',
+        form_submit: 'Send via WhatsApp →',
+        form_note: 'WhatsApp will open with your message ready to send.',
+
+        // CTA
+        cta_h2: 'Ready to work together?',
+        cta_p: 'Whether it\'s repair or a website, let\'s talk without commitment.',
+        cta_btn: 'Message me on WhatsApp',
+
+        // Footer
+        footer_brand_p: 'PC and laptop repair. WordPress websites. Santa Cruz del Quiché, Guatemala.',
+        footer_h_repair:     'Repair',
+        footer_link_diag:    'Diagnosis',
+        footer_link_soft:    'Software',
+        footer_link_data:    'Data & SSD',
+        footer_link_laptops: 'Laptops',
+        footer_link_landing: 'Landing Page',
+        footer_link_info:    'Informational site',
+        footer_link_process: 'Process',
+        footer_h_pages:      'Pages',
+        footer_copy: '© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales',
+        footer_coverage: 'We serve Santa Cruz del Quiché and nearby municipalities: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango and Patzité.',
+        footer_loc: 'Santa Cruz del Quiché, Guatemala'
+      }
+    };
+
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

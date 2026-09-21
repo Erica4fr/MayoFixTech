@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<!-- DOCTYPE le indica al navegador que este es un documento HTML5 -->
+
+<html lang="es">
+<!-- lang="es" → el idioma del contenido es español -->
+
+<head>
+  <!-- <head> contiene información SOBRE la página, no contenido visible para el usuario -->
+
+  <!-- UTF-8: permite tildes, ñ, y cualquier símbolo o caracter especial -->
+  <meta charset="UTF-8">
+
+  <!-- Hace la página responsive (adaptable a celulares):
+       width=device-width → el ancho se ajusta al del dispositivo
+       initial-scale=1.0  → sin zoom automático al cargar -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título optimizado SEO: servicio + ubicación (máx. 60 caracteres) -->
+  <title>WordPress para Negocios en Quiché | Mayo Fix Tech</title>
+  <link rel="canonical" href="https://mayofixtech.com/wordpress.html">
+
+  <!-- Descripción para Google: orientada a generar clic (máx. 155 caracteres) -->
+  <meta name="description" content="Páginas web WordPress para negocios en Santa Cruz del Quiché. Diseño profesional con SEO, velocidad y soporte incluido. Cotización sin costo.">
+
+  <!-- Geolocalización: región GT-QC = Quiché, Guatemala -->
+  <meta name="geo.region" content="GT-QC">
+  <meta name="geo.placename" content="Santa Cruz del Quiché">
+
+  <!-- Open Graph: mejora la vista previa al compartir en redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_GT">
+  <meta property="og:site_name" content="Mayo Fix Tech">
+  <meta property="og:title" content="WordPress para Negocios en Quiché | Mayo Fix Tech">
+  <meta property="og:description" content="Páginas web WordPress para negocios en Santa Cruz del Quiché. Diseño profesional con SEO, velocidad y soporte incluido.">
+  <meta property="og:url" content="https://mayofixtech.com/wordpress.html">
+
+  <!-- Imagen de la vista previa al compartir el enlace (WhatsApp, Facebook,
+       LinkedIn, Telegram). Tiene que ser una URL absoluta: con ruta relativa
+       WhatsApp no la encuentra. 1200x630 y 88 KB, por debajo del limite que
+       hace que WhatsApp descarte la imagen. -->
+  <meta property="og:image" content="https://mayofixtech.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Mayo Fix Tech — Diagnóstico y reparación de PC">
+
+  <!-- Mismo dato para X/Twitter y para los clientes que leen estas etiquetas -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WordPress para Negocios en Quiché | Mayo Fix Tech">
+  <meta name="twitter:description" content="Páginas web WordPress para negocios en Santa Cruz del Quiché. Diseño profesional con SEO, velocidad y soporte incluido.">
+  <meta name="twitter:image" content="https://mayofixtech.com/og-image.jpg">
+
+  <!-- Preconecta con ambos CDN de Google Fonts para reducir latencia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Carga no bloqueante de Google Fonts -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Iconos del sitio. El .ico contiene 16, 32 y 48 px: el de 16 usa una
+       versión de la M con el trazo más grueso, que a ese tamaño se lee
+       mejor. El .svg lo prefieren los navegadores modernos y se mantiene
+       nítido a cualquier tamaño. El .png es para cuando alguien guarda la
+       página en la pantalla de inicio de un iPhone. -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- ── TEMA CLARO / OSCURO ──────────────────────────────────────
+       Se aplica ANTES de que el navegador pinte nada, para que al
+       recargar no se vea un destello del tema anterior. Por eso va
+       aquí arriba y no en js/main.js. -->
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0E2337">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      if (t === 'light') {
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F3F8FC');
+      }
+    }());
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema.org Service: datos estructurados para este servicio específico -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Diseño de Páginas Web WordPress en Santa Cruz del Quiché",
+    "description": "Páginas web WordPress para negocios en Santa Cruz del Quiché. Diseño profesional con SEO, velocidad y soporte incluido.",
+    "serviceType": "Web Design",
+    "areaServed": {
+      "@type": "City",
+      "name": "Santa Cruz del Quiché",
+      "containedInPlace": {"@type": "AdministrativeArea", "name": "Quiché, Guatemala"}
+    },
+    "provider": {"@id": "https://mayofixtech.com/#business"}
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CURSOR PERSONALIZADO
+       Dos divs vacíos que JS posiciona para seguir al mouse.
+  ══════════════════════════════════════════════════════════════ -->
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <svg style="display:none" aria-hidden="true" focusable="false"><symbol id="ico-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol><symbol id="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol></svg>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BARRA DE NAVEGACIÓN (fija en la parte superior)
+  ══════════════════════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <!-- Logo: enlace a la página de inicio -->
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-dot"></div>  <!-- Punto decorativo dorado -->
+      Mayo Fix Tech
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+      <li><a href="reparacion.html" data-i18n="nav_repair">Reparación</a></li>
+      <li><a href="wordpress.html" class="active">WordPress</a></li>
+      <li><a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a></li>
+      <li><a href="nosotros.html" data-i18n="nav_about">Conóceme</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-switch is-es" onclick="toggleLang()" role="switch" tabindex="0" aria-checked="false" aria-label="Cambiar idioma">
+        <div class="lang-switch-pill"></div>
+        <span class="lang-switch-opt">ES</span>
+        <span class="lang-switch-opt">EN</span>
+      </div>
+      <!-- Selector de tema. Mismo patrón que el de idioma: cápsula con
+           pastilla deslizante. Sol = claro, luna = oscuro. El estado
+           real lo fija applyTheme() en js/main.js. -->
+      <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
+        <span class="theme-switch-pill"></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-moon"/></svg></span>
+      </button>
+      <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="nav-cta">
+        <svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+        <span data-i18n="nav_contact">Contactar</span>
+      </a>
+      <button class="hamburger" aria-label="Menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MENÚ MÓVIL ──
+       Panel desplegable que aparece en pantallas pequeñas al pulsar el hamburger.
+       JS añade/quita la clase "open" para mostrarlo u ocultarlo.
+       Contiene los mismos enlaces del nav y el interruptor de idioma. -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" data-i18n="nav_home">Inicio</a>
+    <a href="reparacion.html" data-i18n="nav_repair">Reparación</a>
+    <a href="wordpress.html">WordPress</a>
+    <a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a>
+    <a href="nosotros.html" data-i18n="nav_about">Conóceme</a>
+    <div class="mobile-lang">
+      <span>Idioma / Language</span>
+      <div class="lang-switch is-es" onclick="toggleLang()" role="switch" tabindex="0" aria-checked="false" aria-label="Cambiar idioma">
+        <div class="lang-switch-pill"></div>
+        <span class="lang-switch-opt">ES</span>
+        <span class="lang-switch-opt">EN</span>
+      </div>
+    </div>
+
+    <!-- Fila del selector de tema en el menú móvil -->
+    <div class="mobile-theme">
+      <span>Tema / Theme</span>
+      <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
+        <span class="theme-switch-pill"></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-moon"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CABECERA DE PÁGINA
+       <header> es la etiqueta HTML semánticamente correcta para
+       la cabecera introductoria de una sección o página.
+  ══════════════════════════════════════════════════════════════ -->
+  <header class="page-header" id="main-content">
+    <!-- Orb: círculo de luz difusa decorativo -->
+    <div class="page-header-orb"></div>
+
+    <div class="page-header-inner">
+      <p class="page-tag" data-i18n="page_tag">Diseño web en Santa Cruz del Quiché</p>
+      <!-- <br> = salto de línea forzado dentro del título -->
+      <h1 data-i18n-html="page_h1">Páginas Web en<br><span class="grad">WordPress</span></h1>
+      <p data-i18n="page_sub">Diseño personalizado, responsive, con SEO básico, SSL y capacitación. Tú lo administras, sin depender de nadie.</p>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN "SIEMPRE INCLUIDO"
+       6 tarjetas que muestran lo que viene en TODOS los proyectos.
+       Fondo --bg2 para alternar visualmente con la sección anterior.
+       Las tarjetas tienen animación de línea dorada inferior al hover.
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="includes">
+    <div class="max">
+      <p class="sec-tag reveal" data-i18n="inc_tag">Siempre incluido</p>
+      <h2 class="sec-title reveal" data-i18n-html="inc_title">Todo sitio que construyo<br>incluye <span class="grad">estos 6 pilares.</span></h2>
+      <p class="sec-sub reveal" data-i18n="inc_sub">No son extras. Son el estándar mínimo que merece cualquier negocio que invierte en una página web.</p>
+
+      <!-- Grid de 3 columnas para los 6 ítems (2 filas × 3 columnas) -->
+      <div class="inc-grid">
+
+        <!-- Pilar 1: Diseño Personalizado -->
+        <div class="inc-item reveal">
+          <!-- SVG: ícono de lápiz/edición (diseño) -->
+          <svg class="inc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M12 20h9"/>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+          <h4 data-i18n="inc1_title">Diseño Personalizado</h4>
+          <p data-i18n="inc1_desc">Adaptado a tu identidad: tus colores, tu estilo, tu contenido. No usamos plantillas genéricas.</p>
+        </div>
+
+        <!-- Pilar 2: 100% Responsive (delay 0.1s) -->
+        <div class="inc-item reveal rd1">
+          <!-- SVG: ícono de celular (responsive/móvil) -->
+          <svg class="inc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <rect x="5" y="2" width="14" height="20" rx="2"/> <!-- Contorno del celular -->
+            <line x1="12" y1="18" x2="12.01" y2="18"/>       <!-- Punto del botón de inicio -->
+          </svg>
+          <h4 data-i18n="inc2_title">100% Responsive</h4>
+          <p data-i18n="inc2_desc">Se ve perfecto en celular, tablet y escritorio. Verificado antes de la entrega.</p>
+        </div>
+
+        <!-- Pilar 3: Tú lo Administras (delay 0.2s) -->
+        <div class="inc-item reveal rd2">
+          <!-- SVG: ícono de personas/usuarios (capacitación) -->
+          <svg class="inc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/> <!-- Cuerpo del grupo -->
+            <circle cx="9" cy="7" r="4"/>                           <!-- Cara del usuario principal -->
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/> <!-- Usuario secundario -->
+          </svg>
+          <h4 data-i18n="inc3_title">Tú lo Administras</h4>
+          <p data-i18n="inc3_desc">WordPress te permite actualizar textos e imágenes sin depender de nadie. Capacitación incluida.</p>
+        </div>
+
+        <!-- Pilar 4: Optimización Básica (sin delay, nueva fila) -->
+        <div class="inc-item reveal">
+          <!-- SVG: ícono de rayo (velocidad/rendimiento) -->
+          <svg class="inc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+          <h4 data-i18n="inc4_title">Optimización Básica</h4>
+          <p data-i18n="inc4_desc">Carga rápida, imágenes optimizadas y buenas prácticas de SEO on-page desde el inicio.</p>
+        </div>
+
+        <!-- Pilar 5: Formulario de Contacto (delay 0.1s) -->
+        <div class="inc-item reveal rd1">
+          <!-- SVG: ícono de burbuja de chat (formulario/mensaje) -->
+          <svg class="inc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          <h4 data-i18n="inc5_title">Formulario de Contacto</h4>
+          <p data-i18n="inc5_desc">Tus clientes te escriben directo desde la página. Conectado a tu correo o WhatsApp.</p>
+        </div>
+
+        <!-- Pilar 6: SSL y Seguridad (delay 0.2s) -->
+        <div class="inc-item reveal rd2">
+          <!-- SVG: ícono de escudo (seguridad/SSL) -->
+          <svg class="inc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <h4 data-i18n="inc6_title">SSL y Seguridad</h4>
+          <p data-i18n="inc6_desc">Certificado HTTPS, plugins de seguridad configurados y respaldos iniciales incluidos.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN DE PLANES
+       2 tarjetas: Landing Page (Opción A) y Sitio Informativo (Opción B).
+       La clase .highlight en el plan B lo marca como destacado de entrada.
+       Cada tarjeta tiene:
+         - Letra decorativa de fondo (A / B)
+         - Tag de opción
+         - Nombre del plan
+         - Descripción
+         - Lista de características con checkmarks SVG
+         - Etiqueta de tiempo de entrega
+  ══════════════════════════════════════════════════════════════ -->
+  <section>
+    <div class="max">
+      <p class="sec-tag reveal" data-i18n="plans_tag">Opciones disponibles</p>
+      <h2 class="sec-title reveal" data-i18n-html="plans_title">Elige el plan que<br>se adapta a <span class="grad">tu negocio.</span></h2>
+      <p class="sec-sub reveal" data-i18n="plans_sub">Conversamos primero. La opción correcta depende de tu negocio, no de un formulario.</p>
+
+      <!-- El .reveal en el grid completo hace que ambas tarjetas aparezcan juntas -->
+      <div class="plans-grid reveal">
+
+        <!-- ── PLAN A: Landing Page ── -->
+        <div class="plan-card">
+          <!-- Letra "A" decorativa enorme casi transparente en la esquina -->
+          <div class="plan-letter" aria-hidden="true">A</div>
+          <!-- Tag de categoría con fondo dorado tenue -->
+          <span class="plan-tag" data-i18n="option_a">Opción A</span>
+          <h3 data-i18n="plan_a_name">Landing Page</h3>
+          <p class="plan-desc" data-i18n="plan_a_desc">Una sola página con toda la información esencial. Ideal para comenzar con presencia profesional sin complicaciones.</p>
+
+          <!-- Lista de características con ícono de check dorado -->
+          <ul class="plan-feats">
+            <!-- Cada <li> tiene un SVG de checkmark + el texto de la característica -->
+            <li>
+              <!-- SVG: palomita/check (característica incluida) -->
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <polyline points="20 6 9 17 4 12"/> <!-- Los 3 puntos forman la palomita ✓ -->
+              </svg>
+              <span data-i18n="plan_a_feat1">Página única con secciones desplazables</span>
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="plan_a_feat2">Información del negocio, servicios y contacto</span>
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="plan_a_feat3">Botón directo a WhatsApp</span>
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="plan_a_feat4">Todos los 6 pilares incluidos</span>
+            </li>
+          </ul>
+
+          <!-- Etiqueta de tiempo de entrega con ícono de reloj -->
+          <div class="plan-deadline">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/>      <!-- Círculo del reloj -->
+              <polyline points="12 6 12 12 16 14"/> <!-- Agujas: 12→centro→4 (posición 4:00) -->
+            </svg>
+            <span data-i18n="plan_a_deadline">Entrega en 5–7 días hábiles</span>
+          </div>
+        </div>
+
+        <!-- ── PLAN B: Sitio Informativo (DESTACADO con clase .highlight) ── -->
+        <!-- La clase "highlight" activa el fondo más oscuro y la línea dorada superior
+             desde el inicio, sin necesitar hover -->
+        <div class="plan-card highlight">
+          <div class="plan-letter" aria-hidden="true">B</div>
+          <span class="plan-tag" data-i18n="option_b">Opción B</span>
+          <h3 data-i18n="plan_b_name">Sitio Informativo</h3>
+          <p class="plan-desc" data-i18n="plan_b_desc">Varias páginas para mostrar más de tu negocio. Menú completo, galería y mayor alcance de contenido.</p>
+
+          <ul class="plan-feats">
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="plan_b_feat1">Hasta 6 páginas (Inicio, Servicios, Nosotros…)</span>
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="plan_b_feat2">Menú de navegación completo</span>
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="plan_b_feat3">Galería de fotos o portafolio</span>
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="plan_b_feat4">Todos los 6 pilares incluidos</span>
+            </li>
+          </ul>
+
+          <div class="plan-deadline">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span data-i18n="plan_b_deadline">Entrega en 10–15 días hábiles</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN DE PROCESO
+       4 pasos conectados por una línea horizontal decorativa.
+       Fondo --bg2 para alternar visualmente.
+       Cada paso tiene: círculo numerado + anillo punteado + título + descripción.
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="process">
+    <div class="max">
+      <p class="sec-tag reveal" data-i18n="proc_tag">El proceso</p>
+      <h2 class="sec-title reveal" data-i18n-html="proc_title">Cómo trabajamos juntos.</h2>
+      <!-- style inline para ajustar el margen inferior de este párrafo específico -->
+      <p class="sec-sub reveal" data-i18n="proc_sub">Simple, transparente, sin sorpresas. Sabrás exactamente en qué etapa estamos.</p>
+
+      <!-- Grid de 4 columnas con línea conectora generada por CSS (::before) -->
+      <div class="process-line">
+
+        <!-- Paso 01: Conversamos -->
+        <div class="proc-step reveal">
+          <!-- Círculo con el número del paso.
+               El anillo punteado exterior se genera con CSS (::after). -->
+          <div class="proc-circle">
+            <div class="proc-num">01</div>
+          </div>
+          <h4 data-i18n="proc1_title">Conversamos</h4>
+          <p data-i18n="proc1_desc">Entiendo tu negocio y qué necesitas mostrar. Sin formularios largos.</p>
+        </div>
+
+        <!-- Paso 02: Propuesta (delay 0.1s) -->
+        <div class="proc-step reveal rd1">
+          <div class="proc-circle">
+            <div class="proc-num">02</div>
+          </div>
+          <h4 data-i18n="proc2_title">Propuesta</h4>
+          <p data-i18n="proc2_desc">Estructura, diseño y precio. Sin compromisos, sin sorpresas.</p>
+        </div>
+
+        <!-- Paso 03: Desarrollo (delay 0.2s) -->
+        <div class="proc-step reveal rd2">
+          <div class="proc-circle">
+            <div class="proc-num">03</div>
+          </div>
+          <h4 data-i18n="proc3_title">Desarrollo</h4>
+          <p data-i18n="proc3_desc">Construyo con avances visibles para que puedas dar retroalimentación.</p>
+        </div>
+
+        <!-- Paso 04: Entrega (delay 0.3s) -->
+        <div class="proc-step reveal rd3">
+          <div class="proc-circle">
+            <div class="proc-num">04</div>
+          </div>
+          <h4 data-i18n="proc4_title">Entrega</h4>
+          <p data-i18n="proc4_desc">Sitio en línea + capacitación de administración + soporte inicial.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BANDA CTA (llamada a la acción con fondo dorado)
+       Aquí la <section> tiene directamente la clase .cta-band,
+       a diferencia de otras páginas donde el CTA era un <div>.
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="cta-band">
+    <div class="cta-band-inner reveal">
+      <h2 data-i18n="cta_h2">¿Tu negocio necesita presencia en línea?</h2>
+      <p data-i18n="cta_p">Hablemos sin compromiso. Te explico qué opción tiene más sentido para ti.</p>
+      <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="btn btn-dark">
+        <svg width="17" height="17" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+        <span data-i18n="cta_btn">Consultar por WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PIE DE PÁGINA (FOOTER)
+       Grid 4 columnas: marca + WordPress + Reparación + Páginas.
+  ══════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-top">
+      <!-- Columna de marca (2fr = el doble de ancho que las otras) -->
+      <div class="footer-brand">
+        <div class="brand-name">Mayo Fix Tech<span>.</span></div>
+        <p data-i18n="footer_brand_p">Reparación de PCs y laptops, páginas web en WordPress y sistemas a medida. Santa Cruz del Quiché, Guatemala.</p>
+        <p class="footer-coverage" data-i18n="footer_coverage">Atendemos en Santa Cruz del Quiché y municipios cercanos: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango y Patzité.</p>
+      </div>
+
+      <!-- Columna: links de WordPress -->
+      <div class="footer-col">
+        <h4>WordPress</h4>
+        <ul>
+          <li><a href="wordpress.html" data-i18n="footer_link_landing">Landing Page</a></li>
+          <li><a href="wordpress.html" data-i18n="footer_link_info">Sitio informativo</a></li>
+          <li><a href="wordpress.html" data-i18n="footer_link_process">Proceso</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna: links de Reparación -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_repair">Reparación</h4>
+        <ul>
+          <li><a href="reparacion.html" data-i18n="footer_link_diag">Diagnóstico</a></li>
+          <li><a href="reparacion.html" data-i18n="footer_link_soft">Software</a></li>
+          <li><a href="reparacion.html" data-i18n="footer_link_data">Datos y SSD</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna: páginas del sitio -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_pages">Páginas</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+          <li><a href="reparacion.html" data-i18n="nav_repair">Reparación</a></li>
+          <li><a href="wordpress.html">WordPress</a></li>
+          <li><a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a></li>
+          <li><a href="nosotros.html" data-i18n="nav_about">Conóceme</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fila inferior: copyright y ubicación -->
+    <div class="footer-bottom">
+      <span data-i18n="footer_copy">© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales</span>
+      <span data-i18n="footer_loc">Santa Cruz del Quiché, Guatemala</span>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       JAVASCRIPT
+       Colocado al final del <body> para que todos los elementos
+       del HTML ya existan cuando el JS intente manipularlos.
+  ══════════════════════════════════════════════════════════════ -->
+  <script>
+    const translations = {
+      es: {
+        page_title:       'WordPress para Negocios en Quiché | Mayo Fix Tech',
+        // NAV
+        nav_home:         'Inicio',
+        nav_repair:       'Reparación',
+        nav_sistemas:     'Sistemas',
+        nav_about:        'Conóceme',
+        nav_contact:      'Contactar',
+        // PAGE HEADER
+        page_tag:         'Diseño web en Santa Cruz del Quiché',
+        page_h1:          'Páginas Web en<br><span class="grad">WordPress</span>',
+        page_sub:         'Diseño personalizado, responsive, con SEO básico, SSL y capacitación. Tú lo administras, sin depender de nadie.',
+        // 6 PILLARS
+        inc_tag:          'Siempre incluido',
+        inc_title:        'Todo sitio que construyo<br>incluye <span class="grad">estos 6 pilares.</span>',
+        inc_sub:          'No son extras. Son el estándar mínimo que merece cualquier negocio que invierte en una página web.',
+        inc1_title:       'Diseño Personalizado',
+        inc1_desc:        'Adaptado a tu identidad: tus colores, tu estilo, tu contenido. No usamos plantillas genéricas.',
+        inc2_title:       '100% Responsive',
+        inc2_desc:        'Se ve perfecto en celular, tablet y escritorio. Verificado antes de la entrega.',
+        inc3_title:       'Tú lo Administras',
+        inc3_desc:        'WordPress te permite actualizar textos e imágenes sin depender de nadie. Capacitación incluida.',
+        inc4_title:       'Optimización Básica',
+        inc4_desc:        'Carga rápida, imágenes optimizadas y buenas prácticas de SEO on-page desde el inicio.',
+        inc5_title:       'Formulario de Contacto',
+        inc5_desc:        'Tus clientes te escriben directo desde la página. Conectado a tu correo o WhatsApp.',
+        inc6_title:       'SSL y Seguridad',
+        inc6_desc:        'Certificado HTTPS, plugins de seguridad configurados y respaldos iniciales incluidos.',
+        // PLANS
+        plans_tag:        'Opciones disponibles',
+        plans_title:      'Elige el plan que<br>se adapta a <span class="grad">tu negocio.</span>',
+        plans_sub:        'Conversamos primero. La opción correcta depende de tu negocio, no de un formulario.',
+        option_a:         'Opción A',
+        plan_a_name:      'Landing Page',
+        plan_a_desc:      'Una sola página con toda la información esencial. Ideal para comenzar con presencia profesional sin complicaciones.',
+        plan_a_feat1:     'Página única con secciones desplazables',
+        plan_a_feat2:     'Información del negocio, servicios y contacto',
+        plan_a_feat3:     'Botón directo a WhatsApp',
+        plan_a_feat4:     'Todos los 6 pilares incluidos',
+        plan_a_deadline:  'Entrega en 5–7 días hábiles',
+        option_b:         'Opción B',
+        plan_b_name:      'Sitio Informativo',
+        plan_b_desc:      'Varias páginas para mostrar más de tu negocio. Menú completo, galería y mayor alcance de contenido.',
+        plan_b_feat1:     'Hasta 6 páginas (Inicio, Servicios, Nosotros…)',
+        plan_b_feat2:     'Menú de navegación completo',
+        plan_b_feat3:     'Galería de fotos o portafolio',
+        plan_b_feat4:     'Todos los 6 pilares incluidos',
+        plan_b_deadline:  'Entrega en 10–15 días hábiles',
+        // PROCESS
+        proc_tag:         'El proceso',
+        proc_title:       'Cómo trabajamos juntos.',
+        proc_sub:         'Simple, transparente, sin sorpresas. Sabrás exactamente en qué etapa estamos.',
+        proc1_title:      'Conversamos',
+        proc1_desc:       'Entiendo tu negocio y qué necesitas mostrar. Sin formularios largos.',
+        proc2_title:      'Propuesta',
+        proc2_desc:       'Estructura, diseño y precio. Sin compromisos, sin sorpresas.',
+        proc3_title:      'Desarrollo',
+        proc3_desc:       'Construyo con avances visibles para que puedas dar retroalimentación.',
+        proc4_title:      'Entrega',
+        proc4_desc:       'Sitio en línea + capacitación de administración + soporte inicial.',
+        // CTA
+        cta_h2:           '¿Tu negocio necesita presencia en línea?',
+        cta_p:            'Hablemos sin compromiso. Te explico qué opción tiene más sentido para ti.',
+        cta_btn:          'Consultar por WhatsApp',
+        // FOOTER
+        footer_brand_p:      'Reparación de PCs y laptops, páginas web en WordPress y sistemas a medida. Santa Cruz del Quiché, Guatemala.',
+        footer_link_landing: 'Landing Page',
+        footer_link_info:    'Sitio informativo',
+        footer_link_process: 'Proceso',
+        footer_h_repair:     'Reparación',
+        footer_link_diag:    'Diagnóstico',
+        footer_link_soft:    'Software',
+        footer_link_data:    'Datos y SSD',
+        footer_h_pages:      'Páginas',
+        footer_copy:         '© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales',
+        footer_coverage:     'Atendemos en Santa Cruz del Quiché y municipios cercanos: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango y Patzité.',
+        footer_loc:          'Santa Cruz del Quiché, Guatemala'
+      },
+      en: {
+        page_title:       'WordPress Services — Mayo Fix Tech',
+        // NAV
+        nav_home:         'Home',
+        nav_repair:       'Repair',
+        nav_sistemas:     'Systems',
+        nav_about:        'Meet Me',
+        nav_contact:      'Contact',
+        // PAGE HEADER
+        page_tag:         'Web presence',
+        page_h1:          'Professional<br><span class="grad">WordPress Sites</span>',
+        page_sub:         'Custom-designed, responsive websites that turn visitors into customers.',
+        // 6 PILLARS
+        inc_tag:          'What every site includes',
+        inc_title:        '6 pillars of<br>every <span class="grad">site I build.</span>',
+        inc_sub:          'These aren\'t add-ons. Every project includes all six from day one.',
+        inc1_title:       'Custom Design',
+        inc1_desc:        'Tailored to your identity: your colors, your style, your content. No generic templates.',
+        inc2_title:       '100% Responsive',
+        inc2_desc:        'Looks perfect on mobile, tablet and desktop. Verified before delivery.',
+        inc3_title:       'You Manage It',
+        inc3_desc:        'WordPress lets you update text and images without depending on anyone. Training included.',
+        inc4_title:       'Basic Optimization',
+        inc4_desc:        'Fast loading, optimized images and good on-page SEO practices from day one.',
+        inc5_title:       'Contact Form',
+        inc5_desc:        'Your clients write to you directly from the page. Connected to your email or WhatsApp.',
+        inc6_title:       'SSL & Security',
+        inc6_desc:        'HTTPS certificate, configured security plugins and initial backups included.',
+        // PLANS
+        plans_tag:        'Available options',
+        plans_title:      'Choose the plan that<br>fits <span class="grad">your business.</span>',
+        plans_sub:        'We talk first. The right option depends on your business, not a form.',
+        option_a:         'Option A',
+        plan_a_name:      'Landing Page',
+        plan_a_desc:      'A single page with all the essential information. Ideal for starting with a professional presence without complications.',
+        plan_a_feat1:     'Single page with scrollable sections',
+        plan_a_feat2:     'Business info, services and contact',
+        plan_a_feat3:     'Direct WhatsApp button',
+        plan_a_feat4:     'All 6 pillars included',
+        plan_a_deadline:  'Delivery in 5–7 business days',
+        option_b:         'Option B',
+        plan_b_name:      'Informational Site',
+        plan_b_desc:      'Several pages to show more of your business. Full menu, gallery and greater content reach.',
+        plan_b_feat1:     'Up to 6 pages (Home, Services, About…)',
+        plan_b_feat2:     'Full navigation menu',
+        plan_b_feat3:     'Photo gallery or portfolio',
+        plan_b_feat4:     'All 6 pillars included',
+        plan_b_deadline:  'Delivery in 10–15 business days',
+        // PROCESS
+        proc_tag:         'The process',
+        proc_title:       'How we <span class="grad">work together.</span>',
+        proc_sub:         'Simple, transparent, no surprises. You\'ll know exactly what stage we\'re at.',
+        proc1_title:      'We Talk',
+        proc1_desc:       'I understand your business and what you need to show. No long forms.',
+        proc2_title:      'Proposal',
+        proc2_desc:       'Structure, design and price. No commitments, no surprises.',
+        proc3_title:      'Development',
+        proc3_desc:       'I build with visible progress so you can give feedback.',
+        proc4_title:      'Delivery',
+        proc4_desc:       'Site online + admin training + initial support.',
+        // CTA
+        cta_h2:           'Does your business need an online presence?',
+        cta_p:            'Let\'s talk without commitment. I\'ll explain which option makes the most sense for you.',
+        cta_btn:          'Ask via WhatsApp',
+        // FOOTER
+        footer_brand_p:      'PC & laptop repair, WordPress websites, and custom systems. Santa Cruz del Quiché, Guatemala.',
+        footer_link_landing: 'Landing Page',
+        footer_link_info:    'Informational site',
+        footer_link_process: 'Process',
+        footer_h_repair:     'Repair',
+        footer_link_diag:    'Diagnosis',
+        footer_link_soft:    'Software',
+        footer_link_data:    'Data & SSD',
+        footer_h_pages:      'Pages',
+        footer_copy:         '© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales',
+        footer_coverage:     'We serve Santa Cruz del Quiché and nearby municipalities: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango and Patzité.',
+        footer_loc:          'Santa Cruz del Quiché, Guatemala'
+      }
+    };
+
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

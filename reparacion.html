@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<!-- DOCTYPE le indica al navegador que este es un documento HTML5 -->
+
+<html lang="es">
+<!-- lang="es" → el idioma del contenido es español (útil para Google y lectores de pantalla) -->
+
+<head>
+  <!-- <head> contiene metadatos: información SOBRE la página, no visible para el usuario -->
+
+  <!-- UTF-8: permite tildes, ñ, y cualquier caracter especial -->
+  <meta charset="UTF-8">
+
+  <!-- Hace la página responsive en celulares:
+       width=device-width → el ancho se ajusta al dispositivo
+       initial-scale=1.0  → sin zoom automático al cargar -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título optimizado SEO: servicio + ubicación (máx. 60 caracteres) -->
+  <title>Reparación de Computadoras en Quiché | Mayo Fix Tech</title>
+  <link rel="canonical" href="https://mayofixtech.com/reparacion.html">
+
+  <!-- Descripción para Google: orientada a generar clic (máx. 155 caracteres) -->
+  <meta name="description" content="Diagnóstico, limpieza, formateo y reparación de PCs y laptops en Santa Cruz del Quiché. 7 servicios técnicos con herramientas reales. Sin adivinanzas.">
+
+  <!-- Geolocalización: región GT-QC = Quiché, Guatemala -->
+  <meta name="geo.region" content="GT-QC">
+  <meta name="geo.placename" content="Santa Cruz del Quiché">
+
+  <!-- Open Graph: mejora la vista previa al compartir en redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_GT">
+  <meta property="og:site_name" content="Mayo Fix Tech">
+  <meta property="og:title" content="Reparación de Computadoras en Quiché | Mayo Fix Tech">
+  <meta property="og:description" content="Diagnóstico, limpieza, formateo y reparación de PCs y laptops en Santa Cruz del Quiché. 7 servicios técnicos con herramientas reales.">
+  <meta property="og:url" content="https://mayofixtech.com/reparacion.html">
+
+  <!-- Imagen de la vista previa al compartir el enlace (WhatsApp, Facebook,
+       LinkedIn, Telegram). Tiene que ser una URL absoluta: con ruta relativa
+       WhatsApp no la encuentra. 1200x630 y 88 KB, por debajo del limite que
+       hace que WhatsApp descarte la imagen. -->
+  <meta property="og:image" content="https://mayofixtech.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Mayo Fix Tech — Diagnóstico y reparación de PC">
+
+  <!-- Mismo dato para X/Twitter y para los clientes que leen estas etiquetas -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Reparación de Computadoras en Quiché | Mayo Fix Tech">
+  <meta name="twitter:description" content="Diagnóstico, limpieza, formateo y reparación de PCs y laptops en Santa Cruz del Quiché. 7 servicios técnicos con herramientas reales.">
+  <meta name="twitter:image" content="https://mayofixtech.com/og-image.jpg">
+
+  <!-- Preconecta con ambos CDN de Google Fonts para reducir latencia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Carga no bloqueante de Google Fonts -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Iconos del sitio. El .ico contiene 16, 32 y 48 px: el de 16 usa una
+       versión de la M con el trazo más grueso, que a ese tamaño se lee
+       mejor. El .svg lo prefieren los navegadores modernos y se mantiene
+       nítido a cualquier tamaño. El .png es para cuando alguien guarda la
+       página en la pantalla de inicio de un iPhone. -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- ── TEMA CLARO / OSCURO ──────────────────────────────────────
+       Se aplica ANTES de que el navegador pinte nada, para que al
+       recargar no se vea un destello del tema anterior. Por eso va
+       aquí arriba y no en js/main.js. -->
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0E2337">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      if (t === 'light') {
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F3F8FC');
+      }
+    }());
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema.org Service: datos estructurados para este servicio específico -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Reparación de Computadoras en Santa Cruz del Quiché",
+    "description": "Diagnóstico, limpieza, formateo y reparación de PCs y laptops. 7 tipos de servicio con herramientas reales. Sin adivinanzas.",
+    "serviceType": "Computer Repair",
+    "areaServed": {
+      "@type": "City",
+      "name": "Santa Cruz del Quiché",
+      "containedInPlace": {"@type": "AdministrativeArea", "name": "Quiché, Guatemala"}
+    },
+    "provider": {"@id": "https://mayofixtech.com/#business"}
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CURSOR PERSONALIZADO
+       Dos divs vacíos que JS mueve para seguir al mouse.
+  ══════════════════════════════════════════════════════════════ -->
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <svg style="display:none" aria-hidden="true" focusable="false"><symbol id="ico-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol><symbol id="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol></svg>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BARRA DE NAVEGACIÓN (fija en la parte superior)
+  ══════════════════════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <!-- Logo: enlace a la página de inicio -->
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-dot"></div>  <!-- Punto decorativo dorado -->
+      Mayo Fix Tech
+    </a>
+
+    <!-- Lista de navegación principal (se oculta en móvil).
+         data-i18n → JS reemplaza el texto según el idioma activo.
+         class="active" → marca "Reparación" como la página actual (resaltado en CSS). -->
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+      <li><a href="reparacion.html" class="active" data-i18n="nav_repair">Reparación</a></li>  <!-- Página actual -->
+      <li><a href="wordpress.html">WordPress</a></li>
+      <li><a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a></li>
+      <li><a href="nosotros.html" data-i18n="nav_about">Conóceme</a></li>
+    </ul>
+
+    <!-- Lado derecho del nav: selector de idioma + botón CTA + hamburguesa -->
+    <div class="nav-right">
+      <!-- Selector de idioma ES/EN.
+           role="switch" y aria-label → accesibilidad para lectores de pantalla.
+           onclick="toggleLang()" → llama a la función JS al hacer clic. -->
+      <div class="lang-switch is-es" onclick="toggleLang()" role="switch" tabindex="0" aria-checked="false" aria-label="Cambiar idioma">
+        <div class="lang-switch-pill"></div>  <!-- Pastilla dorada deslizante -->
+        <span class="lang-switch-opt">ES</span>
+        <span class="lang-switch-opt">EN</span>
+      </div>
+      <!-- Botón WhatsApp en forma de cápsula (se oculta en móvil) -->
+      <!-- Selector de tema. Mismo patrón que el de idioma: cápsula con
+           pastilla deslizante. Sol = claro, luna = oscuro. El estado
+           real lo fija applyTheme() en js/main.js. -->
+      <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
+        <span class="theme-switch-pill"></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-moon"/></svg></span>
+      </button>
+      <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="nav-cta">
+        <svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+        <span data-i18n="nav_contact">Contactar</span>
+      </a>
+      <button class="hamburger" aria-label="Menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menú móvil desplegable (JS agrega/quita la clase "open") -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" data-i18n="nav_home">Inicio</a>
+    <a href="reparacion.html" data-i18n="nav_repair">Reparación</a>
+    <a href="wordpress.html">WordPress</a>
+    <a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a>
+    <a href="nosotros.html" data-i18n="nav_about">Conóceme</a>
+    <!-- Fila del selector de idioma dentro del menú móvil:
+         etiqueta "Idioma / Language" a la izquierda + switch a la derecha -->
+    <div class="mobile-lang">
+      <span>Idioma / Language</span>
+      <div class="lang-switch is-es" onclick="toggleLang()" role="switch" tabindex="0" aria-checked="false" aria-label="Cambiar idioma">
+        <div class="lang-switch-pill"></div>
+        <span class="lang-switch-opt">ES</span>
+        <span class="lang-switch-opt">EN</span>
+      </div>
+    </div>
+
+    <!-- Fila del selector de tema en el menú móvil -->
+    <div class="mobile-theme">
+      <span>Tema / Theme</span>
+      <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
+        <span class="theme-switch-pill"></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-moon"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CABECERA DE PÁGINA
+       Sección de introducción con tag, título H1 y subtítulo.
+       <header> es la etiqueta semántica correcta para cabeceras.
+  ══════════════════════════════════════════════════════════════ -->
+  <header class="page-header" id="main-content">
+    <!-- Orb: círculo de luz dorada difusa decorativo en la esquina -->
+    <div class="page-header-orb"></div>
+
+    <div class="page-header-inner">
+      <!-- Etiqueta pequeña con línea decorativa antes del título -->
+      <p class="page-tag" data-i18n="page_tag">Servicio técnico en Santa Cruz del Quiché</p>
+
+      <!-- <br> = salto de línea forzado dentro del título -->
+      <h1 data-i18n-html="page_h1">Reparación de<br><span class="grad">PCs y Laptops</span></h1>
+
+      <p data-i18n="page_sub">7 tipos de servicio. Diagnóstico con herramientas reales. Sin adivinanzas, sin piezas cambiadas innecesariamente.</p>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN DE SERVICIOS
+       Lista vertical de los 7 servicios de reparación.
+       Cada .svc-item tiene 2 columnas internas:
+         - Izquierda (.svc-num-col): número y ícono
+         - Derecha (.svc-body): título y lista de características
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="services-section">
+    <div class="max">
+      <!-- Grid de 1 columna donde cada hijo es un servicio.
+           El fondo var(--border) con gap:1px crea separadores entre servicios. -->
+      <div class="services-list">
+
+        <!-- ── SERVICIO 01: Diagnóstico y Mantenimiento ── -->
+        <div class="svc-item reveal">
+          <!-- Columna izquierda: número + ícono -->
+          <div class="svc-num-col">
+            <span class="svc-num">01</span>
+            <!-- SVG: ícono de actividad/pulso (diagnóstico médico de un equipo) -->
+            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <!-- Columna derecha: descripción del servicio -->
+          <div class="svc-body">
+            <h3 data-i18n="svc1_title">Diagnóstico y Mantenimiento</h3>
+            <!-- Lista sin viñetas (list-style:none). Las flechas "→" se agregan
+                 automáticamente con CSS usando el pseudo-elemento ::before -->
+            <ul>
+              <li data-i18n="svc1_li1">Pruebas SMART, RAM, temperatura y estrés</li>
+              <li data-i18n="svc1_li2">Limpieza interna y externa (desktop y laptop)</li>
+              <li data-i18n="svc1_li3">Cambio de pasta y pads térmicos</li>
+              <li data-i18n="svc1_li4">Verificación de presión de disipador</li>
+              <li data-i18n="svc1_li5">Mantenimiento de ventiladores y mallas de polvo</li>
+              <li data-i18n="svc1_li6">Diagnóstico completo previo a cualquier intervención</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── SERVICIO 02: Software y Sistema Operativo ── -->
+        <div class="svc-item reveal">
+          <div class="svc-num-col">
+            <span class="svc-num">02</span>
+            <!-- SVG: ícono de código (<>) -->
+            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <polyline points="16 18 22 12 16 6"/>  <!-- Flecha derecha > -->
+              <polyline points="8 6 2 12 8 18"/>     <!-- Flecha izquierda < -->
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h3 data-i18n="svc2_title">Software y Sistema Operativo</h3>
+            <ul>
+              <li data-i18n="svc2_li1">Instalación y optimización de Windows / Linux</li>
+              <li data-i18n="svc2_li2">Drivers y actualización de BIOS/UEFI</li>
+              <li data-i18n="svc2_li3">Remoción de malware y limpieza de software</li>
+              <li data-i18n="svc2_li4">Onboarding de PC nueva: migración y seguridad</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── SERVICIO 03: Datos y Almacenamiento ── -->
+        <div class="svc-item reveal">
+          <div class="svc-num-col">
+            <span class="svc-num">03</span>
+            <!-- SVG: ícono de base de datos/cilindro (almacenamiento) -->
+            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/>          <!-- Tapa superior -->
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>   <!-- Línea media -->
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/> <!-- Cuerpo del cilindro -->
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h3 data-i18n="svc3_title">Datos y Almacenamiento</h3>
+            <ul>
+              <li data-i18n="svc3_li1">Migración HDD → SSD (SATA y NVMe) con clonación</li>
+              <li data-i18n="svc3_li2">Ampliación de RAM, SSD o HDD con asesoría</li>
+              <li data-i18n="svc3_li3">Recuperación lógica de archivos (sin abrir disco)</li>
+              <li data-i18n="svc3_li4">Incluye sectores dañados</li>
+              <li data-i18n="svc3_li5">Formateos seguros</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── SERVICIO 04: Medición Eléctrica y Energía ── -->
+        <div class="svc-item reveal">
+          <div class="svc-num-col">
+            <span class="svc-num">04</span>
+            <!-- SVG: ícono de rayo/electricidad -->
+            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h3 data-i18n="svc4_title">Medición Eléctrica y Energía</h3>
+            <ul>
+              <li data-i18n="svc4_li1">Diagnóstico de fuentes ATX con multímetro</li>
+              <li data-i18n="svc4_li2">Triaging de carga en laptops: cargador, cable o puerto</li>
+              <li data-i18n="svc4_li3">Sustitución de fuentes ATX</li>
+              <li data-i18n="svc4_li4">Reemplazo de ventiladores de caja y CPU</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── SERVICIO 05: Laptops: Desarme y Reemplazo ── -->
+        <div class="svc-item reveal">
+          <div class="svc-num-col">
+            <span class="svc-num">05</span>
+            <!-- SVG: ícono de monitor/pantalla -->
+            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>  <!-- Pantalla -->
+              <path d="M8 21h8M12 17v4"/>                        <!-- Pie del monitor -->
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h3 data-i18n="svc5_title">Laptops: Desarme y Reemplazo</h3>
+            <ul>
+              <li data-i18n="svc5_li1">Cambio de pantallas, teclados, trackpads y top-case</li>
+              <li data-i18n="svc5_li2">Cambio de baterías internas</li>
+              <li data-i18n="svc5_li3">Reemplazo de altavoces y antenas Wi-Fi</li>
+              <li data-i18n="svc5_li4">Limpieza profunda de disipadores</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── SERVICIO 06: Soldadura Through-Hole y Cableado ── -->
+        <div class="svc-item reveal">
+          <div class="svc-num-col">
+            <span class="svc-num">06</span>
+            <!-- SVG: ícono de cuadrícula/tabla (circuito/PCB) -->
+            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h3 data-i18n="svc6_title">Soldadura Through-Hole y Cableado</h3>
+            <ul>
+              <li data-i18n="svc6_li1">Re-soldado de pines USB y headers de ventilador</li>
+              <li data-i18n="svc6_li2">Re-soldado de speakers</li>
+              <li data-i18n="svc6_li3">Reparación de DC jack through-hole</li>
+              <li data-i18n="svc6_li4">Reemplazo de conectores, extensiones y pads</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── SERVICIO 07: Daño por Líquido ── -->
+        <div class="svc-item reveal">
+          <div class="svc-num-col">
+            <span class="svc-num">07</span>
+            <!-- SVG: ícono de gota de agua (daño por líquido) -->
+            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h3 data-i18n="svc7_title">Daño por Líquido</h3>
+            <ul>
+              <li data-i18n="svc7_li1">Limpieza y evaluación del equipo afectado</li>
+              <li data-i18n="svc7_li2">Diagnóstico individual caso por caso</li>
+              <!-- Este ítem tiene mayor texto, de ahí los saltos en la lista -->
+              <li data-i18n="svc7_li3">Sin garantía de reparación total (daño irreversible posible)</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN "FUERA DEL ALCANCE"
+       Muestra con transparencia qué NO se hace.
+       Usa <div> en vez de <section> porque es un bloque de información
+       secundaria, no una sección principal de contenido.
+       .reveal hace que aparezca con animación al hacer scroll.
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="not-included">
+    <div class="ni-inner reveal">
+      <h2 data-i18n="not_title">Fuera del alcance del servicio</h2>
+
+      <!-- Lista horizontal de lo que no se ofrece (flex-wrap para móvil) -->
+      <div class="ni-list">
+
+        <!-- Ítem con ícono de X roja: equipos Apple -->
+        <div class="ni-item">
+          <!-- SVG: círculo con X (prohibido/no disponible) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>          <!-- Círculo exterior -->
+            <line x1="15" y1="9" x2="9" y2="15"/>    <!-- Línea diagonal \ -->
+            <line x1="9" y1="9" x2="15" y2="15"/>    <!-- Línea diagonal / → forman X -->
+          </svg>
+          <span data-i18n="not_li1">Equipos Apple / Mac</span>
+        </div>
+
+        <!-- Ítem con ícono de X roja: microsoldadura SMD -->
+        <div class="ni-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+          <span data-i18n="not_li2">Microsoldadura SMD</span>
+        </div>
+
+        <!-- Ítem con ícono de X roja: reemplazo PCH/SoC -->
+        <div class="ni-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+          <span data-i18n="not_li3">Reemplazo de PCH/SoC</span>
+        </div>
+
+        <!-- Ítem con ícono de X roja: reball/reflow GPU -->
+        <div class="ni-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+          <span data-i18n="not_li4">Reball/reflow de GPU</span>
+        </div>
+
+      </div>
+
+      <!-- Nota aclaratoria en cursiva (font-style: italic en el CSS) -->
+      <p class="ni-note" data-i18n="not_note">La honestidad incluye decir lo que no está en mis manos. Prefiero esto a arriesgar tu equipo.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BANDA CTA (llamada a la acción final con fondo dorado)
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="cta-band">
+    <div class="cta-band-inner reveal">
+      <h2 data-i18n="cta_h2">¿Listo para el diagnóstico?</h2>
+      <p data-i18n="cta_p">Sin costos ocultos, sin piezas cambiadas innecesariamente. Escríbeme por WhatsApp.</p>
+      <!-- Botón oscuro de contraste sobre el fondo dorado -->
+      <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="btn btn-dark">
+        <svg width="17" height="17" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+        <span data-i18n="cta_btn">Escríbeme por WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PIE DE PÁGINA (FOOTER)
+       Grid 4 columnas: marca + Reparación + Web + Páginas.
+  ══════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-top">
+      <!-- Columna de marca (2fr = el doble de ancho) -->
+      <div class="footer-brand">
+        <div class="brand-name">Mayo Fix Tech<span>.</span></div>
+        <p data-i18n="footer_brand_p">Reparación de PCs y laptops, páginas web en WordPress y sistemas a medida. Santa Cruz del Quiché, Guatemala.</p>
+        <p class="footer-coverage" data-i18n="footer_coverage">Atendemos en Santa Cruz del Quiché y municipios cercanos: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango y Patzité.</p>
+      </div>
+
+      <!-- Columna: links de Reparación -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_repair">Reparación</h4>
+        <ul>
+          <li><a href="reparacion.html" data-i18n="footer_link_diag">Diagnóstico</a></li>
+          <li><a href="reparacion.html" data-i18n="footer_link_soft">Software</a></li>
+          <li><a href="reparacion.html" data-i18n="footer_link_data">Datos y SSD</a></li>
+          <li><a href="reparacion.html" data-i18n="footer_link_laptops">Laptops</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna: links de Web/WordPress -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_web">Web</h4>
+        <ul>
+          <li><a href="wordpress.html" data-i18n="footer_link_landing">Landing Page</a></li>
+          <li><a href="wordpress.html" data-i18n="footer_link_info">Sitio informativo</a></li>
+          <li><a href="wordpress.html" data-i18n="footer_link_process">Proceso</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna: páginas del sitio -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_pages">Páginas</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+          <li><a href="reparacion.html" data-i18n="nav_repair">Reparación</a></li>
+          <li><a href="wordpress.html">WordPress</a></li>
+          <li><a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a></li>
+          <li><a href="nosotros.html" data-i18n="nav_about">Conóceme</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fila inferior: copyright y ubicación -->
+    <div class="footer-bottom">
+      <span data-i18n="footer_copy">© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales</span>
+      <span data-i18n="footer_loc">Santa Cruz del Quiché, Guatemala</span>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       JAVASCRIPT
+       Al final del <body> para que el HTML esté cargado cuando
+       el JS intente acceder a los elementos del DOM.
+  ══════════════════════════════════════════════════════════════ -->
+  <script>
+    const translations = {
+      es: {
+        page_title: 'Reparación de Computadoras en Quiché | Mayo Fix Tech',
+        // Nav
+        nav_home:            'Inicio',
+        nav_repair:          'Reparación',
+        nav_sistemas:        'Sistemas',
+        nav_about:           'Conóceme',
+        nav_contact:         'Contactar',
+
+        // Page header
+        page_tag:            'Servicio técnico en Santa Cruz del Quiché',
+        page_h1:             'Reparación de<br><span class="grad">PCs y Laptops</span>',
+        page_sub:            '7 tipos de servicio. Diagnóstico con herramientas reales. Sin adivinanzas, sin piezas cambiadas innecesariamente.',
+
+        // Service 01
+        svc1_title:          'Diagnóstico y Mantenimiento',
+        svc1_li1:            'Pruebas SMART, RAM, temperatura y estrés',
+        svc1_li2:            'Limpieza interna y externa (desktop y laptop)',
+        svc1_li3:            'Cambio de pasta y pads térmicos',
+        svc1_li4:            'Verificación de presión de disipador',
+        svc1_li5:            'Mantenimiento de ventiladores y mallas de polvo',
+        svc1_li6:            'Diagnóstico completo previo a cualquier intervención',
+
+        // Service 02
+        svc2_title:          'Software y Sistema Operativo',
+        svc2_li1:            'Instalación y optimización de Windows / Linux',
+        svc2_li2:            'Drivers y actualización de BIOS/UEFI',
+        svc2_li3:            'Remoción de malware y limpieza de software',
+        svc2_li4:            'Onboarding de PC nueva: migración y seguridad',
+
+        // Service 03
+        svc3_title:          'Datos y Almacenamiento',
+        svc3_li1:            'Migración HDD → SSD (SATA y NVMe) con clonación',
+        svc3_li2:            'Ampliación de RAM, SSD o HDD con asesoría',
+        svc3_li3:            'Recuperación lógica de archivos (sin abrir disco)',
+        svc3_li4:            'Incluye sectores dañados',
+        svc3_li5:            'Formateos seguros',
+
+        // Service 04
+        svc4_title:          'Medición Eléctrica y Energía',
+        svc4_li1:            'Diagnóstico de fuentes ATX con multímetro',
+        svc4_li2:            'Triaging de carga en laptops: cargador, cable o puerto',
+        svc4_li3:            'Sustitución de fuentes ATX',
+        svc4_li4:            'Reemplazo de ventiladores de caja y CPU',
+
+        // Service 05
+        svc5_title:          'Laptops: Desarme y Reemplazo',
+        svc5_li1:            'Cambio de pantallas, teclados, trackpads y top-case',
+        svc5_li2:            'Cambio de baterías internas',
+        svc5_li3:            'Reemplazo de altavoces y antenas Wi-Fi',
+        svc5_li4:            'Limpieza profunda de disipadores',
+
+        // Service 06
+        svc6_title:          'Soldadura Through-Hole y Cableado',
+        svc6_li1:            'Re-soldado de pines USB y headers de ventilador',
+        svc6_li2:            'Re-soldado de speakers',
+        svc6_li3:            'Reparación de DC jack through-hole',
+        svc6_li4:            'Reemplazo de conectores, extensiones y pads',
+
+        // Service 07
+        svc7_title:          'Daño por Líquido',
+        svc7_li1:            'Limpieza y evaluación del equipo afectado',
+        svc7_li2:            'Diagnóstico individual caso por caso',
+        svc7_li3:            'Sin garantía de reparación total (daño irreversible posible)',
+
+        // Not-included section
+        not_title:           'Fuera del alcance del servicio',
+        not_li1:             'Equipos Apple / Mac',
+        not_li2:             'Microsoldadura SMD',
+        not_li3:             'Reemplazo de PCH/SoC',
+        not_li4:             'Reball/reflow de GPU',
+        not_note:            'La honestidad incluye decir lo que no está en mis manos. Prefiero esto a arriesgar tu equipo.',
+
+        // CTA band
+        cta_h2:              '¿Listo para el diagnóstico?',
+        cta_p:               'Sin costos ocultos, sin piezas cambiadas innecesariamente. Escríbeme por WhatsApp.',
+        cta_btn:             'Escríbeme por WhatsApp',
+
+        // Footer
+        footer_brand_p:      'Reparación de PCs y laptops, páginas web en WordPress y sistemas a medida. Santa Cruz del Quiché, Guatemala.',
+        footer_h_repair:     'Reparación',
+        footer_link_diag:    'Diagnóstico',
+        footer_link_soft:    'Software',
+        footer_link_data:    'Datos y SSD',
+        footer_link_laptops: 'Laptops',
+        footer_h_web:        'Web',
+        footer_link_landing: 'Landing Page',
+        footer_link_info:    'Sitio informativo',
+        footer_link_process: 'Proceso',
+        footer_h_pages:      'Páginas',
+        footer_copy:         '© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales',
+        footer_coverage:     'Atendemos en Santa Cruz del Quiché y municipios cercanos: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango y Patzité.',
+        footer_loc:          'Santa Cruz del Quiché, Guatemala'
+      },
+      en: {
+        page_title: 'PC & Laptop Repair in Quiché | Mayo Fix Tech',
+        // Nav
+        nav_home:            'Home',
+        nav_repair:          'Repair',
+        nav_sistemas:        'Systems',
+        nav_about:           'Meet Me',
+        nav_contact:         'Contact',
+
+        // Page header
+        page_tag:            'Technical services',
+        page_h1:             'PC and Laptop<br><span class="grad">Repair</span>',
+        page_sub:            '7 service types. Real-tool diagnostics. No guesswork, no unnecessary part swaps.',
+
+        // Service 01
+        svc1_title:          'Diagnostics & Maintenance',
+        svc1_li1:            'SMART, RAM, temperature, and stress tests',
+        svc1_li2:            'Internal and external cleaning (desktop & laptop)',
+        svc1_li3:            'Thermal paste and pad replacement',
+        svc1_li4:            'Heatsink pressure verification',
+        svc1_li5:            'Fan and dust filter maintenance',
+        svc1_li6:            'Complete diagnostics before any intervention',
+
+        // Service 02
+        svc2_title:          'Software & Operating System',
+        svc2_li1:            'Windows / Linux installation and optimization',
+        svc2_li2:            'Driver and BIOS/UEFI updates',
+        svc2_li3:            'Malware removal and software cleanup',
+        svc2_li4:            'New PC onboarding: migration and security',
+
+        // Service 03
+        svc3_title:          'Data & Storage',
+        svc3_li1:            'HDD → SSD migration (SATA & NVMe) with cloning',
+        svc3_li2:            'RAM, SSD, or HDD upgrade with advisory',
+        svc3_li3:            'Logical file recovery (no disk opening)',
+        svc3_li4:            'Includes damaged sectors',
+        svc3_li5:            'Secure wipes',
+
+        // Service 04
+        svc4_title:          'Electrical Measurement & Power',
+        svc4_li1:            'ATX power supply diagnostics with multimeter',
+        svc4_li2:            'Laptop charge triage: adapter, cable, or port',
+        svc4_li3:            'ATX power supply replacement',
+        svc4_li4:            'Case and CPU fan replacement',
+
+        // Service 05
+        svc5_title:          'Laptops: Disassembly & Replacement',
+        svc5_li1:            'Screen, keyboard, trackpad, and top-case replacement',
+        svc5_li2:            'Internal battery replacement',
+        svc5_li3:            'Speaker and Wi-Fi antenna replacement',
+        svc5_li4:            'Deep heatsink cleaning',
+
+        // Service 06
+        svc6_title:          'Through-Hole Soldering & Wiring',
+        svc6_li1:            'USB pin and fan header re-soldering',
+        svc6_li2:            'Speaker re-soldering',
+        svc6_li3:            'Through-hole DC jack repair',
+        svc6_li4:            'Connector, extension, and pad replacement',
+
+        // Service 07
+        svc7_title:          'Liquid Damage',
+        svc7_li1:            'Cleaning and evaluation of affected equipment',
+        svc7_li2:            'Individual case-by-case diagnostics',
+        svc7_li3:            'No guarantee of full repair (irreversible damage possible)',
+
+        // Not-included section
+        not_title:           'Outside the scope of service',
+        not_li1:             'Apple / Mac equipment',
+        not_li2:             'SMD microsoldering',
+        not_li3:             'PCH/SoC replacement',
+        not_li4:             'GPU reball/reflow',
+        not_note:            'Honesty includes saying what is not in my hands. I prefer this over risking your equipment.',
+
+        // CTA band
+        cta_h2:              'Ready for diagnostics?',
+        cta_p:               'No hidden costs, no unnecessary part swaps. Message me on WhatsApp.',
+        cta_btn:             'Message me on WhatsApp',
+
+        // Footer
+        footer_brand_p:      'PC & laptop repair, WordPress websites, and custom systems. Santa Cruz del Quiché, Guatemala.',
+        footer_h_repair:     'Repair',
+        footer_link_diag:    'Diagnostics',
+        footer_link_soft:    'Software',
+        footer_link_data:    'Data & SSD',
+        footer_link_laptops: 'Laptops',
+        footer_h_web:        'Web',
+        footer_link_landing: 'Landing Page',
+        footer_link_info:    'Informational site',
+        footer_link_process: 'Process',
+        footer_h_pages:      'Pages',
+        footer_copy:         '© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales',
+        footer_coverage:     'We serve Santa Cruz del Quiché and nearby municipalities: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango and Patzité.',
+        footer_loc:          'Santa Cruz del Quiché, Guatemala'
+      }
+    };
+
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<!-- DOCTYPE le dice al navegador que este es un documento HTML5 (la versión moderna de HTML) -->
+
+<html lang="es">
+<!-- <html> es la etiqueta raíz que envuelve TODO el contenido de la página -->
+<!-- lang="es" le dice al navegador (y a Google) que el idioma es español -->
+
+<head>
+  <!-- <head> contiene información SOBRE la página, no contenido visible para el usuario -->
+
+  <!-- Define el juego de caracteres: UTF-8 permite tildes, ñ, y cualquier idioma -->
+  <meta charset="UTF-8">
+
+  <!-- Hace que la página se vea bien en celulares:
+       width=device-width → el ancho se adapta al ancho del dispositivo
+       initial-scale=1.0  → sin zoom inicial -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título optimizado SEO: servicio + ubicación (máx. 60 caracteres) -->
+  <title>Técnico de Computadoras en Quiché | Mayo Fix Tech</title>
+  <!-- Canonical: URL canónica para evitar contenido duplicado (actualizar si el dominio cambia) -->
+  <link rel="canonical" href="https://mayofixtech.com/">
+
+  <!-- Descripción para Google: orientada a generar clic (máx. 155 caracteres) -->
+  <meta name="description" content="Reparación de computadoras, páginas WordPress y sistemas a medida en Santa Cruz del Quiché. Cobertura en Chichicastenango y municipios de Quiché. Diagnóstico real.">
+
+  <!-- Geolocalización: región GT-QC = Quiché, Guatemala -->
+  <meta name="geo.region" content="GT-QC">
+  <meta name="geo.placename" content="Santa Cruz del Quiché">
+
+  <!-- Open Graph: mejora la vista previa al compartir en redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_GT">
+  <meta property="og:site_name" content="Mayo Fix Tech">
+  <meta property="og:title" content="Técnico de Computadoras en Quiché | Mayo Fix Tech">
+  <meta property="og:description" content="Reparación de computadoras, páginas WordPress y sistemas a medida en Santa Cruz del Quiché. Cobertura en Chichicastenango y municipios de Quiché.">
+  <meta property="og:url" content="https://mayofixtech.com/">
+
+  <!-- Imagen de la vista previa al compartir el enlace (WhatsApp, Facebook,
+       LinkedIn, Telegram). Tiene que ser una URL absoluta: con ruta relativa
+       WhatsApp no la encuentra. 1200x630 y 88 KB, por debajo del limite que
+       hace que WhatsApp descarte la imagen. -->
+  <meta property="og:image" content="https://mayofixtech.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Mayo Fix Tech — Diagnóstico y reparación de PC">
+
+  <!-- Mismo dato para X/Twitter y para los clientes que leen estas etiquetas -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Técnico de Computadoras en Quiché | Mayo Fix Tech">
+  <meta name="twitter:description" content="Reparación de computadoras, páginas WordPress y sistemas a medida en Santa Cruz del Quiché. Cobertura en Chichicastenango y municipios de Quiché.">
+  <meta name="twitter:image" content="https://mayofixtech.com/og-image.jpg">
+
+  <!-- Preconecta con Google Fonts: primera conexión al CDN de CSS, segunda al CDN de archivos .woff2 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Carga no bloqueante de Google Fonts:
+       media="print" → el navegador descarga la hoja sin bloquear el renderizado
+       onload="this.media='all'" → al terminar la descarga, aplica la fuente a toda la página
+       <noscript> → fallback para navegadores sin JavaScript -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Iconos del sitio. El .ico contiene 16, 32 y 48 px: el de 16 usa una
+       versión de la M con el trazo más grueso, que a ese tamaño se lee
+       mejor. El .svg lo prefieren los navegadores modernos y se mantiene
+       nítido a cualquier tamaño. El .png es para cuando alguien guarda la
+       página en la pantalla de inicio de un iPhone. -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- ── TEMA CLARO / OSCURO ──────────────────────────────────────
+       Se aplica ANTES de que el navegador pinte nada, para que al
+       recargar no se vea un destello del tema anterior. Por eso va
+       aquí arriba y no en js/main.js. -->
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0E2337">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      if (t === 'light') {
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F3F8FC');
+      }
+    }());
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema.org LocalBusiness: datos estructurados para Google Maps y búsqueda local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mayo Fix Tech",
+    "description": "Reparación de computadoras, páginas WordPress y sistemas a medida en Santa Cruz del Quiché, Guatemala.",
+    "telephone": "+502-5992-4104",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santa Cruz del Quiché",
+      "addressRegion": "Quiché",
+      "addressCountry": "GT"
+    },
+    "areaServed": [
+      "Santa Cruz del Quiché",
+      "Chichicastenango",
+      "Chiché",
+      "Chinique",
+      "Zacualpa",
+      "Joyabaj",
+      "San Pedro Jocopilas",
+      "Sacapulas",
+      "San Antonio Ilotenango",
+      "Patzité"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios técnicos",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Reparación de computadoras"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diseño de páginas web WordPress"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sistemas y software a medida"}}
+      ]
+    },
+    "priceRange": "$$",
+    "@id": "https://mayofixtech.com/#business"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CURSOR PERSONALIZADO
+       Dos divs vacíos posicionados con JavaScript para seguir al mouse.
+       - #cursor: el punto central
+       - #cursorRing: el anillo exterior con delay
+  ══════════════════════════════════════════════════════════════ -->
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <svg style="display:none" aria-hidden="true" focusable="false"><symbol id="ico-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol><symbol id="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol></svg>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BARRA DE NAVEGACIÓN
+       position: fixed en el CSS → siempre visible en la parte superior.
+       id="navbar" por si se necesita manipular con JS.
+  ══════════════════════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <!-- Logo: enlace que vuelve a la página de inicio -->
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-dot"></div>  <!-- Punto decorativo dorado -->
+      Mayo Fix Tech
+    </a>
+
+    <!-- Lista de navegación principal (se oculta en móvil) -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active" data-i18n="nav_home">Inicio</a></li>
+      <li><a href="reparacion.html" data-i18n="nav_repair">Reparación</a></li>
+      <li><a href="wordpress.html">WordPress</a></li>
+      <li><a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a></li>
+      <li><a href="nosotros.html" data-i18n="nav_about">Conóceme</a></li>
+    </ul>
+
+    <!-- Lado derecho del nav: selector de idioma + botón CTA + hamburguesa -->
+    <div class="nav-right">
+      <!-- Selector de idioma ES/EN
+           role="switch" y aria-label → accesibilidad para lectores de pantalla
+           onclick="toggleLang()" → llama a la función JS al hacer clic -->
+      <div class="lang-switch is-es" onclick="toggleLang()" role="switch" tabindex="0" aria-checked="false" aria-label="Cambiar idioma">
+        <div class="lang-switch-pill"></div>  <!-- Pastilla dorada deslizante -->
+        <span class="lang-switch-opt">ES</span>
+        <span class="lang-switch-opt">EN</span>
+      </div>
+      <!-- Botón WhatsApp en forma de cápsula (se oculta en móvil) -->
+      <!-- Selector de tema. Mismo patrón que el de idioma: cápsula con
+           pastilla deslizante. Sol = claro, luna = oscuro. El estado
+           real lo fija applyTheme() en js/main.js. -->
+      <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
+        <span class="theme-switch-pill"></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-moon"/></svg></span>
+      </button>
+      <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="nav-cta">
+        <svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+        <span data-i18n="nav_contact">Contactar</span>
+      </a>
+      <button class="hamburger" aria-label="Menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menú móvil desplegable (JS agrega/quita la clase "open") -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" data-i18n="nav_home">Inicio</a>
+    <a href="reparacion.html" data-i18n="nav_repair">Reparación</a>
+    <a href="wordpress.html">WordPress</a>
+    <a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a>
+    <a href="nosotros.html" data-i18n="nav_about">Conóceme</a>
+    <!-- Fila del selector de idioma en el menú móvil:
+         etiqueta "Idioma / Language" a la izquierda + switch a la derecha -->
+    <div class="mobile-lang">
+      <span>Idioma / Language</span>
+      <div class="lang-switch is-es" onclick="toggleLang()" role="switch" tabindex="0" aria-checked="false" aria-label="Cambiar idioma">
+        <div class="lang-switch-pill"></div>
+        <span class="lang-switch-opt">ES</span>
+        <span class="lang-switch-opt">EN</span>
+      </div>
+    </div>
+
+    <!-- Fila del selector de tema en el menú móvil -->
+    <div class="mobile-theme">
+      <span>Tema / Theme</span>
+      <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
+        <span class="theme-switch-pill"></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-moon"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN HERO
+       Primera pantalla que ve el usuario. Contiene:
+       - Fondo con cuadrícula sutil
+       - 3 orbs (círculos de luz difusa animados)
+       - Contenido principal: badge, título, subtítulo y botones
+       - Indicador "scroll" animado en la parte inferior
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="hero" id="main-content">
+    <!-- Cuadrícula de fondo con fade radial -->
+    <div class="hero-grid-bg"></div>
+
+    <!-- Los 3 orbs de color que flotan en el fondo -->
+    <div class="hero-orb orb1"></div>  <!-- Dorado, arriba-derecha -->
+    <div class="hero-orb orb2"></div>  <!-- Azul, abajo-izquierda -->
+    <div class="hero-orb orb3"></div>  <!-- Azul suave, centro -->
+
+    <!-- Contenido principal del hero -->
+    <div class="hero-content">
+      <!-- Badge de ubicación con punto verde pulsante -->
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span data-i18n="hero_badge">Santa Cruz del Quiché, Guatemala</span>
+      </div>
+
+      <!-- Título principal en 2 líneas (cada <span> es una línea) -->
+      <h1>
+        <span data-i18n="hero_h1_1">Tu tecnología,</span>
+        <span class="grad" data-i18n="hero_h1_2">funcionando correctamente.</span>  <!-- "funcionando correctamente." tiene el texto degradado dorado -->
+      </h1>
+
+      <!-- Texto descriptivo debajo del título -->
+      <p class="hero-sub" data-i18n="hero_sub">Servicio técnico profesional en Santa Cruz del Quiché. Reparación de PCs y laptops, páginas web WordPress y sistemas a medida para tu negocio. Diagnóstico real, honestidad ante todo.</p>
+
+      <!-- 3 botones de acción: Reparación, WordPress, WhatsApp -->
+      <div class="hero-actions">
+        <!-- Botón primario dorado con ícono de llave de tuerca (SVG) -->
+        <a href="reparacion.html" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span data-i18n="btn_repair">Ver reparación</span>
+        </a>
+        <!-- Botón primario dorado con ícono de cuadrícula/layout (WordPress) -->
+        <a href="wordpress.html" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <span data-i18n="btn_wp">Ver WordPress</span>
+        </a>
+        <!-- Botón primario dorado con ícono de monitor (Sistemas) -->
+        <a href="sistemas.html" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <span data-i18n="btn_sistemas">Ver Sistemas</span>
+        </a>
+        <!-- Botón verde WhatsApp -->
+        <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="btn btn-wa">
+          <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Indicador visual de scroll con línea y texto "scroll" -->
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      scroll
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BARRA DE ESTADÍSTICAS
+       4 números destacados sobre la experiencia y servicios.
+       Cada .stat tiene clase .reveal para la animación de entrada.
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <!-- Estadística 1: años de experiencia (sin delay) -->
+      <div class="stat reveal">
+        <div class="stat-num">8+</div>
+        <div class="stat-label" data-i18n="stat1">Años de experiencia</div>
+      </div>
+      <!-- Estadística 2: tipos de servicio (0.1s de delay) -->
+      <div class="stat reveal reveal-delay-1">
+        <div class="stat-num">16</div>
+        <div class="stat-label" data-i18n="stat2">Tipos de servicio</div>
+      </div>
+      <!-- Estadística 3: soluciones (0.2s de delay) -->
+      <div class="stat reveal reveal-delay-2">
+        <div class="stat-num">3</div>
+        <div class="stat-label" data-i18n="stat3">Soluciones</div>
+      </div>
+      <!-- Estadística 4: diagnóstico real (0.3s de delay) -->
+      <div class="stat reveal reveal-delay-3">
+        <div class="stat-num">100%</div>
+        <div class="stat-label" data-i18n="stat4">Diagnóstico real</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN DE SERVICIOS (preview)
+       Muestra los 3 servicios del negocio en un grid de 3 columnas
+       (se reduce a 2 en tablets y a 1 en celulares vía @media).
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="services-preview">
+    <div class="max">  <!-- .max = contenedor centrado con ancho máximo -->
+      <!-- Tag de sección con línea decorativa antes del texto -->
+      <p class="section-tag reveal" data-i18n="srv_tag">Lo que ofrezco</p>
+
+      <!-- Título con texto degradado en "experta." -->
+      <h2 class="section-title reveal" data-i18n-html="srv_title">Tres servicios.<br>Una sola <span class="grad">experta.</span></h2>
+
+      <p class="section-sub reveal" data-i18n="srv_sub">Reparación técnica, presencia web en WordPress y sistemas a medida para tu negocio. Tres especialidades, una sola experta.</p>
+
+      <!-- Grid de 3 columnas para los servicios (Reparación / WordPress / Sistemas) -->
+      <div class="service-cols reveal">
+
+        <!-- Servicio 1: Reparación de PCs -->
+        <div class="svc-col">
+          <div class="svc-col-num" aria-hidden="true">01</div>  <!-- Número decorativo de fondo -->
+          <!-- SVG de ícono de llave/herramienta -->
+          <svg class="svc-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          <h3 data-i18n="svc1_title">Reparación de PCs y Laptops</h3>
+          <p data-i18n="svc1_desc">Diagnóstico con herramientas reales: pruebas SMART, RAM, temperatura, medición eléctrica. 7 tipos de servicio desde software hasta soldadura. Sin adivinanzas.</p>
+          <!-- Enlace con flecha → el gap entre texto y flecha crece al hover -->
+          <a href="reparacion.html" class="svc-col-link">
+            <span data-i18n="svc1_link">Ver todos los servicios</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Servicio 2: WordPress -->
+        <div class="svc-col">
+          <div class="svc-col-num" aria-hidden="true">02</div>
+          <!-- SVG de ícono de WordPress/web -->
+          <svg class="svc-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <h3 data-i18n="svc2_title">Páginas Web en WordPress</h3>
+          <p data-i18n="svc2_desc">Sitios profesionales que convierten visitas en clientes. Diseño personalizado, optimización SEO básica y soporte continuo. Tu negocio visible en internet.</p>
+          <a href="wordpress.html" class="svc-col-link">
+            <span data-i18n="svc2_link">Ver proyectos web</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Servicio 3: Sistemas -->
+        <div class="svc-col">
+          <div class="svc-col-num" aria-hidden="true">03</div>
+          <!-- SVG de ícono de servidor/sistema -->
+          <svg class="svc-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+          <h3 data-i18n="svc3_title">Sistemas y Software a Medida</h3>
+          <p data-i18n="svc3_desc">Sistemas de inventario, punto de venta, reportes y automatización en Excel. Soluciones adaptadas exactamente a cómo trabaja tu negocio. Sin funciones innecesarias.</p>
+          <a href="sistemas.html" class="svc-col-link">
+            <span data-i18n="svc3_link">Ver soluciones de sistemas</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN "POR QUÉ MAYO FIX TECH"
+       4 tarjetas con los diferenciadores del negocio.
+       Fondo más claro (--bg2) para contrastar con la sección anterior.
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="why">
+    <div class="max">
+      <p class="section-tag reveal" data-i18n="why_tag">Por qué Mayo Fix Tech</p>
+      <h2 class="section-title reveal" data-i18n="why_title">Lo que me diferencia.</h2>
+
+      <!-- Grid 2x2 para las 4 tarjetas -->
+      <div class="why-grid">
+
+        <!-- Tarjeta 1: Diagnóstico Real -->
+        <div class="why-card reveal">
+          <div class="why-card-num" aria-hidden="true">01</div>  <!-- Número en esquina superior derecha -->
+          <!-- SVG: ícono de lupa con cruz (diagnóstico/búsqueda) -->
+          <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          <h3 data-i18n="why1_title">Diagnóstico Real</h3>
+          <p data-i18n="why1_desc">No cambio piezas "a ver si funciona". Uso software de diagnóstico y medición eléctrica para encontrar el problema real antes de tocar cualquier componente.</p>
+        </div>
+
+        <!-- Tarjeta 2: Honestidad (delay 0.1s) -->
+        <div class="why-card reveal reveal-delay-1">
+          <div class="why-card-num" aria-hidden="true">02</div>
+          <!-- SVG: escudo con check (honestidad/confianza) -->
+          <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <h3 data-i18n="why2_title">Honestidad Ante Todo</h3>
+          <p data-i18n="why2_desc">Si algo está fuera de mi alcance, te lo digo antes que arriesgar tu equipo. Mis limitaciones están publicadas — no escondidas.</p>
+        </div>
+
+        <!-- Tarjeta 3: Formación Continua (delay 0.2s) -->
+        <div class="why-card reveal reveal-delay-2">
+          <div class="why-card-num" aria-hidden="true">03</div>
+          <!-- SVG: dos libros abiertos (formación/estudio) -->
+          <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <h3 data-i18n="why3_title">Formación Continua</h3>
+          <p data-i18n="why3_desc">Estudio Ingeniería en Sistemas en la UMG. Me capacito constantemente porque la tecnología no se detiene y mi servicio tampoco.</p>
+        </div>
+
+        <!-- Tarjeta 4: Tu equipo en buenas manos (delay 0.3s) -->
+        <div class="why-card reveal reveal-delay-3">
+          <div class="why-card-num" aria-hidden="true">04</div>
+          <!-- SVG: corazón (cuidado/dedicación) -->
+          <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <h3 data-i18n="why4_title">Tu Equipo en Buenas Manos</h3>
+          <p data-i18n="why4_desc">Cada reparación la trato como si fuera mía. Documento cada intervención y te explico exactamente qué se hizo y por qué.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BANDA DE LLAMADA A LA ACCIÓN (CTA BAND)
+       Sección llamativa con fondo dorado para invitar a contactar.
+       .reveal → aparece con animación al hacer scroll.
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="cta-band">
+    <div class="cta-band-inner reveal">
+      <h2 data-i18n="cta_h2">¿Tu equipo está fallando? Háblame.</h2>
+      <p data-i18n="cta_p">Diagnóstico sin compromiso. Respuesta rápida por WhatsApp desde Santa Cruz del Quiché.</p>
+      <!-- Botón oscuro sobre fondo dorado — buen contraste visual -->
+      <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="btn btn-dark">
+        <svg width="17" height="17" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+        <span data-i18n="cta_btn">Escribir por WhatsApp — +502 5992-4104</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PIE DE PÁGINA (FOOTER)
+       Dividido en 2 partes:
+       - .footer-top: grid con la marca + 3 columnas de enlaces
+       - .footer-bottom: copyright + ubicación
+  ══════════════════════════════════════════════════════════════ -->
+  <footer>
+    <!-- Parte superior: información y enlaces -->
+    <div class="footer-top">
+      <!-- Columna de marca (más ancha: 2fr en el grid) -->
+      <div class="footer-brand">
+        <!-- El punto al final del nombre tiene color dorado via style inline -->
+        <div class="brand-name">Mayo Fix Tech<span>.</span></div>
+        <p data-i18n="footer_brand_p">Reparación de PCs y laptops, páginas web en WordPress y sistemas a medida. Santa Cruz del Quiché, Guatemala.</p>
+        <p class="footer-coverage" data-i18n="footer_coverage">Atendemos en Santa Cruz del Quiché y municipios cercanos: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango y Patzité.</p>
+      </div>
+
+      <!-- Columna de servicios -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_services">Servicios</h4>
+        <ul>
+          <li><a href="reparacion.html" data-i18n="footer_link_diag">Diagnóstico</a></li>
+          <li><a href="reparacion.html" data-i18n="footer_link_maint">Mantenimiento</a></li>
+          <li><a href="reparacion.html" data-i18n="footer_link_data">Datos y SSD</a></li>
+          <li><a href="reparacion.html" data-i18n="footer_link_soft">Software</a></li>
+          <li><a href="wordpress.html">WordPress</a></li>
+          <li><a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna de páginas del sitio -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_pages">Páginas</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+          <li><a href="reparacion.html" data-i18n="nav_repair">Reparación</a></li>
+          <li><a href="wordpress.html">WordPress</a></li>
+          <li><a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a></li>
+          <li><a href="nosotros.html" data-i18n="nav_about">Conóceme</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna de contacto -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_contact">Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/50259924104" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="nosotros.html#contacto" data-i18n="footer_form">Formulario</a></li>  <!-- #contacto = ancla a esa sección -->
+          <li><a href="nosotros.html" data-i18n="footer_link_about">Acerca de</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Parte inferior: copyright y ubicación -->
+    <div class="footer-bottom">
+      <span data-i18n="footer_copy">© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales</span>
+      <span data-i18n="footer_loc">Santa Cruz del Quiché, Guatemala</span>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       JAVASCRIPT
+       Todo el JS está al final del <body> (antes de </body>) para que
+       el HTML ya esté cargado cuando el JS intente manipularlo.
+  ══════════════════════════════════════════════════════════════ -->
+  <script>
+    const translations = {
+      es: {
+        page_title:        'Técnico de Computadoras en Quiché | Mayo Fix Tech',
+        hero_badge:        'Santa Cruz del Quiché, Guatemala',
+        hero_h1_1:         'Tu tecnología,',
+        hero_h1_2:         'funcionando correctamente.',
+        hero_sub:          'Servicio técnico profesional en Santa Cruz del Quiché. Reparación de PCs y laptops, páginas web WordPress y sistemas a medida para tu negocio. Diagnóstico real, honestidad ante todo.',
+        btn_repair:        'Ver reparación',
+        btn_wp:            'Ver WordPress',
+        btn_sistemas:      'Ver Sistemas',
+        stat1:             'Años de experiencia',
+        stat2:             'Tipos de servicio',
+        stat3:             'Soluciones',
+        stat4:             'Diagnóstico real',
+        srv_tag:           'Lo que ofrezco',
+        srv_title:         'Tres servicios.<br>Una sola <span class="grad">experta.</span>',
+        srv_sub:           'Reparación técnica, presencia web en WordPress y sistemas a medida para tu negocio. Tres especialidades, una sola experta.',
+        svc1_title:        'Reparación de PCs y Laptops',
+        svc1_desc:         'Diagnóstico con herramientas reales: pruebas SMART, RAM, temperatura, medición eléctrica. 7 tipos de servicio desde software hasta soldadura. Sin adivinanzas.',
+        svc1_link:         'Ver todos los servicios',
+        svc2_title:        'Páginas Web en WordPress',
+        svc2_desc:         'Sitios profesionales que convierten visitas en clientes. Diseño personalizado, optimización SEO básica y soporte continuo. Tu negocio visible en internet.',
+        svc2_link:         'Ver proyectos web',
+        svc3_title:        'Sistemas y Software a Medida',
+        svc3_desc:         'Sistemas de inventario, punto de venta, reportes y automatización en Excel. Soluciones adaptadas exactamente a cómo trabaja tu negocio. Sin funciones innecesarias.',
+        svc3_link:         'Ver soluciones de sistemas',
+        why_tag:           'Por qué Mayo Fix Tech',
+        why_title:         'Lo que me diferencia.',
+        why1_title:        'Diagnóstico Real',
+        why1_desc:         'No cambio piezas "a ver si funciona". Uso software de diagnóstico y medición eléctrica para encontrar el problema real antes de tocar cualquier componente.',
+        why2_title:        'Honestidad Ante Todo',
+        why2_desc:         'Si algo está fuera de mi alcance, te lo digo antes que arriesgar tu equipo. Mis limitaciones están publicadas — no escondidas.',
+        why3_title:        'Formación Continua',
+        why3_desc:         'Estudio Ingeniería en Sistemas en la UMG. Me capacito constantemente porque la tecnología no se detiene y mi servicio tampoco.',
+        why4_title:        'Tu Equipo en Buenas Manos',
+        why4_desc:         'Cada reparación la trato como si fuera mía. Documento cada intervención y te explico exactamente qué se hizo y por qué.',
+        cta_h2:            '¿Tu equipo está fallando? Háblame.',
+        cta_p:             'Diagnóstico sin compromiso. Respuesta rápida por WhatsApp desde Santa Cruz del Quiché.',
+        cta_btn:           'Escribir por WhatsApp — +502 5992-4104',
+        footer_brand_p:    'Reparación de PCs y laptops, páginas web en WordPress y sistemas a medida. Santa Cruz del Quiché, Guatemala.',
+        footer_h_services: 'Servicios',
+        footer_link_diag:  'Diagnóstico',
+        footer_link_maint: 'Mantenimiento',
+        footer_link_data:  'Datos y SSD',
+        footer_link_soft:  'Software',
+        footer_h_pages:    'Páginas',
+        footer_h_contact:  'Contacto',
+        footer_form:       'Formulario',
+        footer_link_about: 'Acerca de',
+        footer_loc:        'Santa Cruz del Quiché, Guatemala',
+        nav_home:          'Inicio',
+        nav_repair:        'Reparación',
+        nav_sistemas:      'Sistemas',
+        nav_about:         'Conóceme',
+        nav_contact:       'Contactar',
+        footer_copy:       '© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales',
+        footer_coverage:   'Atendemos en Santa Cruz del Quiché y municipios cercanos: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango y Patzité.'
+      },
+      en: {
+        page_title:        'Mayo Fix Tech — PC Repair & WordPress Design',
+        hero_badge:        'Santa Cruz del Quiché, Guatemala',
+        hero_h1_1:         'Your technology,',
+        hero_h1_2:         'working correctly.',
+        hero_sub:          'Professional PC and laptop repair. WordPress websites that grow businesses. Custom systems and software for your business. Real diagnostics, honesty above all.',
+        btn_repair:        'See repair services',
+        btn_wp:            'See WordPress',
+        btn_sistemas:      'See Systems',
+        stat1:             'Years of experience',
+        stat2:             'Service types',
+        stat3:             'Solutions',
+        stat4:             'Real diagnostics',
+        srv_tag:           'What I offer',
+        srv_title:         'Three services.<br>One <span class="grad">expert.</span>',
+        srv_sub:           'Technical repair, WordPress web presence, and custom systems for your business. Three specialties, one expert.',
+        svc1_title:        'PC & Laptop Repair',
+        svc1_desc:         'Real-tool diagnostics: SMART tests, RAM, temperature, electrical measurement. 7 service types from software to soldering. No guesswork.',
+        svc1_link:         'See all services',
+        svc2_title:        'WordPress Websites',
+        svc2_desc:         'Professional sites that convert visitors into customers. Custom design, basic SEO optimization, and ongoing support. Your business visible online.',
+        svc2_link:         'See web projects',
+        svc3_title:        'Custom Systems & Software',
+        svc3_desc:         'Inventory systems, point of sale, reports, and Excel automation. Solutions adapted exactly to how your business works. No unnecessary features.',
+        svc3_link:         'See systems solutions',
+        why_tag:           'Why Mayo Fix Tech',
+        why_title:         'What sets me apart.',
+        why1_title:        'Real Diagnostics',
+        why1_desc:         "I don't swap parts hoping for the best. I use diagnostic software and electrical measurement to find the real problem before touching any component.",
+        why2_title:        'Honesty Above All',
+        why2_desc:         'If something is beyond my expertise, I tell you before risking your equipment. My limitations are published — not hidden.',
+        why3_title:        'Continuous Learning',
+        why3_desc:         'I study Systems Engineering at UMG. I continuously train myself because technology never stops and neither does my service.',
+        why4_title:        'Your Equipment in Good Hands',
+        why4_desc:         'I treat every repair as if it were my own. I document every intervention and explain exactly what was done and why.',
+        cta_h2:            "Is your equipment failing? Message me.",
+        cta_p:             'Diagnostics with no commitment. Fast response on WhatsApp from Santa Cruz del Quiché.',
+        cta_btn:           'Message on WhatsApp — +502 5992-4104',
+        footer_brand_p:    'PC & laptop repair, WordPress websites, and custom software systems. Santa Cruz del Quiché, Guatemala.',
+        footer_h_services: 'Services',
+        footer_link_diag:  'Diagnosis',
+        footer_link_maint: 'Maintenance',
+        footer_link_data:  'Data & SSD',
+        footer_link_soft:  'Software',
+        footer_h_pages:    'Pages',
+        footer_h_contact:  'Contact',
+        footer_form:       'Contact form',
+        footer_link_about: 'About',
+        footer_loc:        'Santa Cruz del Quiché, Guatemala',
+        nav_home:          'Home',
+        nav_repair:        'Repair',
+        nav_sistemas:      'Systems',
+        nav_about:         'Meet Me',
+        nav_contact:       'Contact',
+        footer_copy:       '© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales',
+        footer_coverage:   'We serve Santa Cruz del Quiché and nearby municipalities: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango and Patzité.'
+      }
+    };
+
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Codificación de caracteres y configuración del viewport para dispositivos móviles -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Título optimizado SEO: servicio + ubicación (máx. 60 caracteres) -->
+  <title>Sistemas a Medida en Quiché | Mayo Fix Tech</title>
+  <link rel="canonical" href="https://mayofixtech.com/sistemas.html">
+
+  <!-- Descripción para Google: orientada a generar clic (máx. 155 caracteres) -->
+  <meta name="description" content="Software de inventario, punto de venta y sistemas a medida para negocios en Santa Cruz del Quiché. Reemplaza Excel con soluciones que realmente funcionan.">
+
+  <!-- Geolocalización: región GT-QC = Quiché, Guatemala -->
+  <meta name="geo.region" content="GT-QC">
+  <meta name="geo.placename" content="Santa Cruz del Quiché">
+
+  <!-- Open Graph: mejora la vista previa al compartir en redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_GT">
+  <meta property="og:site_name" content="Mayo Fix Tech">
+  <meta property="og:title" content="Sistemas a Medida en Quiché | Mayo Fix Tech">
+  <meta property="og:description" content="Software de inventario, punto de venta y sistemas a medida para negocios en Santa Cruz del Quiché. Soluciones que realmente funcionan.">
+  <meta property="og:url" content="https://mayofixtech.com/sistemas.html">
+
+  <!-- Imagen de la vista previa al compartir el enlace (WhatsApp, Facebook,
+       LinkedIn, Telegram). Tiene que ser una URL absoluta: con ruta relativa
+       WhatsApp no la encuentra. 1200x630 y 88 KB, por debajo del limite que
+       hace que WhatsApp descarte la imagen. -->
+  <meta property="og:image" content="https://mayofixtech.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Mayo Fix Tech — Diagnóstico y reparación de PC">
+
+  <!-- Mismo dato para X/Twitter y para los clientes que leen estas etiquetas -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sistemas a Medida en Quiché | Mayo Fix Tech">
+  <meta name="twitter:description" content="Software de inventario, punto de venta y sistemas a medida para negocios en Santa Cruz del Quiché. Soluciones que realmente funcionan.">
+  <meta name="twitter:image" content="https://mayofixtech.com/og-image.jpg">
+  <!-- Preconecta con ambos CDN de Google Fonts para reducir latencia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Carga no bloqueante de Google Fonts -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Iconos del sitio. El .ico contiene 16, 32 y 48 px: el de 16 usa una
+       versión de la M con el trazo más grueso, que a ese tamaño se lee
+       mejor. El .svg lo prefieren los navegadores modernos y se mantiene
+       nítido a cualquier tamaño. El .png es para cuando alguien guarda la
+       página en la pantalla de inicio de un iPhone. -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- ── TEMA CLARO / OSCURO ──────────────────────────────────────
+       Se aplica ANTES de que el navegador pinte nada, para que al
+       recargar no se vea un destello del tema anterior. Por eso va
+       aquí arriba y no en js/main.js. -->
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0E2337">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      if (t === 'light') {
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F3F8FC');
+      }
+    }());
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema.org Service: datos estructurados para este servicio específico -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Sistemas y Software a Medida en Santa Cruz del Quiché",
+    "description": "Software de inventario, punto de venta y sistemas a medida para negocios en Santa Cruz del Quiché. Reemplaza Excel con soluciones que funcionan.",
+    "serviceType": "Software Development",
+    "areaServed": {
+      "@type": "City",
+      "name": "Santa Cruz del Quiché",
+      "containedInPlace": {"@type": "AdministrativeArea", "name": "Quiché, Guatemala"}
+    },
+    "provider": {"@id": "https://mayofixtech.com/#business"}
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ── CURSORES PERSONALIZADOS ──
+       Dos capas: un punto sólido (.cursor) que sigue el ratón exacto
+       y un anillo exterior (.cursor-ring) que lo sigue con un pequeño retraso
+       para dar efecto de suavizado. Ambos se ocultan en pantallas táctiles. -->
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <svg style="display:none" aria-hidden="true" focusable="false"><symbol id="ico-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol><symbol id="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol></svg>
+
+  <!-- ── NAV ── -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      Mayo Fix Tech
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+      <li><a href="reparacion.html" data-i18n="nav_repair">Reparación</a></li>
+      <li><a href="wordpress.html">WordPress</a></li>
+      <li><a href="sistemas.html" class="active" data-i18n="nav_sistemas">Sistemas</a></li>
+      <li><a href="nosotros.html" data-i18n="nav_about">Conóceme</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-switch is-es" onclick="toggleLang()" role="switch" tabindex="0" aria-checked="false" aria-label="Cambiar idioma">
+        <div class="lang-switch-pill"></div>
+        <span class="lang-switch-opt">ES</span>
+        <span class="lang-switch-opt">EN</span>
+      </div>
+      <!-- Selector de tema. Mismo patrón que el de idioma: cápsula con
+           pastilla deslizante. Sol = claro, luna = oscuro. El estado
+           real lo fija applyTheme() en js/main.js. -->
+      <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
+        <span class="theme-switch-pill"></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-moon"/></svg></span>
+      </button>
+      <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="nav-cta">
+        <svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+        <span data-i18n="nav_contact">Contactar</span>
+      </a>
+      <button class="hamburger" aria-label="Menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MENÚ MÓVIL ──
+       Panel desplegable que aparece en pantallas pequeñas al pulsar el hamburger.
+       Se activa añadiendo la clase "open" desde JavaScript.
+       Incluye los mismos enlaces del nav y el interruptor de idioma. -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" data-i18n="nav_home">Inicio</a>
+    <a href="reparacion.html" data-i18n="nav_repair">Reparación</a>
+    <a href="wordpress.html">WordPress</a>
+    <a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a>
+    <a href="nosotros.html" data-i18n="nav_about">Conóceme</a>
+    <div class="mobile-lang">
+      <span>Idioma / Language</span>
+      <div class="lang-switch is-es" onclick="toggleLang()" role="switch" tabindex="0" aria-checked="false" aria-label="Cambiar idioma">
+        <div class="lang-switch-pill"></div>
+        <span class="lang-switch-opt">ES</span>
+        <span class="lang-switch-opt">EN</span>
+      </div>
+    </div>
+
+    <!-- Fila del selector de tema en el menú móvil -->
+    <div class="mobile-theme">
+      <span>Tema / Theme</span>
+      <button class="theme-switch is-dark" type="button" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Cambiar tema">
+        <span class="theme-switch-pill"></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-sun"/></svg></span>
+        <span class="theme-switch-opt"><svg aria-hidden="true" focusable="false"><use href="#ico-moon"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PAGE HEADER
+  ══════════════════════════════════════════════════════════════ -->
+  <header class="page-header" id="main-content">
+    <div class="page-header-orb"></div>
+    <div class="page-header-orb2"></div>
+    <div class="page-header-inner">
+      <p class="page-tag" data-i18n="header_tag">Desarrollo de sistemas en Santa Cruz del Quiché</p>
+      <h1>
+        <span data-i18n="header_h1_line1">Sistemas</span><br>
+        <span class="grad" data-i18n="header_h1_line2">a tu medida.</span>
+      </h1>
+      <p data-i18n="header_sub">¿Tu negocio todavía depende de cuadernos, hojas de Excel desordenadas o procesos manuales que te quitan tiempo? Desarrollamos sistemas adaptados exactamente a la forma en que tú trabajas.</p>
+      <div class="header-badges">
+        <span class="header-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="badge_custom">Sin funciones innecesarias</span>
+        </span>
+        <span class="header-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="badge_nogeneric">Sin software genérico</span>
+        </span>
+        <span class="header-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="badge_support">Con soporte incluido</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SERVICES GRID — 5 cards (3 + 2)
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="services-section">
+    <div class="max">
+      <p class="section-tag reveal" data-i18n="srv_tag">Lo que desarrollamos</p>
+      <h2 class="section-title reveal" data-i18n-html="srv_title">¿Qué podemos hacer<br>por <span class="grad">tu negocio?</span></h2>
+      <p class="section-sub reveal" data-i18n="srv_sub">Cada sistema se construye desde cero para adaptarse a tus procesos. Sin plantillas genéricas, sin pagar por funciones que no vas a usar.</p>
+
+      <!-- Top row: 3 cards -->
+      <div class="services-grid">
+
+        <!-- 01 Inventario -->
+        <div class="srv-card reveal">
+          <div class="srv-card-num" aria-hidden="true">01</div>
+          <svg class="srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+            <path d="M6 8h4M6 11h3"/>
+            <rect x="14" y="7" width="4" height="5" rx="1"/>
+          </svg>
+          <h3 data-i18n="s1_title">Control de Inventario</h3>
+          <p data-i18n="s1_desc">Sabe en todo momento qué productos tienes, cuántos quedan y cuándo reabastecer. Alertas de stock bajo, historial de movimientos y reportes claros.</p>
+        </div>
+
+        <!-- 02 Punto de Venta -->
+        <div class="srv-card reveal reveal-delay-1">
+          <div class="srv-card-num" aria-hidden="true">02</div>
+          <svg class="srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <rect x="2" y="3" width="20" height="18" rx="2"/>
+            <path d="M16 3v4M8 3v4M2 11h20"/>
+            <path d="M8 15h2M8 18h2M14 15h2M14 18h2"/>
+          </svg>
+          <h3 data-i18n="s2_title">Punto de Venta y Facturación</h3>
+          <p data-i18n="s2_desc">Registra ventas rápido, genera facturas y lleva control diario de tus ingresos. Sabe cuánto vendiste hoy, esta semana o este mes con un solo clic.</p>
+        </div>
+
+        <!-- 03 Gastos e Ingresos -->
+        <div class="srv-card reveal reveal-delay-2">
+          <div class="srv-card-num" aria-hidden="true">03</div>
+          <svg class="srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          <h3 data-i18n="s3_title">Control de Gastos e Ingresos</h3>
+          <p data-i18n="s3_desc">Un panel simple donde registras lo que entra y lo que sale. Visualiza tu flujo de dinero sin necesidad de ser contador.</p>
+        </div>
+
+      </div>
+
+      <!-- Bottom row: 2 cards -->
+      <div class="services-grid-bottom">
+
+        <!-- 04 Reportes -->
+        <div class="srv-card reveal">
+          <div class="srv-card-num" aria-hidden="true">04</div>
+          <svg class="srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+            <path d="M2 20h20"/>
+          </svg>
+          <h3 data-i18n="s4_title">Reportes y Estadísticas</h3>
+          <p data-i18n="s4_desc">Gráficas y tablas que te muestran cómo va tu negocio: productos más vendidos, meses fuertes. Información clara para tomar mejores decisiones.</p>
+        </div>
+
+        <!-- 05 Agenda -->
+        <div class="srv-card reveal reveal-delay-1">
+          <div class="srv-card-num" aria-hidden="true">05</div>
+          <svg class="srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+          </svg>
+          <h3 data-i18n="s5_title">Agenda y Control de Citas</h3>
+          <p data-i18n="s5_desc">Ideal para clínicas, salones, talleres y cualquier negocio que trabaje con citas. Calendario visual, recordatorios y registro de asistencia.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       ENTERPRISE — Odoo / Sistemas Empresariales
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="enterprise-section">
+    <div class="enterprise-inner">
+
+      <div class="reveal">
+        <div class="enterprise-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span data-i18n="ent_badge">Nivel empresarial</span>
+        </div>
+        <h2 class="enterprise-title" data-i18n-html="ent_title">Implementación de<br><span class="grad">Sistemas Empresariales</span></h2>
+        <p class="enterprise-desc" data-i18n="ent_desc">Si tu negocio necesita algo más robusto, instalamos y configuramos sistemas empresariales de código abierto como Odoo, adaptándolos completamente a tu operación.</p>
+        <ul class="enterprise-feats">
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="ent_f1">Módulos de ventas, compras, inventario y contabilidad</span>
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="ent_f2">Configuración personalizada según tu giro de negocio</span>
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="ent_f3">Capacitación para que tú y tu equipo lo usen sin problemas</span>
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="ent_f4">Soporte técnico posterior a la implementación</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="enterprise-visual reveal reveal-delay-2">
+        <div class="odoo-logo" aria-hidden="true">Odoo</div>
+        <p data-i18n="ent_modules">Módulos disponibles</p>
+        <div class="module-grid">
+          <div class="module-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <span data-i18n="mod_ventas">Ventas</span>
+          </div>
+          <div class="module-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span data-i18n="mod_compras">Compras</span>
+          </div>
+          <div class="module-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <span data-i18n="mod_inventario">Inventario</span>
+          </div>
+          <div class="module-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <span data-i18n="mod_contabilidad">Contabilidad</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       EXCEL AUTOMATION
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="excel-section">
+    <div class="excel-inner max">
+
+      <div class="reveal">
+        <p class="section-tag" data-i18n="xls_tag">Automatización</p>
+        <h2 class="section-title" data-i18n-html="xls_title">¿Ya usas Excel pero<br>quieres <span class="grad">más provecho?</span></h2>
+        <p class="section-sub excel-section-sub" data-i18n="xls_sub">No siempre hace falta un sistema nuevo. A veces basta con potenciar lo que ya tienes.</p>
+        <ul class="excel-feats">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <span data-i18n="xls_f1">Plantillas profesionales con fórmulas automáticas</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <span data-i18n="xls_f2">Dashboards visuales para ver tus datos de un vistazo</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            <span data-i18n="xls_f3">Limpieza y organización de datos desordenados</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-i18n="xls_f4">Conversión de procesos manuales a hojas inteligentes</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="excel-callout reveal reveal-delay-2">
+        <div class="excel-callout-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <h4 data-i18n="xls_card_title">Excel potenciado para tu negocio</h4>
+        <p data-i18n="xls_card_desc">Si tu operación no requiere un sistema completo, podemos transformar tus hojas de cálculo en herramientas profesionales que te ahorren horas cada semana. Automatización real, sin complicaciones.</p>
+        <br>
+        <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="btn btn-ghost" >
+          <svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+          <span data-i18n="xls_cta_btn">Consultar por WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PROCESS — 5 steps vertical timeline
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="process-section">
+    <div class="max">
+      <p class="section-tag reveal" data-i18n="proc_tag">El proceso</p>
+      <h2 class="section-title reveal" data-i18n-html="proc_title">¿Cómo <span class="grad">funciona?</span></h2>
+      <p class="section-sub reveal" data-i18n="proc_sub">Sin formularios eternos ni procesos opacos. Cinco pasos claros desde la idea hasta el sistema funcionando en tu negocio.</p>
+
+      <div class="process-timeline">
+
+        <div class="proc-step reveal">
+          <div class="proc-circle"><div class="proc-num">01</div></div>
+          <div class="proc-content">
+            <div class="proc-label" data-i18n="proc1_label">Conversación inicial</div>
+            <h4 data-i18n="proc1_title">Entendemos tu negocio</h4>
+            <p data-i18n="proc1_desc">Nos reunimos para conocer cómo funciona tu negocio y qué problema quieres resolver. Sin compromiso, sin costo.</p>
+            <span class="proc-free-badge" data-i18n="proc1_badge">Sin costo</span>
+          </div>
+        </div>
+
+        <div class="proc-step reveal reveal-delay-1">
+          <div class="proc-circle"><div class="proc-num">02</div></div>
+          <div class="proc-content">
+            <div class="proc-label" data-i18n="proc2_label">Propuesta</div>
+            <h4 data-i18n="proc2_title">Solución clara con precio</h4>
+            <p data-i18n="proc2_desc">Te presentamos una propuesta detallada con precio, tiempos de entrega y exactamente lo que incluye. Sin letras pequeñas.</p>
+          </div>
+        </div>
+
+        <div class="proc-step reveal reveal-delay-2">
+          <div class="proc-circle"><div class="proc-num">03</div></div>
+          <div class="proc-content">
+            <div class="proc-label" data-i18n="proc3_label">Desarrollo</div>
+            <h4 data-i18n="proc3_title">Construimos tu sistema</h4>
+            <p data-i18n="proc3_desc">Desarrollamos con avances visibles para que estés al tanto en cada etapa. Tu retroalimentación es parte del proceso.</p>
+          </div>
+        </div>
+
+        <div class="proc-step reveal reveal-delay-3">
+          <div class="proc-circle"><div class="proc-num">04</div></div>
+          <div class="proc-content">
+            <div class="proc-label" data-i18n="proc4_label">Entrega y capacitación</div>
+            <h4 data-i18n="proc4_title">Sistema funcionando + capacitación</h4>
+            <p data-i18n="proc4_desc">Te entregamos el sistema funcionando y te enseñamos a usarlo. No te dejamos solo hasta que lo domines.</p>
+          </div>
+        </div>
+
+        <div class="proc-step reveal reveal-delay-4">
+          <div class="proc-circle"><div class="proc-num">05</div></div>
+          <div class="proc-content">
+            <div class="proc-label" data-i18n="proc5_label">Soporte</div>
+            <h4 data-i18n="proc5_title">Seguimos disponibles</h4>
+            <p data-i18n="proc5_desc">Después de la entrega seguimos disponibles para ajustes, dudas y mantenimiento. El sistema crece contigo.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       FOR WHOM — Industry pills
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="forwho-section">
+    <div class="max">
+      <p class="section-tag reveal" data-i18n="fw_tag">¿Para quién es?</p>
+      <h2 class="section-title reveal" data-i18n-html="fw_title">Cualquier negocio que quiera<br><span class="grad">dejar de improvisar.</span></h2>
+
+      <div class="industry-grid reveal">
+        <div class="industry-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span data-i18n="fw_tiendas">Tiendas y comercios</span>
+        </div>
+        <div class="industry-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <span data-i18n="fw_farmacias">Farmacias</span>
+        </div>
+        <div class="industry-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span data-i18n="fw_talleres">Talleres y servicios técnicos</span>
+        </div>
+        <div class="industry-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span data-i18n="fw_clinicas">Clínicas y consultorios</span>
+        </div>
+        <div class="industry-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <span data-i18n="fw_restaurantes">Restaurantes y cafeterías</span>
+        </div>
+        <div class="industry-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span data-i18n="fw_distribuidoras">Distribuidoras pequeñas</span>
+        </div>
+      </div>
+
+      <div class="forwho-note reveal">
+        <p data-i18n-html="fw_note"><strong>¿Tu negocio no está en la lista?</strong> No importa. Si tienes procesos manuales que te quitan tiempo o datos que no entiendes bien, hay una solución para ti. Conversamos sin compromiso.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CTA BAND
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="cta-band">
+    <div class="cta-band-inner reveal">
+      <h2 data-i18n="cta_title">¿Listo para organizar tu negocio?</h2>
+      <p data-i18n="cta_sub">Conversemos sin compromiso. Te explicamos qué solución tiene más sentido para ti y tu operación.</p>
+      <a href="https://wa.me/50259924104" target="_blank" rel="noopener" class="btn btn-dark">
+        <svg width="17" height="17" fill="currentColor" aria-hidden="true"><use href="#ico-wa"/></svg>
+        <span data-i18n="cta_btn">Escríbeme por WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-name">Mayo Fix Tech<span>.</span></div>
+        <p data-i18n="footer_brand_p">Reparación de PCs y laptops, páginas web en WordPress y sistemas a medida. Santa Cruz del Quiché, Guatemala.</p>
+        <p class="footer-coverage" data-i18n="footer_coverage">Atendemos en Santa Cruz del Quiché y municipios cercanos: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango y Patzité.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_services">Servicios</h4>
+        <ul>
+          <li><a href="reparacion.html" data-i18n="nav_repair">Reparación</a></li>
+          <li><a href="wordpress.html">WordPress</a></li>
+          <li><a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_pages">Páginas</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+          <li><a href="reparacion.html" data-i18n="nav_repair">Reparación</a></li>
+          <li><a href="wordpress.html">WordPress</a></li>
+          <li><a href="sistemas.html" data-i18n="nav_sistemas">Sistemas</a></li>
+          <li><a href="nosotros.html" data-i18n="nav_about">Conóceme</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_h_contact">Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/50259924104" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="nosotros.html#contacto" data-i18n="footer_form">Formulario</a></li>
+          <li><a href="nosotros.html" data-i18n="nav_about">Conóceme</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer_copy">© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales</span>
+      <span data-i18n="footer_loc">Santa Cruz del Quiché, Guatemala</span>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      es: {
+        page_title:    "Sistemas a Medida en Quiché | Mayo Fix Tech",
+        nav_home:      "Inicio",
+        nav_repair:    "Reparación",
+        nav_sistemas:  "Sistemas",
+        nav_about:     "Conóceme",
+        nav_contact:   "Contactar",
+        lang_label:    "Idioma",
+        header_tag:    "Desarrollo de sistemas en Santa Cruz del Quiché",
+        header_h1_line1: "Sistemas",
+        header_h1_line2: "a tu medida.",
+        header_sub:    "¿Tu negocio todavía depende de cuadernos, hojas de Excel desordenadas o procesos manuales que te quitan tiempo? Desarrollamos sistemas adaptados exactamente a la forma en que tú trabajas.",
+        badge_custom:  "Sin funciones innecesarias",
+        badge_nogeneric: "Sin software genérico",
+        badge_support: "Con soporte incluido",
+        srv_tag:       "Lo que desarrollamos",
+        srv_title:     "¿Qué podemos hacer<br>por <span class=\"grad\">tu negocio?</span>",
+        srv_sub:       "Cada sistema se construye desde cero para adaptarse a tus procesos. Sin plantillas genéricas, sin pagar por funciones que no vas a usar.",
+        s1_title:      "Control de Inventario",
+        s1_desc:       "Sabe en todo momento qué productos tienes, cuántos quedan y cuándo reabastecer. Alertas de stock bajo, historial de movimientos y reportes claros.",
+        s2_title:      "Punto de Venta y Facturación",
+        s2_desc:       "Registra ventas rápido, genera facturas y lleva control diario de tus ingresos. Sabe cuánto vendiste hoy, esta semana o este mes con un solo clic.",
+        s3_title:      "Control de Gastos e Ingresos",
+        s3_desc:       "Un panel simple donde registras lo que entra y lo que sale. Visualiza tu flujo de dinero sin necesidad de ser contador.",
+        s4_title:      "Reportes y Estadísticas",
+        s4_desc:       "Gráficas y tablas que te muestran cómo va tu negocio: productos más vendidos, meses fuertes. Información clara para tomar mejores decisiones.",
+        s5_title:      "Agenda y Control de Citas",
+        s5_desc:       "Ideal para clínicas, salones, talleres y cualquier negocio que trabaje con citas. Calendario visual, recordatorios y registro de asistencia.",
+        ent_badge:     "Nivel empresarial",
+        ent_title:     "Implementación de<br><span class=\"grad\">Sistemas Empresariales</span>",
+        ent_desc:      "Si tu negocio necesita algo más robusto, instalamos y configuramos sistemas empresariales de código abierto como Odoo, adaptándolos completamente a tu operación.",
+        ent_f1:        "Módulos de ventas, compras, inventario y contabilidad",
+        ent_f2:        "Configuración personalizada según tu giro de negocio",
+        ent_f3:        "Capacitación para que tú y tu equipo lo usen sin problemas",
+        ent_f4:        "Soporte técnico posterior a la implementación",
+        ent_modules:   "Módulos disponibles",
+        mod_ventas:    "Ventas",
+        mod_compras:   "Compras",
+        mod_inventario:"Inventario",
+        mod_contabilidad:"Contabilidad",
+        xls_tag:       "Automatización",
+        xls_title:     "¿Ya usas Excel pero<br>quieres <span class=\"grad\">más provecho?</span>",
+        xls_sub:       "No siempre hace falta un sistema nuevo. A veces basta con potenciar lo que ya tienes.",
+        xls_f1:        "Plantillas profesionales con fórmulas automáticas",
+        xls_f2:        "Dashboards visuales para ver tus datos de un vistazo",
+        xls_f3:        "Limpieza y organización de datos desordenados",
+        xls_f4:        "Conversión de procesos manuales a hojas inteligentes",
+        xls_card_title:"Excel potenciado para tu negocio",
+        xls_card_desc: "Si tu operación no requiere un sistema completo, podemos transformar tus hojas de cálculo en herramientas profesionales que te ahorren horas cada semana. Automatización real, sin complicaciones.",
+        xls_cta_btn:   "Consultar por WhatsApp",
+        proc_tag:      "El proceso",
+        proc_title:    "¿Cómo <span class=\"grad\">funciona?</span>",
+        proc_sub:      "Sin formularios eternos ni procesos opacos. Cinco pasos claros desde la idea hasta el sistema funcionando en tu negocio.",
+        proc1_label:   "Conversación inicial",
+        proc1_title:   "Entendemos tu negocio",
+        proc1_desc:    "Nos reunimos para conocer cómo funciona tu negocio y qué problema quieres resolver. Sin compromiso, sin costo.",
+        proc1_badge:   "Sin costo",
+        proc2_label:   "Propuesta",
+        proc2_title:   "Solución clara con precio",
+        proc2_desc:    "Te presentamos una propuesta detallada con precio, tiempos de entrega y exactamente lo que incluye. Sin letras pequeñas.",
+        proc3_label:   "Desarrollo",
+        proc3_title:   "Construimos tu sistema",
+        proc3_desc:    "Desarrollamos con avances visibles para que estés al tanto en cada etapa. Tu retroalimentación es parte del proceso.",
+        proc4_label:   "Entrega y capacitación",
+        proc4_title:   "Sistema funcionando + capacitación",
+        proc4_desc:    "Te entregamos el sistema funcionando y te enseñamos a usarlo. No te dejamos solo hasta que lo domines.",
+        proc5_label:   "Soporte",
+        proc5_title:   "Seguimos disponibles",
+        proc5_desc:    "Después de la entrega seguimos disponibles para ajustes, dudas y mantenimiento. El sistema crece contigo.",
+        fw_tag:        "¿Para quién es?",
+        fw_title:      "Cualquier negocio que quiera<br><span class=\"grad\">dejar de improvisar.</span>",
+        fw_tiendas:    "Tiendas y comercios",
+        fw_farmacias:  "Farmacias",
+        fw_talleres:   "Talleres y servicios técnicos",
+        fw_clinicas:   "Clínicas y consultorios",
+        fw_restaurantes:"Restaurantes y cafeterías",
+        fw_distribuidoras:"Distribuidoras pequeñas",
+        fw_note:       "<strong>¿Tu negocio no está en la lista?</strong> No importa. Si tienes procesos manuales que te quitan tiempo o datos que no entiendes bien, hay una solución para ti. Conversamos sin compromiso.",
+        cta_title:     "¿Listo para organizar tu negocio?",
+        cta_sub:       "Conversemos sin compromiso. Te explicamos qué solución tiene más sentido para ti y tu operación.",
+        cta_btn:       "Escríbeme por WhatsApp",
+        footer_brand_p:    "Reparación de PCs y laptops, páginas web en WordPress y sistemas a medida. Santa Cruz del Quiché, Guatemala.",
+        footer_h_services: "Servicios",
+        footer_h_pages:    "Páginas",
+        footer_h_contact:  "Contacto",
+        footer_form:       "Formulario",
+        footer_copy:       "© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales",
+        footer_loc:        "Santa Cruz del Quiché, Guatemala",
+        footer_coverage:   "Atendemos en Santa Cruz del Quiché y municipios cercanos: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango y Patzité.",
+      },
+      en: {
+        page_title:    "Custom Systems — Mayo Fix Tech",
+        nav_home:      "Home",
+        nav_repair:    "Repair",
+        nav_sistemas:  "Systems",
+        nav_about:     "Meet Me",
+        nav_contact:   "Contact",
+        lang_label:    "Language",
+        header_tag:    "Technology for your business",
+        header_h1_line1: "Systems",
+        header_h1_line2: "built for you.",
+        header_sub:    "Does your business still rely on notebooks, messy spreadsheets, or manual processes that eat up your time? We develop systems adapted exactly to the way YOU work.",
+        badge_custom:  "No unnecessary features",
+        badge_nogeneric: "No generic software",
+        badge_support: "Support included",
+        srv_tag:       "What we build",
+        srv_title:     "What we can do<br>for <span class=\"grad\">your business?</span>",
+        srv_sub:       "Every system is built from scratch to fit your processes. No generic templates, no paying for features you'll never use.",
+        s1_title:      "Inventory Control",
+        s1_desc:       "Know at all times what products you have, how many are left, and when to restock. Low stock alerts, movement history, and clear reports.",
+        s2_title:      "Point of Sale & Invoicing",
+        s2_desc:       "Record sales quickly, generate invoices, and track daily income. Know how much you sold today, this week, or this month with a single click.",
+        s3_title:      "Expense & Income Tracking",
+        s3_desc:       "A simple panel where you record what comes in and what goes out. Visualize your cash flow without needing to be an accountant.",
+        s4_title:      "Reports & Statistics",
+        s4_desc:       "Charts and tables that show you how your business is doing: best-selling products, strong months. Clear data to make better decisions.",
+        s5_title:      "Appointment Scheduling",
+        s5_desc:       "Ideal for clinics, salons, workshops, and any appointment-based business. Visual calendar, reminders, and attendance records.",
+        ent_badge:     "Enterprise level",
+        ent_title:     "Enterprise System<br><span class=\"grad\">Implementation</span>",
+        ent_desc:      "If your business needs something more robust, we install and configure open-source enterprise systems like Odoo, fully adapted to your operation.",
+        ent_f1:        "Sales, purchasing, inventory, and accounting modules",
+        ent_f2:        "Custom configuration based on your business type",
+        ent_f3:        "Training so you and your team can use it without issues",
+        ent_f4:        "Technical support after implementation",
+        ent_modules:   "Available modules",
+        mod_ventas:    "Sales",
+        mod_compras:   "Purchasing",
+        mod_inventario:"Inventory",
+        mod_contabilidad:"Accounting",
+        xls_tag:       "Automation",
+        xls_title:     "Already using Excel but want<br><span class=\"grad\">more from it?</span>",
+        xls_sub:       "You don't always need a new system. Sometimes you just need to unlock the potential of what you already have.",
+        xls_f1:        "Professional templates with automatic formulas",
+        xls_f2:        "Visual dashboards to see your data at a glance",
+        xls_f3:        "Cleaning and organizing messy data",
+        xls_f4:        "Converting manual processes into smart spreadsheets",
+        xls_card_title:"Excel turbocharged for your business",
+        xls_card_desc: "If your operation doesn't need a full system, we can transform your spreadsheets into professional tools that save you hours every week. Real automation, no fuss.",
+        xls_cta_btn:   "Ask via WhatsApp",
+        proc_tag:      "The process",
+        proc_title:    "How does it <span class=\"grad\">work?</span>",
+        proc_sub:      "No endless forms, no opaque processes. Five clear steps from idea to a working system in your business.",
+        proc1_label:   "Initial conversation",
+        proc1_title:   "We understand your business",
+        proc1_desc:    "We meet to learn how your business works and what problem you want to solve. No commitment, no cost.",
+        proc1_badge:   "No cost",
+        proc2_label:   "Proposal",
+        proc2_title:   "Clear solution with pricing",
+        proc2_desc:    "We present a detailed proposal with price, delivery timeline, and exactly what's included. No fine print.",
+        proc3_label:   "Development",
+        proc3_title:   "We build your system",
+        proc3_desc:    "We develop with visible progress updates so you're informed at every stage. Your feedback is part of the process.",
+        proc4_label:   "Delivery & training",
+        proc4_title:   "Working system + training",
+        proc4_desc:    "We deliver a working system and teach you how to use it. We won't leave you on your own until you've mastered it.",
+        proc5_label:   "Support",
+        proc5_title:   "We stay available",
+        proc5_desc:    "After delivery we remain available for adjustments, questions, and maintenance. The system grows with you.",
+        fw_tag:        "Who is it for?",
+        fw_title:      "Any business that wants to<br><span class=\"grad\">stop improvising.</span>",
+        fw_tiendas:    "Retail stores & shops",
+        fw_farmacias:  "Pharmacies",
+        fw_talleres:   "Workshops & repair services",
+        fw_clinicas:   "Clinics & medical offices",
+        fw_restaurantes:"Restaurants & cafés",
+        fw_distribuidoras:"Small distributors",
+        fw_note:       "<strong>Is your business not on the list?</strong> No problem. If you have manual processes that waste your time or data you don't fully understand, there's a solution for you. Let's talk — no commitment.",
+        cta_title:     "Ready to organize your business?",
+        cta_sub:       "Let's talk without commitment. We'll explain what solution makes the most sense for you and your operation.",
+        cta_btn:       "Message me on WhatsApp",
+        footer_brand_p:    "PC & laptop repair, WordPress websites, and custom systems. Santa Cruz del Quiché, Guatemala.",
+        footer_h_services: "Services",
+        footer_h_pages:    "Pages",
+        footer_h_contact:  "Contact",
+        footer_form:       "Contact form",
+        footer_copy:       "© 2026 Mayo Fix Tech — Erica Alejandra Franco Rosales",
+        footer_loc:        "Santa Cruz del Quiché, Guatemala",
+        footer_coverage:   "We serve Santa Cruz del Quiché and nearby municipalities: Chichicastenango, Chiché, Chinique, Zacualpa, Joyabaj, San Pedro Jocopilas, Sacapulas, San Antonio Ilotenango and Patzité.",
+      }
+    };
+
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
