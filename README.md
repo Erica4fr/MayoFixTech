@@ -14,9 +14,9 @@ Un sitio estático de cinco páginas, escrito a mano en HTML, CSS y JavaScript. 
 
 **Bilingüe español / inglés.** El texto se cambia sin recargar la página: cada elemento traducible lleva un atributo `data-i18n` y cada página define sus cadenas en un objeto `translations`. La elección se guarda en el navegador.
 
-**Tema claro y oscuro.** Un selector junto al de idioma. El tema se aplica desde un script en el `<head>`, antes de que el navegador pinte nada, para que al recargar no se vea un destello del tema anterior. Si nunca se ha elegido tema, sigue la preferencia del sistema operativo.
+**Tema claro y oscuro.** Un selector junto al de idioma. El tema se aplica desde un script en el `<head>`, antes de que el navegador pinte nada, para que al recargar no se vea un destello del tema anterior. El sitio abre siempre en oscuro; si el visitante elige otro tema, se recuerda.
 
-**Color por tokens.** Dos escalas de color, azul y dorado, con variables semánticas encima. El cambio de tema redefine las variables, no los componentes. En tema oscuro el dorado es el color de acento del texto; en tema claro pasa a serlo el azul, porque el dorado sobre fondo claro no alcanza contraste legible.
+**Color por tokens.** Variables semánticas encima de escalas de color; el cambio de tema redefine las variables, no los componentes. El tema oscuro usa los colores de la marca, azul marino y dorado. El tema claro usa una paleta distinta de azul eléctrico, cian y grises fríos. En ella el cian solo aparece en botones y superficies, porque como texto sobre fondo claro no alcanza contraste legible.
 
 **Contraste verificado.** Cada combinación de texto y fondo se comprobó contra el mínimo de WCAG 2.1 AA (4,5:1 en texto normal, 3:1 en texto grande) midiendo el resultado renderizado, en las seis páginas y en los dos temas.
 

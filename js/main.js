@@ -172,7 +172,7 @@ applyLang(localStorage.getItem('lang') || 'es');
 // posterior y el estado visual del selector.
 
 // Color de la barra del navegador en móvil, por tema.
-var THEME_COLORS = { dark: '#0E2337', light: '#F3F8FC' };
+var THEME_COLORS = { dark: '#0E2337', light: '#F5F8FC' };
 
 function applyTheme(theme) {
   if (theme !== 'light' && theme !== 'dark') theme = 'dark';
