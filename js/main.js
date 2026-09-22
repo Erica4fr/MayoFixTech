@@ -65,6 +65,27 @@ document.addEventListener('click', function (e) {
 }());
 
 // ── FORMULARIO DE CONTACTO → WHATSAPP
+// ESTADÍSTICAS (Google Analytics)
+// Cada vez que alguien abre WhatsApp desde el sitio se envía el evento
+// `contacto_whatsapp`, para contar consultas y no solo visitas. `via` distingue
+// los botones del formulario y `ubicacion` dice qué botón fue. Nunca se envían
+// nombre, correo ni mensaje: Google prohíbe datos personales y no hacen falta.
+// Si Analytics no cargó (por un bloqueador de anuncios), no hace nada.
+function track(evento, datos) {
+  if (typeof gtag === 'function') gtag('event', evento, datos);
+}
+
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[href^="https://wa.me/"]');
+  if (!a) return;
+  var ubicacion = a.closest('nav, #mobileMenu') ? 'menu'
+                : a.closest('footer') ? 'pie'
+                : a.closest('.cta-band') ? 'banda_final'
+                : a.closest('.hero, .page-header') ? 'portada'
+                : 'contenido';
+  track('contacto_whatsapp', { via: 'boton', ubicacion: ubicacion });
+});
+
 // El sitio es estático (sin servidor), así que el formulario no puede enviar correos.
 // En su lugar arma un mensaje con los datos y abre WhatsApp con el texto listo.
 // Solo existe en nosotros.html; en las demás páginas no hace nada.
@@ -88,6 +109,14 @@ document.addEventListener('click', function (e) {
 
     // encodeURIComponent convierte espacios, tildes y saltos de línea a formato de URL
     var url = 'https://wa.me/50259924104?text=' + encodeURIComponent(lineas.join('\n'));
+
+    // El servicio va siempre en español, para que el informe no mezcle idiomas
+    var clave = sel.value ? sel.options[sel.selectedIndex].getAttribute('data-i18n') : '';
+    var es = typeof translations !== 'undefined' && translations.es;
+    track('contacto_whatsapp', {
+      via: 'formulario',
+      servicio: (clave && es && es[clave]) || servicio || 'sin elegir'
+    });
 
     // Abre WhatsApp en una pestaña nueva; si el navegador la bloquea, lo abre en la misma
     var win = window.open(url, '_blank');

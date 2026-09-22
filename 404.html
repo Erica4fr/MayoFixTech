@@ -37,6 +37,16 @@
     }());
   </script>
 
+  <!-- Google Analytics 4. Va con async para no retrasar la carga de la página.
+       El evento contacto_whatsapp se envía desde js/main.js. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFHFFPBXV7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TFHFFPBXV7');
+  </script>
+
   <link rel="stylesheet" href="/css/styles.css">
 
   <style>
