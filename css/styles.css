@@ -277,14 +277,6 @@ nav {
 .lang-switch.is-es .lang-switch-opt:first-of-type,
 .lang-switch.is-en .lang-switch-opt:last-of-type { color: var(--on-accent); }
 
-.mobile-lang {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0.9rem 0; border-bottom: 1px solid var(--border);
-}
-.mobile-lang > span { font-size: 0.85rem; color: var(--text3); }
-/* Al ser la última fila del menú, su línea inferior quedaría suelta. */
-.mobile-lang:last-child { border-bottom: none; }
-
 /* Botones reutilizables */
 .btn {
   display: inline-flex; align-items: center; gap: 0.45rem;
