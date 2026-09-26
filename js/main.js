@@ -133,6 +133,15 @@ document.addEventListener('click', function (e) {
 // vienen de lo que teclee la visitante, de la URL ni de localStorage: innerHTML
 // ejecutaría lo que traigan.
 
+// localStorage puede lanzar si el navegador lo bloquea (modo privado, escudos).
+// El script de tema del <head> ya lo lee dentro de un try; aquí hace falta lo
+// mismo, porque una excepción en la inicialización del final abortaba el resto
+// del archivo: THEME_COLORS se quedaba sin asignar, el selector de tema no se
+// sincronizaba al cargar y cambiar de idioma dejaba de funcionar.
+function storedLang() {
+  try { return localStorage.getItem('lang'); } catch (e) { return null; }
+}
+
 function applyLang(lang) {
   // El idioma se guarda en localStorage, que se puede editar desde el navegador.
   // Sin esta guarda, un valor como `__proto__` hacía que translations[lang]
@@ -186,11 +195,11 @@ function applyLang(lang) {
   // bloque de temas, más abajo en este archivo, se haya evaluado.
   if (typeof THEME_COLORS !== 'undefined') applyTheme(currentTheme());
 
-  localStorage.setItem('lang', lang);
+  try { localStorage.setItem('lang', lang); } catch (e) {}
 }
 
 function toggleLang() {
-  applyLang((localStorage.getItem('lang') || 'es') === 'es' ? 'en' : 'es');
+  applyLang((storedLang() || 'es') === 'es' ? 'en' : 'es');
 }
 
 // Accesibilidad: activar lang-switch con teclado (Enter o Espacio)
@@ -202,7 +211,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 // Inicialización: aplica el idioma guardado en localStorage (o español por defecto)
-applyLang(localStorage.getItem('lang') || 'es');
+applyLang(storedLang() || 'es');
 
 // ── MOTOR DE TEMAS (claro / oscuro)
 // El tema se aplica en un <script> inline dentro del <head> de cada
