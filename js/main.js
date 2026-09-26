@@ -129,8 +129,18 @@ document.addEventListener('click', function (e) {
 // `translations` es definido por el <script> inline de cada página antes de cargar este archivo.
 // data-i18n usa textContent (texto plano, seguro contra XSS).
 // data-i18n-html usa innerHTML (solo para contenido con etiquetas HTML internas).
+// Por eso las cadenas de `translations` se escriben a mano en cada página y nunca
+// vienen de lo que teclee la visitante, de la URL ni de localStorage: innerHTML
+// ejecutaría lo que traigan.
 
 function applyLang(lang) {
+  // El idioma se guarda en localStorage, que se puede editar desde el navegador.
+  // Sin esta guarda, un valor como `__proto__` hacía que translations[lang]
+  // devolviera el prototipo de Object: no se aplicaba ninguna traducción, los
+  // placeholders del formulario quedaban en "undefined" y el selector de idioma
+  // se quedaba sin su clase de estado.
+  if (lang !== 'es' && lang !== 'en') lang = 'es';
+
   if (typeof translations === 'undefined') return;
   var tr = translations[lang];
   if (!tr) return;
